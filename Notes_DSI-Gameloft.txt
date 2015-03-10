@@ -1,0 +1,7 @@
+Laser
+Spread & Ranged & "Plasma"
+Splash & Sans LDV
+Classic
+
+UI
+	CanvasScaler.UIScaleMode = "Screen Space - Overlay"
