@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour {
     }
 
     void Update () {
+        // Look at locked enemy
         if (m_EnemyTarget != null) {
             this.transform.LookAt (m_EnemyTarget.position);
         }
@@ -43,9 +44,13 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void Unlock (EnemyLock enemyLockScript) {
+    public void Unlock () {
+        if (m_EnemyTarget == null) {
+            return;
+        }
+
+        m_EnemyTarget.GetComponent<EnemyLock> ().m_IsPlayerTarget = false;
         m_EnemyTarget = null;
-        enemyLockScript.m_IsPlayerTarget = false;
 
         int weaponCount = m_Weapons.Length;
         for (int i = 0; i < weaponCount; ++i) {

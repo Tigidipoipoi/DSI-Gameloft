@@ -15,14 +15,10 @@ public class EnemyLock : MonoBehaviour {
         m_Renderer = this.GetComponent<Renderer> ();
     }
 
-    void OnMouseDown () {
-        m_PlayerScript.LockTarget (this);
-    }
-
     void Update () {
         if (m_IsPlayerTarget
             && !m_Renderer.IsVisibleFrom (Camera.main)) {
-            m_PlayerScript.Unlock (this);
+            m_PlayerScript.Unlock ();
         }
     }
 }
