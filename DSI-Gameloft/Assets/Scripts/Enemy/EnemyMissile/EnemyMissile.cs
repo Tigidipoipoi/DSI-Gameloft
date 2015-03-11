@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyMissile : Enemy
+public class EnemyMissile : Enemy_Script
 {
 
     public IADestination m_Mouvement;
@@ -14,8 +14,9 @@ public class EnemyMissile : Enemy
     public Transform m_PointForShoot;
 
 	// Use this for initialization
-	void Start () 
+	public override void Start () 
     {
+        base.Start();
         m_IsReady = true;
 	}
 	
@@ -25,15 +26,17 @@ public class EnemyMissile : Enemy
         {
             yield return new WaitForSeconds(m_DelayBeforeShoot);
 
-            Instantiate(m_PrefabBullet, m_PointForShoot.position, Quaternion.identity);
-
+            GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject ;
+            bullet.layer = LayerMask.NameToLayer("EnemyBullet");
             m_IsReady = true;
         }
     }
 
 	// Update is called once per frame
-	void Update () 
+	public override void Update () 
     {
+        base.Update();
+
         if (m_IsAwake == true)
         {
             if (m_Mouvement.m_IsAtDistance == true && m_IsReady == true)

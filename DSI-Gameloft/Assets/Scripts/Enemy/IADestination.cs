@@ -23,6 +23,8 @@ public class IADestination : MonoBehaviour {
     {
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
 
+        m_Destination_Cible = GameObject.FindGameObjectWithTag("Player").transform;
+
         if(m_Acceleration==0)
         {
             m_Acceleration = 0.1f;
@@ -57,7 +59,15 @@ public class IADestination : MonoBehaviour {
             m_Rigidbody.velocity = Vector3.zero;
             if(m_RotateAroundPlayer==true)
             {
-                transform.RotateAround(m_Destination_Cible.position, Vector3.up, m_RotateSpeed*Time.deltaTime );
+                if(m_ChangeRotate)
+                {
+                    transform.RotateAround(m_Destination_Cible.position, Vector3.up, m_RotateSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    transform.RotateAround(m_Destination_Cible.position, Vector3.up, (m_RotateSpeed * Time.deltaTime)*-1);
+                }
+                
             }
         }
         else
@@ -75,15 +85,16 @@ public class IADestination : MonoBehaviour {
            }
            m_Rigidbody.velocity = m_Direction * m_Speed;
         }
-        
+       
+
     }
-    /*
-    void OnCollisionEnter(Collider other)
+    
+    void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.layer==9)
         {
-            m_ChangeRotate = true;
+            m_ChangeRotate = !m_ChangeRotate;
         }
     }
-    */
+    
 }
