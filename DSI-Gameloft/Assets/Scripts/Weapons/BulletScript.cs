@@ -28,6 +28,10 @@ public class BulletScript : MonoBehaviour {
         GameObject otherGO = other.gameObject;
 
         if (otherGO.layer != this.gameObject.layer) {
+            if (this.gameObject.layer == LayerMask.NameToLayer ("EnemyBullet")) {
+                // ToDo: Handle timer
+            }
+
             PreDestroy ();
         }
     }
