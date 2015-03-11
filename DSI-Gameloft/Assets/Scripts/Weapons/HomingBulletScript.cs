@@ -11,7 +11,9 @@ public class HomingBulletScript : BulletScript {
         this.transform.Rotate (Vector3.right, 90.0f);
     }
 
-    public virtual void Update () {
+    public override void Update () {
         m_Rigidbody.velocity = (m_Target.position - this.transform.position).normalized * m_BulletStats.m_Speed;
+
+        base.Update ();
     }
 }

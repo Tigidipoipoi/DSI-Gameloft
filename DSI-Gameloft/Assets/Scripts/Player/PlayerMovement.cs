@@ -3,9 +3,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
     #region Members
-    public float m_TimeBeforeTurrelMode = 0.2f;
-    public int m_MoveSpeed;
-    public float m_BreakDistance;
+    public float m_TimeBeforeTurretMode = 0.2f;
+    public float m_MoveSpeed = 10.0f;
+    public float m_BreakDistance = 0.5f;
 
     float m_LastClickDownTime;
     int m_EnemyLayerMask;
@@ -20,12 +20,14 @@ public class PlayerMovement : MonoBehaviour {
         m_EnemyLayerMask = LayerMask.GetMask ("Enemy");
         m_GroundLayerMask = LayerMask.GetMask ("Ground");
         m_PlayerScript = this.GetComponent<PlayerScript> ();
+        m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         m_Rigidbody = this.GetComponent<Rigidbody> ();
         m_MoveToTarget = this.MoveToTarget ();
     }
 
     void Update () {
-        if (Input.GetMouseButtonDown (0)) {
+        if (!m_PlayerScript.m_IsInTurretMode
+            && Input.GetMouseButtonDown (0)) {
             Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
             RaycastHit hit;
             m_LastClickDownTime = Time.time;
@@ -43,10 +45,18 @@ public class PlayerMovement : MonoBehaviour {
                 this.StartCoroutine (m_MoveToTarget);
             }
         }
-        // Focus Fire
+        // Turret Mode
         else if (Input.GetMouseButton (0)
-            && Mathf.Abs (Time.time - m_LastClickDownTime) > m_TimeBeforeTurrelMode) {
+            && Mathf.Abs (Time.time - m_LastClickDownTime) > m_TimeBeforeTurretMode
+            && !m_PlayerScript.m_IsInTurretMode) {
+            m_PlayerScript.m_IsInTurretMode = true;
             m_PlayerScript.Unlock ();
+            m_PlayerScript.UpdateWeaponsHoming (isHoming: false);
+            m_PlayerScript.StartCoroutine ("TurretShoot");
+        }
+        else if (Input.GetMouseButtonUp (0)) {
+            m_PlayerScript.m_IsInTurretMode = false;
+            m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         }
     }
 

@@ -5,7 +5,7 @@ public class BulletScript : MonoBehaviour {
     #region Members
     public Rigidbody m_Rigidbody;
     public Bullet m_BulletStats;
-    Renderer m_Renderer;
+    public Renderer m_Renderer;
     #endregion
 
     public virtual void Start () {
@@ -18,7 +18,7 @@ public class BulletScript : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    void Update () {
+    public virtual void Update () {
         if (!m_Renderer.IsVisibleFrom (Camera.main)) {
             PreDestroy ();
         }

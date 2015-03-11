@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public class PlayerScript : MonoBehaviour {
     #region Members
     public const int c_MaxWeaponCount = 3;
+    public bool m_IsInTurretMode;
 
-    Transform m_EnemyTarget;
+    [HideInInspector]
+    public Transform m_EnemyTarget;
 
     public WeaponScript[] m_Weapons;
     IEnumerator[] m_WeaponCoroutines;
@@ -28,6 +30,11 @@ public class PlayerScript : MonoBehaviour {
         // Look at locked enemy
         if (m_EnemyTarget != null) {
             this.transform.LookAt (m_EnemyTarget.position);
+        }
+
+        // Turret mode
+        if (m_IsInTurretMode) {
+            this.LookAtMouse ();
         }
     }
 
@@ -72,5 +79,49 @@ public class PlayerScript : MonoBehaviour {
                 m_WeaponCoroutines[i] = m_Weapons[i].AutoFire ();
             }
         }
+    }
+
+    public void UpdateWeaponsHoming (bool isHoming) {
+        int weaponCount = m_Weapons.Length;
+        for (int i = 0; i < weaponCount; ++i) {
+            if (m_Weapons[i] != null) {
+                m_Weapons[i].m_WeaponStats.m_IsHoming = isHoming;
+            }
+        }
+    }
+
+    public void GetDamage () {
+
+    }
+
+    public IEnumerator TurretShoot () {
+        int weaponCount = m_Weapons.Length;
+        this.LookAtMouse ();
+        for (int i = 0; i < weaponCount; ++i) {
+            if (m_Weapons[i] != null) {
+                m_Weapons[i].StartCoroutine (m_WeaponCoroutines[i]);
+            }
+        }
+
+        while (m_IsInTurretMode) {
+
+            yield return null;
+        }
+
+        for (int i = 0; i < weaponCount; ++i) {
+            if (m_Weapons[i] != null) {
+                m_Weapons[i].StopCoroutine (m_WeaponCoroutines[i]);
+            }
+        }
+    }
+
+    void LookAtMouse () {
+        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast (ray, out hit, Mathf.Infinity);
+        Vector3 lookTarget = hit.point;
+        lookTarget.y = 1.0f;
+
+        this.transform.LookAt (lookTarget);
     }
 }
