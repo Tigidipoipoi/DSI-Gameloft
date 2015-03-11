@@ -9,7 +9,7 @@ public class Bullet {
     #endregion
 
     public Bullet ()
-        : this (1, 100) { }
+        : this (1, 20) { }
 
     public Bullet (int power, int speed) {
         m_Power = power;

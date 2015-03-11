@@ -7,7 +7,8 @@ public class PlayerScript : MonoBehaviour {
     public const int c_MaxWeaponCount = 3;
     public bool m_IsInTurretMode;
 
-    Transform m_EnemyTarget;
+    [HideInInspector]
+    public Transform m_EnemyTarget;
 
     public WeaponScript[] m_Weapons;
     IEnumerator[] m_WeaponCoroutines;
@@ -71,6 +72,15 @@ public class PlayerScript : MonoBehaviour {
         for (int i = 0; i < weaponCount; ++i) {
             if (m_Weapons[i] != null) {
                 m_WeaponCoroutines[i] = m_Weapons[i].AutoFire ();
+            }
+        }
+    }
+
+    public void UpdateWeaponsHoming (bool isHoming) {
+        int weaponCount = m_Weapons.Length;
+        for (int i = 0; i < weaponCount; ++i) {
+            if (m_Weapons[i] != null) {
+                m_Weapons[i].m_WeaponStats.m_IsHoming = isHoming;
             }
         }
     }

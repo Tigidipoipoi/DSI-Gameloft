@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
         m_EnemyLayerMask = LayerMask.GetMask ("Enemy");
         m_GroundLayerMask = LayerMask.GetMask ("Ground");
         m_PlayerScript = this.GetComponent<PlayerScript> ();
+        m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         m_Rigidbody = this.GetComponent<Rigidbody> ();
         m_MoveToTarget = this.MoveToTarget ();
     }
@@ -50,10 +51,12 @@ public class PlayerMovement : MonoBehaviour {
             && !m_PlayerScript.m_IsInTurretMode) {
             m_PlayerScript.m_IsInTurretMode = true;
             m_PlayerScript.Unlock ();
+            m_PlayerScript.UpdateWeaponsHoming (isHoming: false);
             m_PlayerScript.StartCoroutine ("TurretShoot");
         }
         else if (Input.GetMouseButtonUp (0)) {
             m_PlayerScript.m_IsInTurretMode = false;
+            m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         }
     }
 
