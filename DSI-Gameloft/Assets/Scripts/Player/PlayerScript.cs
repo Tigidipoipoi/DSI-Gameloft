@@ -38,6 +38,11 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
+    public void GetDamage(float damage)
+    {
+
+    }
+
     public void LockTarget (EnemyLock enemyLockScript) {
         m_EnemyTarget = enemyLockScript.transform;
         enemyLockScript.m_IsPlayerTarget = true;

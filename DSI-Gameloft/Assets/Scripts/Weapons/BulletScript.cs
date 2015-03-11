@@ -13,6 +13,11 @@ public class BulletScript : MonoBehaviour {
         m_Renderer = this.GetComponent<Renderer> ();
     }
 
+    public virtual void GetDamage()
+    {
+        Destroy(this.gameObject);
+    }
+
     public virtual void Update () {
         if (!m_Renderer.IsVisibleFrom (Camera.main)) {
             PreDestroy ();

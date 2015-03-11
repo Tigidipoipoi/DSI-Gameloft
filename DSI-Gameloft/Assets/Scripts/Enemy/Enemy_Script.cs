@@ -14,11 +14,9 @@ public class Enemy_Script : MonoBehaviour {
     public virtual void Start()
     {
         renderer=this.GetComponent<Renderer>();
-        m_Player = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
-    void TakeDamage(float m_Damage)
+    public void GetDamage(float m_Damage)
     {
         StartCoroutine(blink());
     }
@@ -29,6 +27,7 @@ public class Enemy_Script : MonoBehaviour {
         if(renderer.IsVisibleFrom(Camera.main))
         {
             m_IsAwake = true;
+            m_Player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         else
         {
@@ -43,17 +42,17 @@ public class Enemy_Script : MonoBehaviour {
     public IEnumerator blink(float time = 3)
     {
         float delay = 0.15f;
-
+        Color renderer_memory = renderer.material.color;
         while (time > 0)
         {
 
-            if (renderer.material.color == Color.white)
+            if (renderer.material.color == renderer_memory)
             {
                 renderer.material.color = Color.red;
             }
             else
             {
-                renderer.material.color = Color.white;
+                renderer.material.color = renderer_memory;
             }
 
             yield return new WaitForSeconds(delay);
@@ -61,7 +60,7 @@ public class Enemy_Script : MonoBehaviour {
             time -= delay;
         }
 
-        renderer.material.color = Color.white;
+        renderer.material.color = renderer_memory;
         yield return null;
     }
 
