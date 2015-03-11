@@ -25,9 +25,9 @@ public class BulletScript : MonoBehaviour {
     }
 
     public virtual void OnCollisionEnter (Collision other) {
-        GameObject GO = other.gameObject;
+        GameObject otherGO = other.gameObject;
 
-        if (GO.layer != this.gameObject.layer) {
+        if (otherGO.layer != this.gameObject.layer) {
             PreDestroy ();
         }
     }

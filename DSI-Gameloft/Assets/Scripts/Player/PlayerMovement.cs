@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour {
     #region Members
     public float m_TimeBeforeTurretMode = 0.1f;
     public float m_MoveSpeed = 10.0f;
-    public float m_BreakDistance = 0.5f;
+    public float m_BreakDistance = 0.1f;
 
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
