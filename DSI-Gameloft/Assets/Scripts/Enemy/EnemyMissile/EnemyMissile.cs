@@ -37,6 +37,11 @@ public class EnemyMissile : Enemy_Script
     {
         base.Update();
 
+        if (m_Mouvement.m_Destination_Cible == null)
+        {
+            m_Mouvement.m_Destination_Cible = m_Player;
+        }
+
         if (m_IsAwake == true)
         {
             if (m_Mouvement.m_IsAtDistance == true && m_IsReady == true)
@@ -47,11 +52,5 @@ public class EnemyMissile : Enemy_Script
 
             }
         }
-
-        if (m_Life <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-
 	}
 }
