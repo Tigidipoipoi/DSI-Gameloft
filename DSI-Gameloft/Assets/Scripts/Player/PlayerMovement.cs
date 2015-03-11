@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     public float m_BreakDistance = 0.5f;
 
     float m_LastClickDownTime;
-    int m_EnemyLayerMask;
+    int m_EnemyOrObstacleLayerMask;
     int m_GroundLayerMask;
     Vector3 m_TargetPosition;
     Rigidbody m_Rigidbody;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
     #endregion
 
     void Start () {
-        m_EnemyLayerMask = LayerMask.GetMask ("Enemy");
+        m_EnemyOrObstacleLayerMask = LayerMask.GetMask ("Enemy", "Obstacle");
         m_GroundLayerMask = LayerMask.GetMask ("Ground");
         m_PlayerScript = this.GetComponent<PlayerScript> ();
         m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
             m_LastClickDownTime = Time.time;
 
             // Lock
-            if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_EnemyLayerMask)) {
+            if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_EnemyOrObstacleLayerMask)) {
                 m_PlayerScript.LockTarget (hit.collider.transform.GetComponent<EnemyLock> ());
             }
             // Move

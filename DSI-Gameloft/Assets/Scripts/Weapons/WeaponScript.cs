@@ -34,7 +34,6 @@ public class WeaponScript : MonoBehaviour {
 
         if (m_WeaponStats.m_IsHoming) {
             if (m_Holder.tag == "Player") {
-                Debug.Log (m_PlayerScript.m_EnemyTarget != null);
                 bulletGO.GetComponent<HomingBulletScript>().m_Target = m_PlayerScript.m_EnemyTarget;
             }
             else {
