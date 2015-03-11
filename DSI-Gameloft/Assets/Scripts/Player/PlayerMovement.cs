@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
     #region Members
-    public float m_TimeBeforeTurretMode = 0.2f;
+    public float m_TimeBeforeTurretMode = 0.1f;
     public float m_MoveSpeed = 10.0f;
     public float m_BreakDistance = 0.5f;
 
@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour {
         else if (Input.GetMouseButton (0)
             && Mathf.Abs (Time.time - m_LastClickDownTime) > m_TimeBeforeTurretMode
             && !m_PlayerScript.m_IsInTurretMode) {
+            this.FreezePosition ();
+
             m_PlayerScript.m_IsInTurretMode = true;
             m_PlayerScript.Unlock ();
             m_PlayerScript.UpdateWeaponsHoming (isHoming: false);
@@ -58,6 +60,11 @@ public class PlayerMovement : MonoBehaviour {
             m_PlayerScript.m_IsInTurretMode = false;
             m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         }
+    }
+
+    void FreezePosition () {
+        this.StopCoroutine (m_MoveToTarget);
+        m_Rigidbody.velocity = Vector3.zero;
     }
 
     IEnumerator MoveToTarget () {
