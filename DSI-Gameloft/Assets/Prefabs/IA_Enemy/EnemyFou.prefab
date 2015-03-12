@@ -29,7 +29,6 @@ GameObject:
   - 54: {fileID: 5457810}
   - 114: {fileID: 11499488}
   - 114: {fileID: 11408820}
-  - 215: {fileID: 21534730}
   - 114: {fileID: 11437346}
   m_Layer: 12
   m_Name: EnemyFou
@@ -135,9 +134,11 @@ MonoBehaviour:
   m_Life: 10
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_EnnemyMissile2: {fileID: 0}
   m_Mouvement: {fileID: 11499488}
-  m_DelayBeforeShoot: 0
-  m_DelayAfterShoot: 0
+  m_ShootCooldown: 5
+  m_DelayBeforeShoot: 1
+  m_DelayAfterShoot: 1
   m_PrefabBullet: {fileID: 174032, guid: d08a75d93b1acc848bb0361804b77ad7, type: 2}
   m_PointForShoot: {fileID: 400956}
 --- !u!114 &11499488
@@ -172,37 +173,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!215 &21534730
-ReflectionProbe:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174872}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 1
-  m_RefreshMode: 2
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_Importance: 1
-  m_BoxSize: {x: 10, y: 10, z: 10}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: .300000012
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_CustomBakedTexture: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

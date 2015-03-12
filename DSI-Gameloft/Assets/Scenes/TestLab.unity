@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -86,6 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
+<<<<<<< HEAD
   m_NavMeshData: {fileID: 23800000, guid: 26206c348ee2a6c4e931b8856348a74f, type: 2}
 --- !u!1 &96926745
 GameObject:
@@ -868,3 +869,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 464130, guid: 8aa2d8080c6d0204589f0e504aa22af0, type: 2}
   m_PrefabInternal: {fileID: 1172688972}
+=======
+  m_NavMeshData: {fileID: 0}
+>>>>>>> ddf27fbc5e473047b16d712804be58b6af84815b

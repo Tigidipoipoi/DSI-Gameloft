@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.17061615, y: 1, z: 12.6416035}
+  m_LocalPosition: {x: -3.89633775, y: 1, z: -7.65658474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400956}
@@ -134,10 +134,12 @@ MonoBehaviour:
   m_Life: 10
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_EnnemyMissile2: {fileID: 0}
   m_Mouvement: {fileID: 11499488}
   m_DelayBeforeShoot: 3
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_PointForShoot: {fileID: 400956}
+  m_RangeForShoot: 9
 --- !u!114 &11499488
 MonoBehaviour:
   m_ObjectHideFlags: 1

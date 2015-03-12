@@ -31,6 +31,9 @@ public class TimerManager : MonoBehaviour {
     }
 
     IEnumerator TimeIsRunningOut () {
+        // Wait for the start
+        yield return null;
+
         while (m_RemainingTime >= 0.0f) {
             m_RemainingTime -= Time.deltaTime;
             if (UIManager.instance != null) {
