@@ -8,7 +8,8 @@ public class FollowPlayer : MonoBehaviour {
     #endregion
 
     void Start () {
-        m_DistanceToPlayer = new Vector3 (0.0f, 8.0f, -6.0f);
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
+        m_DistanceToPlayer = this.transform.position - playerPosition;
     }
 
     void Update () {

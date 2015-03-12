@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour {
             m_PlayerScript.UpdateWeaponsHoming (isHoming: false);
             m_PlayerScript.StartCoroutine ("TurretShoot");
         }
+        // End of Turret Mode
         else if (Input.GetMouseButtonUp (0)) {
             m_PlayerScript.m_IsInTurretMode = false;
             m_PlayerScript.UpdateWeaponsHoming (isHoming: true);

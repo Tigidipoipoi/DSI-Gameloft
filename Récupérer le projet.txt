@@ -1,0 +1,4 @@
+Pour récupérer le projet Unity:
+	allez sur l'adresse suivante https://github.com/Tigidipoipoi/DSI-Gameloft
+	Puis cliquez sur "Download ZIP" en bas à droite de la page
+	Puis ouvrez le dossier "DSI-Gameloft" dans Unity

@@ -9,25 +9,26 @@ public class WeaponScript : MonoBehaviour {
     public Transform m_BulletSpawn;
     public GameObject m_Holder;
 
-    int m_BulletLayer;
-    PlayerScript m_PlayerScript;
+    protected int m_BulletLayer;
+    protected PlayerScript m_PlayerScript;
     #endregion
 
-    void Start () {
+    protected virtual void Start () {
         m_BulletLayer = LayerMask.NameToLayer (m_WeaponStats.m_IsAlly
             ? "AllyBullet"
             : "EnemyBullet");
         m_PlayerScript = m_Holder.GetComponent<PlayerScript> ();
     }
 
-    public IEnumerator AutoFire () {
+    public virtual IEnumerator AutoFire () {
         while (true) {
             this.Fire ();
-            yield return new WaitForSeconds (m_WeaponStats.m_FireRate);
+            yield return new WaitForSeconds (m_PlayerScript.m_IsInTurretMode
+                ? m_WeaponStats.m_FireRate * 0.5f : m_WeaponStats.m_FireRate);
         }
     }
 
-    public void Fire () {
+    public virtual void Fire () {
         GameObject bulletGO = Object.Instantiate (m_WeaponStats.m_IsHoming ? m_HomingBulletPrefab : m_BulletPrefab,
             m_BulletSpawn.position, m_BulletSpawn.rotation) as GameObject;
         bulletGO.layer = m_BulletLayer;
@@ -43,7 +44,7 @@ public class WeaponScript : MonoBehaviour {
         }
     }
 
-    public void LevelUpWeapon () {
+    public virtual void LevelUpWeapon () {
         if (m_WeaponStats.m_CurrentLevel <= 2) {
             ++m_WeaponStats.m_CurrentLevel;
         }
