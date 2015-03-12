@@ -33,7 +33,7 @@ public class TimerManager : MonoBehaviour {
     IEnumerator TimeIsRunningOut () {
         while (m_RemainingTime >= 0.0f) {
             m_RemainingTime -= Time.deltaTime;
-            Debug.Log (m_RemainingTime.ToString ());
+            //Debug.Log (m_RemainingTime.ToString ());
             yield return null;
         }
 

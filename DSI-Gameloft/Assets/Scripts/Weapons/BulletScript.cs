@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour {
     public Rigidbody m_Rigidbody;
     public Bullet m_BulletStats;
     public Renderer m_Renderer;
+    private Enemy_Script m_EnemyScript;
 
     public int m_EnemyBulletLayer;
     public int m_EnemyLayer;
@@ -17,7 +18,8 @@ public class BulletScript : MonoBehaviour {
         m_Renderer = this.GetComponent<Renderer> ();
         m_EnemyBulletLayer = LayerMask.NameToLayer ("EnemyBullet");
         m_EnemyLayer = LayerMask.NameToLayer ("Enemy");
-        m_AllyBulletLayer = LayerMask.NameToLayer ("AllyBullet");
+        m_AllyBulletLayer = LayerMask.NameToLayer("AllyBullet");
+        Debug.Log(m_AllyBulletLayer);
     }
 
     public virtual void GetDamage () {
@@ -32,13 +34,23 @@ public class BulletScript : MonoBehaviour {
 
     public virtual void OnCollisionEnter (Collision other) {
         GameObject otherGO = other.gameObject;
-
-        if (otherGO.layer != this.gameObject.layer) {
+        
+        if (otherGO.layer != this.gameObject.layer)
+        {
             if (this.gameObject.layer == m_EnemyBulletLayer) {
-                // ToDo: Handle timer
                 if (otherGO.tag == "Player") {
                     TimerManager.instance.LoseTime (m_BulletStats.m_Power);
                     Debug.Log ("Player shot !");
+                }
+            }
+            
+            if (this.gameObject.layer == m_AllyBulletLayer)
+            {
+                if (otherGO.layer == m_EnemyLayer)
+                {
+                    m_EnemyScript = otherGO.GetComponent<Enemy_Script>();
+                    m_EnemyScript.GetDamage(m_BulletStats.m_Power);
+                    
                 }
             }
 
