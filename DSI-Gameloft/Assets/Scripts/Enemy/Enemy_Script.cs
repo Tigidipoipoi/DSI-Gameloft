@@ -11,6 +11,8 @@ public class Enemy_Script : MonoBehaviour {
 
     Renderer renderer;
 
+    public GameObject m_EnnemyMissile2;
+
     public virtual void Start()
     {
         renderer=this.GetComponent<Renderer>();
@@ -19,7 +21,22 @@ public class Enemy_Script : MonoBehaviour {
     public void GetDamage(float m_Damage)
     {
         StartCoroutine(blink());
+        m_Life -= m_Damage;
+        if(m_Life<=0)
+        {
+            DestroyEnemy();
+        }
+    }
 
+    public void DestroyEnemy()
+    {
+        if(name=="EnemyMissile")
+        {
+            Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation);
+            Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation);
+        }
+
+        Destroy(this.gameObject);
     }
 
     public virtual void Update()
