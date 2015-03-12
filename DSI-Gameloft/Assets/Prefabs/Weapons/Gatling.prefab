@@ -110,6 +110,7 @@ MonoBehaviour:
   m_HomingBulletPrefab: {fileID: 129760, guid: 90330890501cd0144a39837d6043b85e, type: 2}
   m_BulletSpawn: {fileID: 472592}
   m_Holder: {fileID: 0}
+  m_PierceBulletPrefab: {fileID: 113294, guid: ca929911b9adafa4abaf7cb7bc8a2412, type: 2}
   m_HoldPower: .00999999978
   m_FireRate2: 1
   m_FireRate3: .5

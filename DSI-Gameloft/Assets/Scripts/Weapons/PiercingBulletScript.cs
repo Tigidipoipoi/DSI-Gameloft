@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PiercingBulletScript : BulletScript {
-    public override void OnCollisionEnter (Collision other) {
+    public virtual void OnTriggerEnter (Collider other) {
         GameObject otherGO = other.gameObject;
 
         if (otherGO.layer != this.gameObject.layer) {
