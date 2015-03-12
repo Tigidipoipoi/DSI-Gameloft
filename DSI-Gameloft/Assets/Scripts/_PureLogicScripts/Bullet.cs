@@ -5,13 +5,13 @@ using System.Collections;
 public class Bullet {
     #region Members
     public float m_Power;
-    public int m_Speed;
+    public float m_Speed;
     #endregion
 
     public Bullet ()
-        : this (1.0f, 20) { }
+        : this (1.0f, 20.0f) { }
 
-    public Bullet (float power, int speed) {
+    public Bullet (float power, float speed) {
         m_Power = power;
         m_Speed = speed;
     }

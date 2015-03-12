@@ -33,7 +33,9 @@ public class TimerManager : MonoBehaviour {
     IEnumerator TimeIsRunningOut () {
         while (m_RemainingTime >= 0.0f) {
             m_RemainingTime -= Time.deltaTime;
-            Debug.Log (m_RemainingTime.ToString ());
+            if (UIManager.instance != null) {
+                UIManager.instance.UpdateRemainingTime (m_RemainingTime);
+            }
             yield return null;
         }
 
