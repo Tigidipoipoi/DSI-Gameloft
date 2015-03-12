@@ -27,7 +27,7 @@ public class EnemyMissile2 : Enemy_Script
         if (m_IsAwake == true)
         {
             yield return new WaitForSeconds(m_DelayBeforeShoot);
-            if (m_Mouvement.m_IsAtDistance == false && && (Vector3.Distance(this.transform.position, m_Mouvement.m_Destination_Cible.position) <= m_RangeForShoot))
+            if (m_Mouvement.m_IsAtDistance == false && (Vector3.Distance(this.transform.position, m_Mouvement.m_Destination_Cible.position) <= m_RangeForShoot))
             {
                 StopCoroutine(WaitAndShoot());
             }
