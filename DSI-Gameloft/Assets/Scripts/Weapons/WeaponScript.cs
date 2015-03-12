@@ -41,6 +41,11 @@ public class WeaponScript : MonoBehaviour {
                 bulletGO.GetComponent<HomingBulletScript> ().m_Target = m_PlayerScript.transform;
             }
         }
+    }
 
+    public void LevelUpWeapon () {
+        if (m_WeaponStats.m_CurrentLevel <= 2) {
+            ++m_WeaponStats.m_CurrentLevel;
+        }
     }
 }
