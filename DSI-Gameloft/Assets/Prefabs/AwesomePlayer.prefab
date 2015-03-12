@@ -69,6 +69,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &120082
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 463574}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &160730
 GameObject:
   m_ObjectHideFlags: 1
@@ -102,6 +117,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &195288
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 450476}
+  - 33: {fileID: 3367840}
+  - 23: {fileID: 2327626}
+  - 114: {fileID: 11449244}
+  m_Layer: 0
+  m_Name: ShotGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &414178
 Transform:
   m_ObjectHideFlags: 1
@@ -114,6 +147,7 @@ Transform:
   m_Children:
   - {fileID: 447058}
   - {fileID: 443972}
+  - {fileID: 450476}
   m_Father: {fileID: 464130}
   m_RootOrder: 0
 --- !u!4 &443972
@@ -142,6 +176,19 @@ Transform:
   - {fileID: 450592}
   m_Father: {fileID: 414178}
   m_RootOrder: 0
+--- !u!4 &450476
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: .25}
+  m_LocalScale: {x: .5, y: .5, z: 1.5}
+  m_Children:
+  - {fileID: 463574}
+  m_Father: {fileID: 414178}
+  m_RootOrder: 2
 --- !u!4 &450592
 Transform:
   m_ObjectHideFlags: 1
@@ -153,6 +200,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447058}
+  m_RootOrder: 0
+--- !u!4 &463574
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: .5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 450476}
   m_RootOrder: 0
 --- !u!4 &464130
 Transform:
@@ -179,6 +238,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443972}
   m_RootOrder: 0
+--- !u!23 &2327626
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195288}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2332464
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -272,6 +355,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160730}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3367840
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195288}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5470152
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -301,6 +391,7 @@ MonoBehaviour:
   m_WeaponStats:
     m_Power: 1
     m_FireRate: .5
+    m_HoldFireRate: .25
     m_IsAlly: 1
     m_IsHoming: 0
     m_CurrentLevel: 0
@@ -308,6 +399,33 @@ MonoBehaviour:
   m_HomingBulletPrefab: {fileID: 129760, guid: 90330890501cd0144a39837d6043b85e, type: 2}
   m_BulletSpawn: {fileID: 450592}
   m_Holder: {fileID: 108188}
+--- !u!114 &11449244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5272b9fa8eb914d43836e72b74f32558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WeaponStats:
+    m_Power: 1
+    m_FireRate: .5
+    m_HoldFireRate: .25
+    m_IsAlly: 1
+    m_IsHoming: 0
+    m_CurrentLevel: 0
+  m_BulletPrefab: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
+  m_HomingBulletPrefab: {fileID: 129760, guid: 90330890501cd0144a39837d6043b85e, type: 2}
+  m_BulletSpawn: {fileID: 463574}
+  m_Holder: {fileID: 108188}
+  m_BallsPerShotLV0: 3
+  m_BallsPerShotLV1: 5
+  m_BallsPerShotLV2: 7
+  m_LockRange: 30
+  m_HoldRange: 60
 --- !u!114 &11464654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,6 +454,7 @@ MonoBehaviour:
   m_WeaponStats:
     m_Power: 1
     m_FireRate: 2
+    m_HoldFireRate: .25
     m_IsAlly: 1
     m_IsHoming: 0
     m_CurrentLevel: 0
@@ -360,9 +479,9 @@ MonoBehaviour:
   m_IsInTurretMode: 0
   m_EnemyTarget: {fileID: 0}
   m_Weapons:
-  - {fileID: 11415108}
-  - {fileID: 11472996}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11449244}
 --- !u!136 &13649560
 CapsuleCollider:
   m_ObjectHideFlags: 1

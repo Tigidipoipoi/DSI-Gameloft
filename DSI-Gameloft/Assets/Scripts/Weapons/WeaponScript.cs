@@ -17,14 +17,14 @@ public class WeaponScript : MonoBehaviour {
         m_BulletLayer = LayerMask.NameToLayer (m_WeaponStats.m_IsAlly
             ? "AllyBullet"
             : "EnemyBullet");
-        m_PlayerScript = m_Holder.GetComponent<PlayerScript> ();
+        m_PlayerScript = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerScript> ();
     }
 
     public virtual IEnumerator AutoFire () {
         while (true) {
             this.Fire ();
             yield return new WaitForSeconds (m_PlayerScript.m_IsInTurretMode
-                ? m_WeaponStats.m_FireRate * 0.5f : m_WeaponStats.m_FireRate);
+                ? m_WeaponStats.m_HoldFireRate : m_WeaponStats.m_FireRate);
         }
     }
 
