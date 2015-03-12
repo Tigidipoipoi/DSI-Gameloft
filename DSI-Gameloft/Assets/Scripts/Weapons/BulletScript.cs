@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour {
     public int m_EnemyBulletLayer;
     public int m_EnemyLayer;
     public int m_AllyBulletLayer;
+    public int m_GroundLayer;
     #endregion
 
     public virtual void Start () {
@@ -18,6 +19,7 @@ public class BulletScript : MonoBehaviour {
         m_EnemyBulletLayer = LayerMask.NameToLayer ("EnemyBullet");
         m_EnemyLayer = LayerMask.NameToLayer ("Enemy");
         m_AllyBulletLayer = LayerMask.NameToLayer ("AllyBullet");
+        m_GroundLayer = LayerMask.NameToLayer ("Ground");
     }
 
     public virtual void GetDamage () {
@@ -35,7 +37,6 @@ public class BulletScript : MonoBehaviour {
 
         if (otherGO.layer != this.gameObject.layer) {
             if (this.gameObject.layer == m_EnemyBulletLayer) {
-                // ToDo: Handle timer
                 if (otherGO.tag == "Player") {
                     TimerManager.instance.LoseTime (m_BulletStats.m_Power);
                     Debug.Log ("Player shot !");
