@@ -14,7 +14,14 @@ public class HomingBulletScript : BulletScript {
     }
 
     public override void Update () {
-        m_Rigidbody.velocity = (m_Target.position - this.transform.position).normalized * m_BulletStats.m_Speed;
+        if (m_Target != null)
+        {
+            m_Rigidbody.velocity = (m_Target.position - this.transform.position).normalized * m_BulletStats.m_Speed;
+        }
+        if(m_Target==null)
+        {
+            Destroy(this.gameObject);
+        }
 
         base.Update ();
     }
