@@ -14,6 +14,10 @@ public class EnemyMissile2 : Enemy_Script
 
     public float m_RangeForShoot;
 
+    public BulletScript m_BulletScript;
+    public float m_BulletPower;
+    public float m_BulletSpeed;
+
 	// Use this for initialization
 	public override void Start () 
     {

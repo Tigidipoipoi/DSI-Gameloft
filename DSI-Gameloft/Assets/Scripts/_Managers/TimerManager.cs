@@ -36,7 +36,11 @@ public class TimerManager : MonoBehaviour {
 
         while (m_RemainingTime >= 0.0f) {
             m_RemainingTime -= Time.deltaTime;
+<<<<<<< HEAD:DSI-Gameloft/Assets/Scripts/_Managers/TimerManager.cs
             UIManager.instance.UpdateRemainingTime (m_RemainingTime);
+=======
+            //Debug.Log (m_RemainingTime.ToString ());
+>>>>>>> ad65a806500c172fb8666e63961a45a95eec7bc9:DSI-Gameloft/Assets/Scripts/Timer/TimerManager.cs
             yield return null;
         }
 

@@ -11,6 +11,11 @@ public class EnemyMissile : Enemy_Script
     public float m_DelayBeforeShoot;
 
     public GameObject m_PrefabBullet;
+
+    public  BulletScript m_BulletScript;
+    public float m_BulletPower;
+    public float m_BulletSpeed;
+
     public Transform m_PointForShoot;
 
     public float m_RangeForShoot;
@@ -21,6 +26,12 @@ public class EnemyMissile : Enemy_Script
         base.Start();
         m_IsReady = true;
         name = "EnemyMissile";
+
+        m_BulletScript = m_PrefabBullet.GetComponent<BulletScript>();
+        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+        
+
 	}
 	
     IEnumerator WaitAndShoot()
