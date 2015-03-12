@@ -7,8 +7,7 @@ public class HomingBulletScript : BulletScript {
     #endregion
 
     public override void Start () {
-        // TEST ONLY!!!
-        this.transform.Rotate (Vector3.right, 90.0f);
+        m_Renderer = this.GetComponent<Renderer> ();
     }
 
     public override void Update () {

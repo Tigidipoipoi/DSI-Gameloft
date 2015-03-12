@@ -3,12 +3,12 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
     #region Members
-    public float m_TimeBeforeTurretMode = 0.2f;
+    public float m_TimeBeforeTurretMode = 0.1f;
     public float m_MoveSpeed = 10.0f;
-    public float m_BreakDistance = 0.5f;
+    public float m_BreakDistance = 0.1f;
 
     float m_LastClickDownTime;
-    int m_EnemyLayerMask;
+    int m_EnemyOrObstacleLayerMask;
     int m_GroundLayerMask;
     Vector3 m_TargetPosition;
     Rigidbody m_Rigidbody;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
     #endregion
 
     void Start () {
-        m_EnemyLayerMask = LayerMask.GetMask ("Enemy");
+        m_EnemyOrObstacleLayerMask = LayerMask.GetMask ("Enemy", "Obstacle");
         m_GroundLayerMask = LayerMask.GetMask ("Ground");
         m_PlayerScript = this.GetComponent<PlayerScript> ();
         m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
             m_LastClickDownTime = Time.time;
 
             // Lock
-            if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_EnemyLayerMask)) {
+            if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_EnemyOrObstacleLayerMask)) {
                 m_PlayerScript.LockTarget (hit.collider.transform.GetComponent<EnemyLock> ());
             }
             // Move
@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour {
         else if (Input.GetMouseButton (0)
             && Mathf.Abs (Time.time - m_LastClickDownTime) > m_TimeBeforeTurretMode
             && !m_PlayerScript.m_IsInTurretMode) {
+            this.FreezePosition ();
+
             m_PlayerScript.m_IsInTurretMode = true;
             m_PlayerScript.Unlock ();
             m_PlayerScript.UpdateWeaponsHoming (isHoming: false);
@@ -58,6 +60,11 @@ public class PlayerMovement : MonoBehaviour {
             m_PlayerScript.m_IsInTurretMode = false;
             m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         }
+    }
+
+    void FreezePosition () {
+        this.StopCoroutine (m_MoveToTarget);
+        m_Rigidbody.velocity = Vector3.zero;
     }
 
     IEnumerator MoveToTarget () {
