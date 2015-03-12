@@ -27,9 +27,9 @@ GameObject:
   - 136: {fileID: 13635520}
   - 23: {fileID: 2352636}
   - 54: {fileID: 5457810}
-  - 114: {fileID: 11432714}
   - 114: {fileID: 11499488}
   - 114: {fileID: 11408820}
+  - 114: {fileID: 11427430}
   m_Layer: 12
   m_Name: EnemyStandard
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
---- !u!114 &11432714
+--- !u!114 &11427430
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 174872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2aea7844f453534797dbfbdd52ace23, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a7d33ed93fdfd4486d2820464c1336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Life: 10
@@ -136,10 +136,12 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_Mouvement: {fileID: 11499488}
-  m_DelayBeforeShoot: 3
+  m_DelayBeforeShoot: 2
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_PointForShoot: {fileID: 400956}
-  m_RangeForShoot: 0
+  m_BulletScript: {fileID: 0}
+  m_BulletPower: 1
+  m_BulletSpeed: 10
 --- !u!114 &11499488
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -31,9 +31,12 @@ public class TimerManager : MonoBehaviour {
     }
 
     IEnumerator TimeIsRunningOut () {
+        // Wait for the start
+        yield return null;
+
         while (m_RemainingTime >= 0.0f) {
             m_RemainingTime -= Time.deltaTime;
-            //Debug.Log (m_RemainingTime.ToString ());
+            UIManager.instance.UpdateRemainingTime (m_RemainingTime);
             yield return null;
         }
 
