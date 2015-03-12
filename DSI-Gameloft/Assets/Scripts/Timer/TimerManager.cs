@@ -43,4 +43,8 @@ public class TimerManager : MonoBehaviour {
     public void AddTime (float timeEarned) {
         m_RemainingTime += timeEarned;
     }
+
+    public void LoseTime (float timeLost) {
+        m_RemainingTime -= timeLost;
+    }
 }
