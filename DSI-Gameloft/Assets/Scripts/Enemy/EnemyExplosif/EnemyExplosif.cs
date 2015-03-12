@@ -20,7 +20,6 @@ public class EnemyExplosif : Enemy_Script {
 	
     IEnumerator ExplosionProcess()
     {
-        
         m_Mouvement.enabled = false;
         StartCoroutine(blink(m_ExplosionDelay));
         yield return new WaitForSeconds(m_ExplosionDelay);

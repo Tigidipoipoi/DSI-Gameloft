@@ -19,6 +19,7 @@ public class Enemy_Script : MonoBehaviour {
     public void GetDamage(float m_Damage)
     {
         StartCoroutine(blink());
+
     }
 
     public virtual void Update()
