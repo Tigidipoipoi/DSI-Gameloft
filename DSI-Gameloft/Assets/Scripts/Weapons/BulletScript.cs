@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour {
     public int m_EnemyBulletLayer;
     public int m_EnemyLayer;
     public int m_AllyBulletLayer;
+    public int m_GroundLayer;
     #endregion
 
     public virtual void Start () {
@@ -18,8 +19,9 @@ public class BulletScript : MonoBehaviour {
         m_Renderer = this.GetComponent<Renderer> ();
         m_EnemyBulletLayer = LayerMask.NameToLayer ("EnemyBullet");
         m_EnemyLayer = LayerMask.NameToLayer ("Enemy");
-        m_AllyBulletLayer = LayerMask.NameToLayer("AllyBullet");
-        Debug.Log(m_AllyBulletLayer);
+        m_AllyBulletLayer = LayerMask.NameToLayer ("AllyBullet");
+        m_GroundLayer = LayerMask.NameToLayer ("Ground");
+
     }
 
     public virtual void GetDamage () {

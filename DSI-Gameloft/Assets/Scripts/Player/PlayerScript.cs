@@ -38,12 +38,15 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void GetDamage(float damage)
-    {
+    public void GetDamage (float damage) {
 
     }
 
     public void LockTarget (EnemyLock enemyLockScript) {
+        if (m_EnemyTarget != null) {
+            return;
+        }
+
         m_EnemyTarget = enemyLockScript.transform;
         enemyLockScript.m_IsPlayerTarget = true;
         this.transform.LookAt (m_EnemyTarget.position);
@@ -104,7 +107,6 @@ public class PlayerScript : MonoBehaviour {
         }
 
         while (m_IsInTurretMode) {
-
             yield return null;
         }
 

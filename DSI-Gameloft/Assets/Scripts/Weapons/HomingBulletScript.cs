@@ -7,9 +7,10 @@ public class HomingBulletScript : BulletScript {
     #endregion
 
     public override void Start () {
+
         base.Start();
         m_Rigidbody.velocity = Vector3.zero;
-        
+
     }
 
     public override void Update () {
