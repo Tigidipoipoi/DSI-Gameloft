@@ -4,23 +4,41 @@ using System.Linq;
 using System.Collections.Generic;
 
 public class RoomScript : MonoBehaviour {
+    public enum ROOM_POSITION {
+        UP_LEFT = 0,
+        UP_CENTER,
+        UP_RIGHT,
+        LEFT,
+        CENTER,
+        RIGHT,
+        DOWN_LEFT,
+        DOWN_CENTER,
+        DOWN_RIGHT,
+
+        COUNT
+    }
+
     #region Members
-    public GameObject[] m_RoomParts;
-    public GameObject[] m_RoomPartPrefabs;
+    // Room parts
+    GameObject[] m_RoomParts;
+    GameObject[] m_RoomPartPrefabs;
+    Transform m_RoomPartsContainer;
 
     // Walls
-    public List<GameObject> m_RoomWalls;
-    public GameObject[] m_WallHorPrefabs;
-    public GameObject[] m_WallVerPrefabs;
-    public GameObject[] m_WallDoorPrefabs;
-    public GameObject[] m_WallCornerPrefabs;
+    GameObject[] m_RoomWalls;
+    GameObject[] m_WallHorPrefabs;
+    GameObject[] m_WallVerPrefabs;
+    GameObject[] m_WallHorDoorPrefabs;
+    GameObject[] m_WallVerDoorPrefabs;
+    GameObject[] m_WallCornerPrefabs;
+    Transform m_WallsContainer;
 
     // Constants
-    public const int c_MaxRoomPart = 9;
     public const int c_RoomPartPrefabCount = 2;
     public const int c_WallHorPrefabCount = 1;
     public const int c_WallVerPrefabCount = 1;
-    public const int c_WallDoorPrefabCount = 1;
+    public const int c_WallHorDoorPrefabCount = 1;
+    public const int c_WallVerDoorPrefabCount = 1;
     public const int c_WallCornerPrefabCount = 1;
     #endregion
 
@@ -32,153 +50,134 @@ public class RoomScript : MonoBehaviour {
 
         m_WallHorPrefabs = new GameObject[c_WallHorPrefabCount];
         m_WallVerPrefabs = new GameObject[c_WallVerPrefabCount];
-        m_WallDoorPrefabs = new GameObject[c_WallDoorPrefabCount];
+        m_WallHorDoorPrefabs = new GameObject[c_WallHorDoorPrefabCount];
+        m_WallVerDoorPrefabs = new GameObject[c_WallVerDoorPrefabCount];
         m_WallCornerPrefabs = new GameObject[c_WallCornerPrefabCount];
 
         int maxIterations = Mathf.Max (c_WallHorPrefabCount, c_WallVerPrefabCount,
-            c_WallDoorPrefabCount, c_WallCornerPrefabCount);
+            c_WallHorDoorPrefabCount, c_WallVerDoorPrefabCount, c_WallCornerPrefabCount);
         for (int i = 0; i < maxIterations; ++i) {
-            m_WallHorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryH{0}", i));
-            m_WallVerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryV{0}", i));
-            m_WallDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryD{0}", i));
-            m_WallCornerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryC{0}", i));
+            if (i < c_WallHorPrefabCount) {
+                m_WallHorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryH{0}", i));
+            }
+            if (i < c_WallVerPrefabCount) {
+                m_WallVerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryV{0}", i));
+            }
+            if (i < c_WallHorDoorPrefabCount) {
+                m_WallHorDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryDH{0}", i));
+            }
+            if (i < c_WallVerDoorPrefabCount) {
+                m_WallVerDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryDV{0}", i));
+            }
+            if (i < c_WallCornerPrefabCount) {
+                m_WallCornerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryC{0}", i));
+            }
         }
     }
 
     void Start () {
-        if (m_RoomParts != null
-            && m_RoomParts.Length != c_MaxRoomPart) {
-            Debug.Log ("Room badly instanciated");
+        List<GameObject> childGOList = new List<GameObject> ();
 
-            m_RoomParts = new GameObject[c_MaxRoomPart];
-            this.GenerateRoom ();
+        // Room parts
+        m_RoomPartsContainer = this.transform.FindChild ("RoomParts");
+        int rpCount = m_RoomPartsContainer.childCount;
+        for (int i = 0; i < rpCount; ++i) {
+            RoomPartScript childRPScript = m_RoomPartsContainer.GetChild (i).GetComponent<RoomPartScript> ();
+
+            childGOList.Add (childRPScript.gameObject);
         }
-        else {
-            for (int i = 0; i < c_MaxRoomPart; ++i) {
-                if (m_RoomParts[i] == null) {
-                    m_RoomParts = new GameObject[c_MaxRoomPart];
-                    this.GenerateRoom ();
-                }
-            }
+        m_RoomParts = childGOList.Where (x => x.GetComponent<RoomPartScript> ().m_IsReachable).ToArray ();
+
+        // Walls
+        m_WallsContainer = this.transform.FindChild ("Walls");
+        childGOList = childGOList.Where (x => !x.GetComponent<RoomPartScript> ().m_IsReachable).ToList ();
+        int wCount = m_WallsContainer.childCount;
+        for (int i = 0; i < wCount; ++i) {
+            SceneryScript childSceneryScript = m_WallsContainer.GetChild (i).GetComponent<SceneryScript> ();
+
+            childGOList.Add (childSceneryScript.gameObject);
         }
-    }
+        m_RoomWalls = childGOList.ToArray ();
 
-    public void GenerateRoom () {
-        Vector3 roomPartPosition = this.transform.position;
-        roomPartPosition.x -= RoomPartScript.c_PartWidth;
-        roomPartPosition.z += RoomPartScript.c_PartHeight;
-
-        int roomPartsCount = m_RoomParts.Length;
-        for (int i = 0; i < roomPartsCount; ++i) {
-            int rngRPPrefabIndex = Random.Range (0, c_RoomPartPrefabCount);
-            m_RoomParts[i] = Object.Instantiate (m_RoomPartPrefabs[rngRPPrefabIndex], roomPartPosition, Quaternion.identity) as GameObject;
-            m_RoomParts[i].transform.parent = this.transform;
-            m_RoomParts[i].name = string.Format ("RoomPart{0}", i.ToString ());
-            RoomPartScript roomPartScript = m_RoomParts[i].GetComponent<RoomPartScript> ();
-            roomPartScript.m_ParentRoom = this;
-            roomPartScript.m_IsReachable = true;
-
-            #region RoomPart position handling
-            roomPartPosition.x += RoomPartScript.c_PartWidth;
-            if (i % 3 == 2) {
-                roomPartPosition = this.transform.position;
-                roomPartPosition.x -= RoomPartScript.c_PartWidth;
-
-                if (i == 5) {
-                    roomPartPosition.z -= RoomPartScript.c_PartHeight;
-                }
-            }
-            #endregion
-        }
-
+        this.GenerateRoom ();
         this.GenerateWalls ();
     }
 
+    public void GenerateRoom () {
+        int roomPartsCount = m_RoomParts.Length;
+        for (int i = 0; i < roomPartsCount; ++i) {
+            RoomPartScript roomPartScript = m_RoomParts[i].GetComponent<RoomPartScript> ();
+            int rngRPPrefabIndex = Random.Range (0, c_RoomPartPrefabCount);
+
+            roomPartScript.AttachContent (m_RoomPartPrefabs[rngRPPrefabIndex]);
+
+            roomPartScript.m_ParentRoom = this;
+        }
+    }
+
     void GenerateWalls () {
-        m_RoomWalls = new List<GameObject> ();
-        List<Transform> reachableRPTransforms = m_RoomParts
-            .Select (x => x.transform)
-            .Where (y => y.GetComponent<RoomPartScript> ().m_IsReachable).ToList ();
-        int reachableRPCount = reachableRPTransforms.Count ();
+        int roomWallsCount = m_RoomWalls.Length;
+        for (int i = 0; i < roomWallsCount; ++i) {
+            SceneryScript.SCENERY_TYPE wallTypeToBuild = SceneryScript.SCENERY_TYPE.NONE;
 
-        for (int i = 0; i < reachableRPCount; ++i) {
-            Transform currentRPTransform = reachableRPTransforms[i];
-
-            bool hasUpNeighbour = this.HasVerticalNeighbourPart (true, currentRPTransform, reachableRPTransforms);
-            bool hasDownNeighbour = this.HasVerticalNeighbourPart (false, currentRPTransform, reachableRPTransforms);
-            bool hasLeftNeighbour = this.HasHorizontalNeighbourPart (false, currentRPTransform, reachableRPTransforms);
-            bool hasRightNeighbour = this.HasHorizontalNeighbourPart (true, currentRPTransform, reachableRPTransforms);
-
-            //Debug.Log (string.Format ("{0}: {1} {2} {3} {4}",
-            //    currentRPTransform.name,
-            //    hasUpNeighbour ? "T" : "F",
-            //    hasDownNeighbour ? "T" : "F",
-            //    hasLeftNeighbour ? "T" : "F",
-            //    hasRightNeighbour ? "T" : "F"));
-
-            #region Corners
-            Vector3 cornerPosition = currentRPTransform.position;
-            if (!hasLeftNeighbour
-                && !hasUpNeighbour) {
-                cornerPosition.x += -RoomPartScript.c_PartWidth;
-                cornerPosition.z += RoomPartScript.c_PartHeight;
+            RoomPartScript currentRPScript = m_RoomWalls[i].GetComponent<RoomPartScript> ();
+            SceneryScript currentSScript = m_RoomWalls[i].GetComponent<SceneryScript> ();
+            if (currentRPScript == null) {
+                wallTypeToBuild = currentSScript.m_Type;
             }
-            else if (!hasLeftNeighbour
-                && !hasDownNeighbour) {
-                cornerPosition.x += -RoomPartScript.c_PartWidth;
-                cornerPosition.z += -RoomPartScript.c_PartHeight;
-            }
-            else if (!hasRightNeighbour
-                && !hasUpNeighbour) {
-                cornerPosition.x += RoomPartScript.c_PartWidth;
-                cornerPosition.z += RoomPartScript.c_PartHeight;
-            }
-            else if (!hasRightNeighbour
-                && !hasDownNeighbour) {
-                cornerPosition.x += RoomPartScript.c_PartWidth;
-                cornerPosition.z += -RoomPartScript.c_PartHeight;
+            else {
+                wallTypeToBuild = currentRPScript.m_WallType;
             }
 
-            // Is there a corner to build
-            if (cornerPosition != currentRPTransform.position) {
-                Debug.Log ("Corner");
-                int rngIndex = Random.Range (0, m_WallCornerPrefabs.Length);
-                GameObject corner = Object.Instantiate (m_WallCornerPrefabs[rngIndex],
-                    cornerPosition, Quaternion.identity) as GameObject;
-                corner.transform.parent = this.transform;
+            Vector3 wallPosition = m_RoomWalls[i].transform.position;
+            GameObject newWallGO = this.BuildWall (wallPosition, wallTypeToBuild);
 
-                m_RoomWalls.Add (corner);
+            if (currentRPScript != null) {
+                currentRPScript.AttachContent (newWallGO, true);
+                currentRPScript.m_ParentRoom = this;
             }
-            #endregion
+            else {
+                currentSScript.AttachContent (newWallGO);
+            }
+        }
+    }
 
-            #region Walls
-            #endregion
+    GameObject BuildWall (Vector3 newWallPosition, SceneryScript.SCENERY_TYPE type) {
+        int maxRNGRange = 0;
+        GameObject[] prefabs = null;
+        switch (type) {
+            case SceneryScript.SCENERY_TYPE.CORNER:
+                maxRNGRange = m_WallCornerPrefabs.Length;
+                prefabs = m_WallCornerPrefabs;
+                break;
+            case SceneryScript.SCENERY_TYPE.DOOR_HOR:
+                maxRNGRange = m_WallHorDoorPrefabs.Length;
+                prefabs = m_WallHorDoorPrefabs;
+                break;
+            case SceneryScript.SCENERY_TYPE.DOOR_VER:
+                maxRNGRange = m_WallVerDoorPrefabs.Length;
+                prefabs = m_WallVerDoorPrefabs;
+                break;
+            case SceneryScript.SCENERY_TYPE.HORIZONTAL:
+                maxRNGRange = m_WallHorPrefabs.Length;
+                prefabs = m_WallHorPrefabs;
+                break;
+            case SceneryScript.SCENERY_TYPE.VERTICAL:
+                maxRNGRange = m_WallVerPrefabs.Length;
+                prefabs = m_WallVerPrefabs;
+                break;
 
-            #region Doors
-            #endregion
+            case SceneryScript.SCENERY_TYPE.NONE:
+                return new GameObject ();
+            default:
+                Debug.LogError ("RoomScript::BuildWall=> Wrong wall type!");
+                break;
         }
 
-    }
+        int rngIndex = Random.Range (0, maxRNGRange);
+        GameObject newWall = Object.Instantiate (prefabs[rngIndex],
+            newWallPosition, Quaternion.identity) as GameObject;
 
-    bool HasVerticalNeighbourPart (bool lookUp, Transform currentRPTransform, List<Transform> reachableRPTs) {
-        int coef = lookUp
-            ? 1 : -1;
-        Vector3 positionToLook = currentRPTransform.position;
-        positionToLook.z += coef * RoomPartScript.c_PartHeight;
-
-        return reachableRPTs
-            .Select (x => x.position)
-            .Contains (positionToLook);
-    }
-
-    bool HasHorizontalNeighbourPart (bool lookRight, Transform currentRPTransform, List<Transform> reachableRPTs) {
-        int coef = lookRight
-            ? 1 : -1;
-        Vector3 positionToLook = currentRPTransform.position;
-        positionToLook.x += coef * RoomPartScript.c_PartWidth;
-
-        return reachableRPTs
-            .Select (x => x.position)
-            .Contains (positionToLook);
+        return newWall;
     }
 }
