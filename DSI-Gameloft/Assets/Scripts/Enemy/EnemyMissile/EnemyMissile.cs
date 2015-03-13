@@ -13,12 +13,20 @@ public class EnemyMissile : Enemy_Script
     public GameObject m_PrefabBullet;
     public Transform m_PointForShoot;
 
+    private BulletScript m_BulletScript;
+    public float m_BulletPower;
+    public float m_BulletSpeed;
+
 	// Use this for initialization
 	public override void Start () 
     {
         base.Start();
         m_IsReady = true;
-	}
+
+        m_BulletScript =m_PrefabBullet.GetComponent<BulletScript>();
+        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+    }
 	
     IEnumerator WaitAndShoot()
     {

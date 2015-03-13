@@ -7,7 +7,7 @@ public class IADestination : MonoBehaviour {
 
     public Transform m_Destination_Cible;
     Vector3 m_Direction;
-    [SerializeField]
+
     private float m_Speed;
     public float m_SpeedMax;
     public float m_Acceleration;

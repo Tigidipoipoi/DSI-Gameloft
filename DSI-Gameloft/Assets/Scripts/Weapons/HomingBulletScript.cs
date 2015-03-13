@@ -7,12 +7,21 @@ public class HomingBulletScript : BulletScript {
     #endregion
 
     public override void Start () {
-        m_Renderer = this.GetComponent<Renderer> ();
+        
+        base.Start();
+        m_Rigidbody.velocity = Vector3.zero;
+
     }
 
     public override void Update () {
-        m_Rigidbody.velocity = (m_Target.position - this.transform.position).normalized * m_BulletStats.m_Speed;
-
-        base.Update ();
+        if (m_Target == null)
+        {
+           Destroy(this.gameObject);
+        }
+        if (m_Target != null)
+        {
+            m_Rigidbody.velocity = (m_Target.position - this.transform.position).normalized * m_BulletStats.m_Speed;
+        }
+     base.Update ();
     }
 }

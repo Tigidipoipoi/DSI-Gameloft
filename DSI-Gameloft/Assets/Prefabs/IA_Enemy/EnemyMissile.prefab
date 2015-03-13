@@ -72,7 +72,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 09870e6323172c9489cfb321eb4d7b68, type: 2}
+  - {fileID: 2100000, guid: f4c1287c9e1d32a47b3c0974cf486365, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -134,10 +134,15 @@ MonoBehaviour:
   m_Life: 10
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_EnnemyMissile2: {fileID: 174872, guid: 80587eafffa26c047ba8817996eb7779, type: 2}
+  m_EarnedTime: 0
+  TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
   m_DelayBeforeShoot: 3
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_PointForShoot: {fileID: 400956}
+  m_BulletPower: 5
+  m_BulletSpeed: 10
 --- !u!114 &11499488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Destination_Cible: {fileID: 0}
-  m_Speed: 0
   m_SpeedMax: 1
   m_Acceleration: 1
   m_BreakDistance: 4
