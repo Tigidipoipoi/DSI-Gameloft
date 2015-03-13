@@ -20,15 +20,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &151470
+--- !u!1 &154668
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 459676}
-  - 96: {fileID: 9674806}
+  - 4: {fileID: 432896}
+  - 96: {fileID: 9653624}
   m_Layer: 0
   m_Name: BulletEffect
   m_TagString: Untagged
@@ -36,14 +36,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &459676
+--- !u!4 &432896
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151470}
+  m_GameObject: {fileID: 154668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 478700}
@@ -58,7 +58,7 @@ Transform:
   m_LocalPosition: {x: 0, y: .129999995, z: -1.17299998}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
-  - {fileID: 459676}
+  - {fileID: 432896}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2318548
@@ -107,12 +107,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!96 &9674806
+--- !u!96 &9653624
 TrailRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151470}
+  m_GameObject: {fileID: 154668}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1

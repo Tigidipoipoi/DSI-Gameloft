@@ -15,10 +15,19 @@ public class Enemy_Script : MonoBehaviour {
 
     private Color m_StandardColor;
 
+
+    public float m_EarnedTime;
+    public GameObject m_TimeDistributor;
+    private TimeDistributor m_TimeDistributorScript;
+
     public virtual void Start()
     {
         renderer=this.GetComponent<Renderer>();
         m_StandardColor= renderer.material.color;
+
+        m_TimeDistributorScript = m_TimeDistributor.GetComponent<TimeDistributor>();
+        m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
+
     }
 
     public void GetDamage(float m_Damage)
@@ -40,6 +49,9 @@ public class Enemy_Script : MonoBehaviour {
         }
 
         m_Player.GetComponent<PlayerScript>().Unlock();
+
+
+        Instantiate(m_TimeDistributor, this.transform.position, this.transform.rotation);
 
         Destroy(this.gameObject);
     }

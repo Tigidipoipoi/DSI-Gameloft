@@ -14,6 +14,7 @@ public class ObstacleScript : MonoBehaviour {
 
     void OnCollisionEnter (Collision other) {
         BulletScript bulletScript = other.gameObject.GetComponent<BulletScript> ();
+
         if (bulletScript != null) {
             m_ObstacleStats.GetHit ();
         }

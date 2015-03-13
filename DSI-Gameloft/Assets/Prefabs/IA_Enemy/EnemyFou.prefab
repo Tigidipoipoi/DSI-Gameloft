@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 3.45000005}
+  m_LocalPosition: {x: -4.8499999, y: 1.29999995, z: 5.78999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400956}
@@ -72,7 +72,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 09870e6323172c9489cfb321eb4d7b68, type: 2}
+  - {fileID: 2100000, guid: fde7e3d8105f7064daef2f0e594263bc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -135,10 +135,11 @@ MonoBehaviour:
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
+  m_EarnedTime: 10
+  TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
-  m_ShootCooldown: 5
-  m_DelayBeforeShoot: 1
-  m_DelayAfterShoot: 1
+  m_DelayBeforeShoot: 2
+  m_DelayAfterShoot: 2
   m_PrefabBullet: {fileID: 174032, guid: d08a75d93b1acc848bb0361804b77ad7, type: 2}
   m_PointForShoot: {fileID: 400956}
 --- !u!114 &11499488
@@ -153,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Destination_Cible: {fileID: 0}
-  m_Speed: 0
   m_SpeedMax: 1
   m_Acceleration: 1
   m_BreakDistance: 4

@@ -23,6 +23,9 @@ public class EnemyMissile2 : Enemy_Script
     {
         base.Start();
         m_IsReady = true;
+        m_BulletScript = m_PrefabBullet.GetComponent<BulletScript>();
+        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
         
 	}
 	

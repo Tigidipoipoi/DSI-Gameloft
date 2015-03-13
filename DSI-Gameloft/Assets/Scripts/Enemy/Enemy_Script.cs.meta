@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 9448a3de73bd2cb4daead241a3a68ee3
-timeCreated: 1426012121
+timeCreated: 1426182840
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_Player: {instanceID: 0}
+  - m_EnnemyMissile2: {instanceID: 0}
+  - BigTime: {fileID: 183394, guid: bc23c599e30016b46a83fca25a8b52f5, type: 2}
+  - MedTime: {fileID: 183394, guid: 19ee8d2ff9d4b7f49afc41f46e1aae14, type: 2}
+  - SmallTime: {fileID: 183394, guid: 7e7033eb9f9d8c443aee67b51ce35c08, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

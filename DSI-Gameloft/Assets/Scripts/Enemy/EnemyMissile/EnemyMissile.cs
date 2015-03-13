@@ -20,6 +20,7 @@ public class EnemyMissile : Enemy_Script
 
     public float m_RangeForShoot;
 
+
 	// Use this for initialization
 	public override void Start () 
     {
@@ -33,6 +34,7 @@ public class EnemyMissile : Enemy_Script
         
 
 	}
+
 	
     IEnumerator WaitAndShoot()
     {

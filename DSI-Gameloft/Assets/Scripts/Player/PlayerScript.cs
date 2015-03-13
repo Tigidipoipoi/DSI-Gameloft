@@ -38,9 +38,6 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void GetDamage (float damage) {
-
-    }
 
     public void LockTarget (EnemyLock enemyLockScript) {
         if (m_EnemyTarget != null) {
@@ -91,10 +88,6 @@ public class PlayerScript : MonoBehaviour {
                 m_Weapons[i].m_WeaponStats.m_IsHoming = isHoming;
             }
         }
-    }
-
-    public void GetDamage () {
-
     }
 
     public IEnumerator TurretShoot () {
