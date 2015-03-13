@@ -40,6 +40,9 @@ public class RoomScript : MonoBehaviour {
     public const int c_WallHorDoorPrefabCount = 1;
     public const int c_WallVerDoorPrefabCount = 1;
     public const int c_WallCornerPrefabCount = 1;
+
+    // Doors
+    public DoorScript[] m_DoorScripts;
     #endregion
 
     void Awake () {
@@ -145,6 +148,7 @@ public class RoomScript : MonoBehaviour {
     GameObject BuildWall (Vector3 newWallPosition, SceneryScript.SCENERY_TYPE type) {
         int maxRNGRange = 0;
         GameObject[] prefabs = null;
+        bool isDoor = false;
         switch (type) {
             case SceneryScript.SCENERY_TYPE.CORNER:
                 maxRNGRange = m_WallCornerPrefabs.Length;
@@ -153,10 +157,12 @@ public class RoomScript : MonoBehaviour {
             case SceneryScript.SCENERY_TYPE.DOOR_HOR:
                 maxRNGRange = m_WallHorDoorPrefabs.Length;
                 prefabs = m_WallHorDoorPrefabs;
+                isDoor = true;
                 break;
             case SceneryScript.SCENERY_TYPE.DOOR_VER:
                 maxRNGRange = m_WallVerDoorPrefabs.Length;
                 prefabs = m_WallVerDoorPrefabs;
+                isDoor = true;
                 break;
             case SceneryScript.SCENERY_TYPE.HORIZONTAL:
                 maxRNGRange = m_WallHorPrefabs.Length;
@@ -177,6 +183,9 @@ public class RoomScript : MonoBehaviour {
         int rngIndex = Random.Range (0, maxRNGRange);
         GameObject newWall = Object.Instantiate (prefabs[rngIndex],
             newWallPosition, Quaternion.identity) as GameObject;
+        if (isDoor) {
+            newWall.AddComponent<DoorScript> ();
+        }
 
         return newWall;
     }
