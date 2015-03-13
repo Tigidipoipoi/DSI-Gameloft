@@ -136,8 +136,9 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
-  TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
+  m_TimeDistributor: {fileID: 0}
   m_Mouvement: {fileID: 11499488}
+  m_ShootCooldown: 0
   m_DelayBeforeShoot: 2
   m_DelayAfterShoot: 2
   m_PrefabBullet: {fileID: 174032, guid: d08a75d93b1acc848bb0361804b77ad7, type: 2}

@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1365509, y: 1.20000005, z: 10.5945396}
+  m_LocalPosition: {x: -1.88914585, y: 1.20000005, z: 11.6682663}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400956}
@@ -131,14 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a7d33ed93fdfd4486d2820464c1336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Life: 10
+  m_Life: 3
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
-  m_DelayBeforeShoot: 2
+  m_DelayBeforeShoot: 3.5
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_PointForShoot: {fileID: 400956}
   m_BulletScript: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Destination_Cible: {fileID: 0}
-  m_SpeedMax: 1
+  m_SpeedMax: 3
   m_Acceleration: 1
   m_BreakDistance: 4
   m_IsAtDistance: 0

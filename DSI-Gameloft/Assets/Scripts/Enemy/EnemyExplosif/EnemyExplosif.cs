@@ -34,14 +34,13 @@ public class EnemyExplosif : Enemy_Script {
         {
             if (hitColliders[i].tag == "Player")
             {
-                PlayerScript m_PlayerScript;
-                m_PlayerScript = (PlayerScript)hitColliders[i].GetComponent(typeof(PlayerScript));
-                
+                TimerManager.instance.LoseTime(m_ExplosionDamages);
             }
             if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
                 Enemy_Script m_EnemyScript;
                 m_EnemyScript = (Enemy_Script)hitColliders[i].GetComponent(typeof(Enemy_Script));
+                m_EnemyScript.GetDamage(m_ExplosionDamages);
                 
             }
             if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
