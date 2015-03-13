@@ -15,4 +15,6 @@ public class RoomPart {
     #region Members
     public ROOM_PART_TYPE m_Type;
     #endregion
+
+    public RoomPart () { }
 }

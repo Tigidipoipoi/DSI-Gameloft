@@ -19,7 +19,8 @@ public class FloorManager : MonoBehaviour {
     #endregion
 
     #region Members
-    Floor m_CurrentFloor;
+    public int m_RoomCount;
+    //Floor m_CurrentFloor;
     #endregion
 
     public void Init () {

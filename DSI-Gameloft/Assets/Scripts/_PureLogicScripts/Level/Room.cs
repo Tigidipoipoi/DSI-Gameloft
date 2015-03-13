@@ -11,6 +11,13 @@ public class Room {
     public bool m_IsReachable;
     #endregion
 
+    public Room ()
+        : this (false) { }
+
+    public Room (bool isReachable) {
+        m_IsReachable = isReachable;
+    }
+
     public void GenerateRoom () {
         if (m_WalkableRoomPartCount > c_MaxWaklableRoomParts) {
             m_WalkableRoomPartCount = c_MaxWaklableRoomParts;
