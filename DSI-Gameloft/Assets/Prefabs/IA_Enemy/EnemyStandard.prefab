@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Acceleration: 1
   m_BreakDistance: 4
   m_IsAtDistance: 0
-  m_RotateAroundPlayer: 1
+  m_RotateAroundPlayer: 0
   m_RotateSpeed: 100
 --- !u!136 &13635520
 CapsuleCollider:

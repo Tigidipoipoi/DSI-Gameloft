@@ -9,6 +9,8 @@ public class ChestScript : MonoBehaviour {
 
     private Collider m_ChestCollider;
 
+    public int m_EarnPesos;
+
 	// Use this for initialization
 	void Start () {
         m_ChestOpen = false;
@@ -22,6 +24,7 @@ public class ChestScript : MonoBehaviour {
             m_ChestOpen = true;
             m_ChestCollider.enabled = false;
             Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+            PesosManager.instance.AddPesos(m_EarnPesos);
             Destroy(this);
         }
     }

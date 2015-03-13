@@ -14,8 +14,8 @@ public class ObstacleScript : MonoBehaviour {
         m_ObstacleStats = new Obstacle (m_MaxHP, this.gameObject);
     }
 
-    void OnTriggerEnter (Collider other) {
-        BulletScript bulletScript = other.GetComponent<BulletScript> ();
+    void OnCollisionEnter (Collision other) {
+        BulletScript bulletScript = other.gameObject.GetComponent<BulletScript> ();
         if (bulletScript != null) {
             m_ObstacleStats.GetHit ();
         }
