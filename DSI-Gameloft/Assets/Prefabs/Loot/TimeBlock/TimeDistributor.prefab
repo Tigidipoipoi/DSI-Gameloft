@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b0834e3531ba24cababc47630897d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EarnTime: 0
+  m_EarnTime: 10
   m_ValeurBigTime: 5
   m_ValeurMedTime: 3
   m_ValeurSmallTime: 1
