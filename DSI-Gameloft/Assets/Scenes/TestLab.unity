@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -150,6 +150,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 96926745}
+--- !u!1001 &104620953
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24.2999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495008, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7aca844af287a1b4ca437c555fe607d7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &137931634
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,4 +1031,4 @@ MonoBehaviour:
 --- !u!4 &2023063893
 Transform:
   m_PrefabParentObject: {fileID: 464130, guid: 8aa2d8080c6d0204589f0e504aa22af0, type: 2}
-  m_PrefabInternal: {fileID: 773917268}
+  m_PrefabInternal: {fileID: 1172688972}

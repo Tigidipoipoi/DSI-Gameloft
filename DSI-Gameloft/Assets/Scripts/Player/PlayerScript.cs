@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour {
     IEnumerator[] m_WeaponCoroutines;
     #endregion
 
-    void Awake () {
+    void Start () {
         int weaponCount = m_Weapons.Length;
         if (m_Weapons == null
             || weaponCount > c_MaxWeaponCount) {
@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour {
 
         m_WeaponCoroutines = new IEnumerator[m_Weapons.Length];
 
-        UpdateWeaponsCoroutines ();
+        this.UpdateWeaponsCoroutines ();
     }
 
     void Update () {

@@ -11,29 +11,52 @@ public class EnemyMissile : Enemy_Script
     public float m_DelayBeforeShoot;
 
     public GameObject m_PrefabBullet;
+
+    public  BulletScript m_BulletScript;
+    public float m_BulletPower;
+    public float m_BulletSpeed;
+
     public Transform m_PointForShoot;
 
+<<<<<<< HEAD
     private BulletScript m_BulletScript;
     public float m_BulletPower;
     public float m_BulletSpeed;
+=======
+    public float m_RangeForShoot;
+>>>>>>> fedf80e010b550df919d387c9cf030019927c0dc
 
 	// Use this for initialization
 	public override void Start () 
     {
         base.Start();
         m_IsReady = true;
+<<<<<<< HEAD
 
         m_BulletScript =m_PrefabBullet.GetComponent<BulletScript>();
         m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
         m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
     }
+=======
+        name = "EnemyMissile";
+
+        m_BulletScript = m_PrefabBullet.GetComponent<BulletScript>();
+        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+        
+
+	}
+>>>>>>> fedf80e010b550df919d387c9cf030019927c0dc
 	
     IEnumerator WaitAndShoot()
     {
         if (m_IsAwake == true)
         {
             yield return new WaitForSeconds(m_DelayBeforeShoot);
-
+            if (m_Mouvement.m_IsAtDistance == false && (Vector3.Distance(this.transform.position, m_Mouvement.m_Destination_Cible.position) <= m_RangeForShoot))
+            {
+                StopCoroutine(WaitAndShoot());
+            }
             GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject ;
             bullet.layer = LayerMask.NameToLayer("EnemyBullet");
             m_IsReady = true;
@@ -52,7 +75,7 @@ public class EnemyMissile : Enemy_Script
 
         if (m_IsAwake == true)
         {
-            if (m_Mouvement.m_IsAtDistance == true && m_IsReady == true)
+            if ((m_Mouvement.m_IsAtDistance == true || (Vector3.Distance(this.transform.position,m_Mouvement.m_Destination_Cible.position)<=m_RangeForShoot))&& m_IsReady == true)
             {
                 m_IsReady = false;
 

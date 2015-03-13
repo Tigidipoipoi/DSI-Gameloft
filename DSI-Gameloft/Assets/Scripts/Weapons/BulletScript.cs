@@ -54,6 +54,16 @@ public class BulletScript : MonoBehaviour {
                     
                 }
             }
+            
+            if (this.gameObject.layer == m_AllyBulletLayer)
+            {
+                if (otherGO.layer == m_EnemyLayer)
+                {
+                    m_EnemyScript = otherGO.GetComponent<Enemy_Script>();
+                    m_EnemyScript.GetDamage(m_BulletStats.m_Power);
+                    
+                }
+            }
 
             PreDestroy ();
         }
