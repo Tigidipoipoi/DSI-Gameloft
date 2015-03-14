@@ -28,17 +28,13 @@ public class RoomScript : MonoBehaviour {
     GameObject[] m_RoomWalls;
     GameObject[] m_WallHorPrefabs;
     GameObject[] m_WallVerPrefabs;
-    GameObject[] m_WallHorDoorPrefabs;
-    GameObject[] m_WallVerDoorPrefabs;
     GameObject[] m_WallCornerPrefabs;
     Transform m_WallsContainer;
 
     // Constants
-    public const int c_RoomPartPrefabCount = 24;
+    public const int c_RoomPartPrefabCount = 21;
     public const int c_WallHorPrefabCount = 1;
     public const int c_WallVerPrefabCount = 1;
-    public const int c_WallHorDoorPrefabCount = 1;
-    public const int c_WallVerDoorPrefabCount = 1;
     public const int c_WallCornerPrefabCount = 1;
 
     // Doors
@@ -56,24 +52,15 @@ public class RoomScript : MonoBehaviour {
 
         m_WallHorPrefabs = new GameObject[c_WallHorPrefabCount];
         m_WallVerPrefabs = new GameObject[c_WallVerPrefabCount];
-        m_WallHorDoorPrefabs = new GameObject[c_WallHorDoorPrefabCount];
-        m_WallVerDoorPrefabs = new GameObject[c_WallVerDoorPrefabCount];
         m_WallCornerPrefabs = new GameObject[c_WallCornerPrefabCount];
 
-        int maxIterations = Mathf.Max (c_WallHorPrefabCount, c_WallVerPrefabCount,
-            c_WallHorDoorPrefabCount, c_WallVerDoorPrefabCount, c_WallCornerPrefabCount);
+        int maxIterations = Mathf.Max (c_WallHorPrefabCount, c_WallVerPrefabCount, c_WallCornerPrefabCount);
         for (int i = 0; i < maxIterations; ++i) {
             if (i < c_WallHorPrefabCount) {
                 m_WallHorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryH{0}", i));
             }
             if (i < c_WallVerPrefabCount) {
                 m_WallVerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryV{0}", i));
-            }
-            if (i < c_WallHorDoorPrefabCount) {
-                m_WallHorDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryDH{0}", i));
-            }
-            if (i < c_WallVerDoorPrefabCount) {
-                m_WallVerDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryDV{0}", i));
             }
             if (i < c_WallCornerPrefabCount) {
                 m_WallCornerPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Sceneries/SceneryC{0}", i));
@@ -138,7 +125,10 @@ public class RoomScript : MonoBehaviour {
             Vector3 wallPosition = m_RoomWalls[i].transform.position;
             GameObject newWallGO = this.BuildWall (wallPosition, wallTypeToBuild);
 
-            if (currentRPScript != null) {
+            if (newWallGO == null) {
+                continue;
+            }
+            else if (currentRPScript != null) {
                 currentRPScript.AttachContent (newWallGO, true);
                 currentRPScript.m_ParentRoom = this;
             }
@@ -153,19 +143,14 @@ public class RoomScript : MonoBehaviour {
         GameObject[] prefabs = null;
         bool isDoor = false;
         switch (type) {
+            case SceneryScript.SCENERY_TYPE.DOOR_HOR:
+            case SceneryScript.SCENERY_TYPE.DOOR_VER:
+                isDoor = true;
+                break;
+
             case SceneryScript.SCENERY_TYPE.CORNER:
                 maxRNGRange = m_WallCornerPrefabs.Length;
                 prefabs = m_WallCornerPrefabs;
-                break;
-            case SceneryScript.SCENERY_TYPE.DOOR_HOR:
-                maxRNGRange = m_WallHorDoorPrefabs.Length;
-                prefabs = m_WallHorDoorPrefabs;
-                isDoor = true;
-                break;
-            case SceneryScript.SCENERY_TYPE.DOOR_VER:
-                maxRNGRange = m_WallVerDoorPrefabs.Length;
-                prefabs = m_WallVerDoorPrefabs;
-                isDoor = true;
                 break;
             case SceneryScript.SCENERY_TYPE.HORIZONTAL:
                 maxRNGRange = m_WallHorPrefabs.Length;
@@ -184,10 +169,13 @@ public class RoomScript : MonoBehaviour {
         }
 
         int rngIndex = Random.Range (0, maxRNGRange);
-        GameObject newWall = Object.Instantiate (prefabs[rngIndex],
-            newWallPosition, Quaternion.identity) as GameObject;
+        GameObject newWall;
         if (isDoor) {
-            newWall.AddComponent<DoorScript> ();
+            newWall = null;
+        }
+        else {
+            newWall = Object.Instantiate (prefabs[rngIndex],
+                newWallPosition, Quaternion.identity) as GameObject;
         }
 
         return newWall;
