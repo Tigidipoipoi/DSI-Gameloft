@@ -52,6 +52,8 @@ public class Enemy_Script : MonoBehaviour {
         m_IsFreeze = false;
     }
 
+  
+
     public void DestroyEnemy()
     {
         if (name == "EnemyMissile" && m_EnnemyMissile2!=null)

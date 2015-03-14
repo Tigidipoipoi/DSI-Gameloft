@@ -16,7 +16,7 @@ public class ConsumableActionsScript : MonoBehaviour {
            if (ConsumablesManager.instance.m_KillAllEnemy == true)
            {
                m_Enemy_Script = other.gameObject.GetComponent<Enemy_Script>();
-               m_Enemy_Script.StartCoroutine("FreezeEnemy");
+               m_Enemy_Script.StartCoroutine("DestroyEnemy");
            }
         }
     }

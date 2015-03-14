@@ -38,18 +38,28 @@ public class ConsumablesManager : MonoBehaviour {
         m_FreezeEnemy = true;
 
         m_Collider.enabled = true;
-
         yield return null;
         yield return null;
         m_Collider.enabled = false;
         m_FreezeEnemy = false;
     }
 
+    public IEnumerator LetsKill()
+    {
+        m_KillAllEnemy = true;
+
+        m_Collider.enabled = true;
+        yield return null;
+        yield return null;
+        m_Collider.enabled = false;
+        m_KillAllEnemy = false;
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(LetsFreeze());
+            StartCoroutine(LetsKill());
         }
     }
 }
