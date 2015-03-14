@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Enemy_Script : MonoBehaviour {
-
+    #region Members
     public float m_Life;
 
     public bool m_IsAwake;
@@ -19,78 +19,80 @@ public class Enemy_Script : MonoBehaviour {
     public float m_EarnedTime;
     public GameObject m_TimeDistributor;
     private TimeDistributor m_TimeDistributorScript;
+    private GameObject m_KeyPrefab;
+    #endregion
 
-    public virtual void Start()
-    {
-        renderer=this.GetComponent<Renderer>();
-        m_StandardColor= renderer.material.color;
+    public void Awake () {
+        m_KeyPrefab = Resources.Load<GameObject> ("Prefabs/Key/Key");
+        FloorManager.instance.NewEnemyAppeared ();
+    }
 
-        m_TimeDistributorScript = m_TimeDistributor.GetComponent<TimeDistributor>();
+    public virtual void Start () {
+        renderer = this.GetComponent<Renderer> ();
+        m_StandardColor = renderer.material.color;
+
+        m_TimeDistributorScript = m_TimeDistributor.GetComponent<TimeDistributor> ();
         m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
 
     }
 
-    public void GetDamage(float m_Damage)
-    {
-        StartCoroutine(blink());
+    public void GetDamage (float m_Damage) {
+        StartCoroutine (blink ());
         m_Life -= m_Damage;
-        if(m_Life<=0)
-        {
-            DestroyEnemy();
+        if (m_Life <= 0) {
+            DestroyEnemy ();
         }
     }
 
-    public void DestroyEnemy()
-    {
-        if (name == "EnemyMissile" && m_EnnemyMissile2!=null)
-        {
-            Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation);
-            Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation);
+    public void DestroyEnemy () {
+        bool mustPopKey = FloorManager.instance.MustPopKey ();
+
+        if (name == "EnemyMissile"
+            && m_EnnemyMissile2 != null) {
+            Instantiate (m_EnnemyMissile2, this.transform.position, this.transform.rotation);
+            Instantiate (m_EnnemyMissile2, this.transform.position, this.transform.rotation);
         }
 
-        m_Player.GetComponent<PlayerScript>().Unlock();
+        m_Player.GetComponent<PlayerScript> ().Unlock ();
 
 
-        Instantiate(m_TimeDistributor, this.transform.position, this.transform.rotation);
+        Instantiate (m_TimeDistributor, this.transform.position, this.transform.rotation);
 
-        Destroy(this.gameObject);
+        if (mustPopKey) {
+            PopKey ();
+        }
+
+        Destroy (this.gameObject);
     }
 
-    public virtual void Update()
-    {
+    public virtual void Update () {
 
-        if(renderer.IsVisibleFrom(Camera.main))
-        {
+        if (renderer.IsVisibleFrom (Camera.main)) {
             m_IsAwake = true;
-            m_Player = GameObject.FindGameObjectWithTag("Player").transform;
+            m_Player = GameObject.FindGameObjectWithTag ("Player").transform;
         }
-        else
-        {
+        else {
             m_IsAwake = false;
         }
 
-        transform.LookAt(m_Player, Vector3.up);
+        transform.LookAt (m_Player, Vector3.up);
 
 
     }
 
-    public IEnumerator blink(float time = 0.5f)
-    {
+    public IEnumerator blink (float time = 0.5f) {
         float delay = 0.15f;
-        
-        while (time > 0)
-        {
 
-            if (renderer.material.color == m_StandardColor)
-            {
+        while (time > 0) {
+
+            if (renderer.material.color == m_StandardColor) {
                 renderer.material.color = Color.red;
             }
-            else
-            {
+            else {
                 renderer.material.color = m_StandardColor;
             }
 
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds (delay);
 
             time -= delay;
         }
@@ -99,5 +101,7 @@ public class Enemy_Script : MonoBehaviour {
         yield return null;
     }
 
-
+    void PopKey () {
+        GameObject keyGO = Object.Instantiate (m_KeyPrefab, this.transform.position, Quaternion.identity) as GameObject;
+    }
 }
