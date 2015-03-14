@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.17061615, y: 1, z: 12.6416035}
+  m_LocalPosition: {x: -7.01999998, y: 1, z: 12.6400003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400956}
@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 174872, guid: 80587eafffa26c047ba8817996eb7779, type: 2}
   m_EarnedTime: 0
-  m_TimeDistributor: {fileID: 0}
+  m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
   m_DelayBeforeShoot: 4
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
-  m_BulletScript: {fileID: 0}
+  m_BulletScript: {fileID: 11408308, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_BulletPower: 5
   m_BulletSpeed: 10
   m_PointForShoot: {fileID: 400956}
