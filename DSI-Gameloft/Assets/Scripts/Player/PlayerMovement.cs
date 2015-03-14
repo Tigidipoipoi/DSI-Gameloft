@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
     int m_GroundLayerMask;
+
     Vector3 m_TargetPosition;
     Rigidbody m_Rigidbody;
     IEnumerator m_MoveToTarget;
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
             else if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_GroundLayerMask)) {
                 this.StopCoroutine (m_MoveToTarget);
                 m_TargetPosition = hit.point;
-                m_TargetPosition.y = 1.0f;
+                m_TargetPosition.y = m_PlayerScript.c_PlayerPosYClamp;
                 m_MoveToTarget = this.MoveToTarget ();
                 this.StartCoroutine (m_MoveToTarget);
             }
