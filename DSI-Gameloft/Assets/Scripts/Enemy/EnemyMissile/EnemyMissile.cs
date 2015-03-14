@@ -71,5 +71,14 @@ public class EnemyMissile : Enemy_Script
 
             }
         }
+
+        if (m_IsFreeze == true)
+        {
+            m_Mouvement.enabled = false;
+        }
+        else
+        {
+            m_Mouvement.enabled = true;
+        }
 	}
 }

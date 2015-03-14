@@ -20,8 +20,13 @@ public class Enemy_Script : MonoBehaviour {
     public GameObject m_TimeDistributor;
     private TimeDistributor m_TimeDistributorScript;
 
+    private float m_FreezeDelay;
+    protected bool m_IsFreeze;
+
     public virtual void Start()
     {
+        m_FreezeDelay = 3;
+
         renderer=this.GetComponent<Renderer>();
         m_StandardColor= renderer.material.color;
 
@@ -38,6 +43,13 @@ public class Enemy_Script : MonoBehaviour {
         {
             DestroyEnemy();
         }
+    }
+
+    public IEnumerator FreezeEnemy()
+    {
+        m_IsFreeze = true;
+        yield return new WaitForSeconds(m_FreezeDelay);
+        m_IsFreeze = false;
     }
 
     public void DestroyEnemy()
@@ -71,6 +83,7 @@ public class Enemy_Script : MonoBehaviour {
 
         transform.LookAt(m_Player, Vector3.up);
 
+      
 
     }
 
