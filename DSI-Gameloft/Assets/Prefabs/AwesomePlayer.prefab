@@ -47,7 +47,6 @@ GameObject:
   - 54: {fileID: 5470152}
   - 114: {fileID: 11464654}
   - 114: {fileID: 11483512}
-  - 114: {fileID: 11400148}
   m_Layer: 0
   m_Name: AwesomePlayer
   m_TagString: Player
@@ -221,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.709999979, y: 1, z: .610000014}
+  m_LocalPosition: {x: -.709999979, y: 1.20000005, z: .610000014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414178}
@@ -234,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .5}
+  m_LocalPosition: {x: 0, y: 0, z: .72299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 443972}
@@ -378,19 +377,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &11400148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b64589a3a9a9874b95505cc8d209ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relative: 500
-  mainCamera: {fileID: 0}
 --- !u!114 &11415108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsInTurretMode: 0
+  c_PlayerPosYClamp: 0
   m_EnemyTarget: {fileID: 0}
   m_Weapons:
   - {fileID: 11415108}

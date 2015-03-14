@@ -41,6 +41,7 @@ GameObject:
   - 111: {fileID: 11167770}
   - 114: {fileID: 11453302}
   - 135: {fileID: 13593812}
+  - 82: {fileID: 8284830}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -215,8 +216,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108834}
   m_LocalRotation: {x: -.0187685527, y: -.585160196, z: -.810586095, w: .0136222141}
-  m_LocalPosition: {x: .978905678, y: .199999988, z: 6.83398962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -.696498394, y: .199999988, z: 8.11177826}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 470804}
   - {fileID: 442092}
@@ -296,6 +297,75 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112672}
   m_Mesh: {fileID: 4300000, guid: 2caebd3268dcf2245b5d1bbb533d1241, type: 3}
+--- !u!82 &8284830
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108834}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a4a4d08b22e3a914996130b8eae45c6e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!111 &11167770
 Animation:
   m_ObjectHideFlags: 1
@@ -354,7 +424,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1.42999995
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -387,7 +457,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1.77999997
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -514,7 +584,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .159999996
+      scalar: .300000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1465,7 +1535,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1.20000005
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1592,7 +1662,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .25
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1654,7 +1724,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: 24.0499992
+    radius: 29.25
     angle: 90
     length: 5
     boxX: 1
@@ -1952,17 +2022,17 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
     y:
-      scalar: 5
+      scalar: 6
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .216216326
+          value: -.0383290946
           inSlope: .442441314
-          outSlope: 5.96328449
+          outSlope: 17.9385109
           tangentMode: 21
-        - time: .0362376645
-          value: .432311833
+        - time: .0578826815
+          value: 1
           inSlope: 10.5750561
           outSlope: 26.5746861
           tangentMode: 1

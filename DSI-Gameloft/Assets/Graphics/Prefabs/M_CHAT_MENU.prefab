@@ -62,6 +62,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 474906}
   - 54: {fileID: 5455796}
+  - 114: {fileID: 11499356}
+  - 82: {fileID: 8286840}
   m_Layer: 0
   m_Name: M_CHAT_MENU
   m_TagString: Untagged
@@ -228,6 +230,75 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &8286840
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158530}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9585144
 Animator:
   serializedVersion: 3
@@ -245,6 +316,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11499356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18cd0ceead4d66d46a56029d4614dfd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MiaouSound:
+  - {fileID: 8300000, guid: 98526f77b4b5f9b42b763769a9e2a0b6, type: 3}
+  - {fileID: 8300000, guid: 6ce7194136c7c724499b7a5c3e60da94, type: 3}
+  - {fileID: 8300000, guid: da88bf69ebd7776498fd8484d5695160, type: 3}
+  - {fileID: 8300000, guid: 7e34b95e7825ab44fb30dd06ced10b4f, type: 3}
+  - {fileID: 8300000, guid: 3df8b782458ac8f40942cf903ca8ccfa, type: 3}
+  - {fileID: 8300000, guid: 6fc36fab0dee8d84cb5d80787b30f13c, type: 3}
+  - {fileID: 8300000, guid: 8d3208554adaebd47b144e28cde80b76, type: 3}
+  - {fileID: 8300000, guid: c8d08ec05e29d394d8555cf5de33f86b, type: 3}
+  - {fileID: 8300000, guid: 0d899ab3ccdb5b144815240096ee722a, type: 3}
+  - {fileID: 8300000, guid: f7ad7caef2811a34b968b146f5967f58, type: 3}
 --- !u!135 &13576208
 SphereCollider:
   m_ObjectHideFlags: 1

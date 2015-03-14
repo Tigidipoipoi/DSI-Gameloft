@@ -27,7 +27,12 @@ public class Enemy_Script : MonoBehaviour {
         FloorManager.instance.NewEnemyAppeared ();
     }
 
+    private float m_FreezeDelay;
+    protected bool m_IsFreeze;
+
     public virtual void Start () {
+        m_FreezeDelay = 3;
+
         renderer = this.GetComponent<Renderer> ();
         m_StandardColor = renderer.material.color;
 
@@ -40,15 +45,22 @@ public class Enemy_Script : MonoBehaviour {
         StartCoroutine (blink ());
         m_Life -= m_Damage;
         if (m_Life <= 0) {
-            DestroyEnemy ();
+            this.DestroyEnemy ();
         }
     }
+
+    public IEnumerator FreezeEnemy () {
+        m_IsFreeze = true;
+        yield return new WaitForSeconds (m_FreezeDelay);
+        m_IsFreeze = false;
+    }
+
+
 
     public void DestroyEnemy () {
         bool mustPopKey = FloorManager.instance.MustPopKey ();
 
-        if (name == "EnemyMissile"
-            && m_EnnemyMissile2 != null) {
+        if (name == "EnemyMissile" && m_EnnemyMissile2 != null) {
             Instantiate (m_EnnemyMissile2, this.transform.position, this.transform.rotation);
             Instantiate (m_EnnemyMissile2, this.transform.position, this.transform.rotation);
         }
@@ -76,6 +88,7 @@ public class Enemy_Script : MonoBehaviour {
         }
 
         transform.LookAt (m_Player, Vector3.up);
+
 
 
     }
