@@ -11,10 +11,15 @@ public class ChestScript : MonoBehaviour {
 
     public int m_EarnPesos;
 
+    public GameObject m_ObjectParticules;
+
+    private Animation m_Animation;
+
 	// Use this for initialization
 	void Start () {
         m_ChestOpen = false;
         m_ChestCollider = this.gameObject.GetComponent<Collider>();
+        m_Animation = GetComponent<Animation>();
 	}
 
     void OnTriggerEnter(Collider other)
@@ -23,7 +28,14 @@ public class ChestScript : MonoBehaviour {
         {
             m_ChestOpen = true;
             m_ChestCollider.enabled = false;
-            Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+            m_Animation.Play();
+            m_ObjectParticules.SetActive(true);
+            
+            if(m_ChestLoot!=null)
+            {
+             Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+            }
+            
             PesosManager.instance.AddPesos(m_EarnPesos);
             Destroy(this);
         }
