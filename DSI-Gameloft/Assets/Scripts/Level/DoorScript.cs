@@ -34,4 +34,10 @@ public class DoorScript : MonoBehaviour {
         m_ChildContent.name = "Content";
         m_ChildContent.transform.parent = this.transform;
     }
+
+    void OnTriggerEnter (Collider other) {
+        if (other.tag == "Player") {
+            Debug.Log ("Transition !");
+        }
+    }
 }

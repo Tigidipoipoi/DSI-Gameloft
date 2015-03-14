@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
-    int m_GroundLayerMask;
+    int m_ClickableLayerMask;
 
     Vector3 m_TargetPosition;
     Rigidbody m_Rigidbody;
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start () {
         m_EnemyOrObstacleLayerMask = LayerMask.GetMask ("Enemy", "Obstacle");
-        m_GroundLayerMask = LayerMask.GetMask ("Ground");
+        m_ClickableLayerMask = LayerMask.GetMask ("Ground", "ClickToMove");
         m_PlayerScript = this.GetComponent<PlayerScript> ();
         m_PlayerScript.UpdateWeaponsHoming (isHoming: true);
         m_Rigidbody = this.GetComponent<Rigidbody> ();
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour {
                 m_PlayerScript.LockTarget (hit.collider.transform.GetComponent<EnemyLock> ());
             }
             // Move
-            else if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_GroundLayerMask)) {
+            else if (Physics.Raycast (ray, out hit, Mathf.Infinity, m_ClickableLayerMask)) {
                 this.StopCoroutine (m_MoveToTarget);
                 m_TargetPosition = hit.point;
                 m_TargetPosition.y = m_PlayerScript.c_PlayerPosYClamp;
@@ -71,6 +71,12 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator MoveToTarget () {
         while (Vector3.Distance (this.transform.position, m_TargetPosition) > m_BreakDistance) {
+            if (m_PlayerScript.m_EnemyTarget == null) {
+                Vector3 lookAtTarget = m_TargetPosition;
+                lookAtTarget.y = m_PlayerScript.c_PlayerPosYClamp;
+                this.transform.LookAt (lookAtTarget);
+            }
+
             m_Rigidbody.velocity = (m_TargetPosition - this.transform.position).normalized * m_MoveSpeed;
             yield return null;
         }
