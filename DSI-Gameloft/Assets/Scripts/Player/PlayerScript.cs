@@ -91,6 +91,7 @@ public class PlayerScript : MonoBehaviour {
     }
 
     public IEnumerator TurretShoot () {
+
         int weaponCount = m_Weapons.Length;
         this.LookAtMouse ();
         for (int i = 0; i < weaponCount; ++i) {
@@ -100,6 +101,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
         while (m_IsInTurretMode) {
+            ShakeManager.instance.LetsShake(300);
             yield return null;
         }
 
