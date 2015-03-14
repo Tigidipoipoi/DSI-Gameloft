@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
-  m_TimeDistributor: {fileID: 0}
+  m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
   m_DelayBeforeShoot: 4
   m_PrefabBullet: {fileID: 104646, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
-  m_BulletScript: {fileID: 0}
+  m_BulletScript: {fileID: 11408308, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_BulletPower: 5
   m_BulletSpeed: 10
   m_PointForShoot: {fileID: 400956}

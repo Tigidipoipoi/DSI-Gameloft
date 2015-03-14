@@ -19,9 +19,13 @@ public class FloorManager : MonoBehaviour {
     #endregion
 
     #region Members
-    Floor m_CurrentFloor;
+    public int m_RoomCount;
+    public GameObject[] m_FloorPrefabs;
+    public FloorScript m_CurrentFloor;
     #endregion
 
     public void Init () {
     }
+
+
 }

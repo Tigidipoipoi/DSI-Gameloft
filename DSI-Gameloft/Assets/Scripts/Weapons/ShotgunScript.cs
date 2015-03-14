@@ -61,8 +61,7 @@ public class ShotgunScript : WeaponScript {
             Quaternion oldTurnedSpawnRotation = m_BulletSpawn.rotation;
 
             m_BulletSpawn.Rotate (Vector3.up, -coef * i * spaceBetweenBullets);
-            GameObject spreadBulletGO = Object.Instantiate (m_BulletPrefab,
-                m_BulletSpawn.position, m_BulletSpawn.rotation) as GameObject;
+            Object.Instantiate (m_BulletPrefab, m_BulletSpawn.position, m_BulletSpawn.rotation);
 
             m_BulletSpawn.rotation = oldTurnedSpawnRotation;
         }
