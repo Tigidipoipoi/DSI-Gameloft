@@ -12,10 +12,10 @@ public class DoorScript : MonoBehaviour {
     }
 
     #region Members
-    public RoomScript m_Enter;
-    public RoomScript m_Exit;
-
+    public Vector2 m_RoomEnterIndex;
     public RoomScript.ROOM_POSITION m_EnterPos;
+
+    public Vector2 m_RoomExitIndex;
     public RoomScript.ROOM_POSITION m_ExitPos;
 
     public DOOR_ORIENTATION m_Orientation;

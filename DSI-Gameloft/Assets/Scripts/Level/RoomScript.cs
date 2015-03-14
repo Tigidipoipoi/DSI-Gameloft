@@ -34,7 +34,7 @@ public class RoomScript : MonoBehaviour {
     Transform m_WallsContainer;
 
     // Constants
-    public const int c_RoomPartPrefabCount = 2;
+    public const int c_RoomPartPrefabCount = 24;
     public const int c_WallHorPrefabCount = 1;
     public const int c_WallVerPrefabCount = 1;
     public const int c_WallHorDoorPrefabCount = 1;
@@ -42,7 +42,10 @@ public class RoomScript : MonoBehaviour {
     public const int c_WallCornerPrefabCount = 1;
 
     // Doors
-    public DoorScript[] m_DoorScripts;
+    public Utils.DIRECTIONS[] m_PossibleDoorPositions;
+
+    // Floor
+    public Vector2 m_FloorIndex;
     #endregion
 
     void Awake () {
@@ -102,11 +105,11 @@ public class RoomScript : MonoBehaviour {
         }
         m_RoomWalls = childGOList.ToArray ();
 
-        this.GenerateRoom ();
+        this.GenerateRoomParts ();
         this.GenerateWalls ();
     }
 
-    public void GenerateRoom () {
+    public void GenerateRoomParts () {
         int roomPartsCount = m_RoomParts.Length;
         for (int i = 0; i < roomPartsCount; ++i) {
             RoomPartScript roomPartScript = m_RoomParts[i].GetComponent<RoomPartScript> ();

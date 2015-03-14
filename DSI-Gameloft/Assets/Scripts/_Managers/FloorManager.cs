@@ -20,9 +20,12 @@ public class FloorManager : MonoBehaviour {
 
     #region Members
     public int m_RoomCount;
-    //Floor m_CurrentFloor;
+    public GameObject[] m_FloorPrefabs;
+    public FloorScript m_CurrentFloor;
     #endregion
 
     public void Init () {
     }
+
+
 }
