@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour {
     public bool m_IsInTurretMode;
 
     [HideInInspector]
+    public float c_PlayerPosYClamp;
+    [HideInInspector]
     public Transform m_EnemyTarget;
 
     public WeaponScript[] m_Weapons;
@@ -15,6 +17,8 @@ public class PlayerScript : MonoBehaviour {
     #endregion
 
     void Start () {
+        c_PlayerPosYClamp = this.transform.position.y;
+
         int weaponCount = m_Weapons.Length;
         if (m_Weapons == null
             || weaponCount > c_MaxWeaponCount) {
@@ -29,6 +33,8 @@ public class PlayerScript : MonoBehaviour {
     void Update () {
         // Look at locked enemy
         if (m_EnemyTarget != null) {
+            Vector3 lookAtTarget = m_EnemyTarget.position;
+            lookAtTarget.y = c_PlayerPosYClamp;
             this.transform.LookAt (m_EnemyTarget.position);
         }
 
@@ -46,6 +52,9 @@ public class PlayerScript : MonoBehaviour {
 
         m_EnemyTarget = enemyLockScript.transform;
         enemyLockScript.m_IsPlayerTarget = true;
+
+        Vector3 lookAtTarget = m_EnemyTarget.position;
+        lookAtTarget.y = c_PlayerPosYClamp;
         this.transform.LookAt (m_EnemyTarget.position);
 
         int weaponCount = m_Weapons.Length;
@@ -91,7 +100,6 @@ public class PlayerScript : MonoBehaviour {
     }
 
     public IEnumerator TurretShoot () {
-
         int weaponCount = m_Weapons.Length;
         this.LookAtMouse ();
         for (int i = 0; i < weaponCount; ++i) {
@@ -101,7 +109,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
         while (m_IsInTurretMode) {
-            ShakeManager.instance.LetsShake(300);
+            ShakeManager.instance.LetsShake (300);
             yield return null;
         }
 
@@ -117,7 +125,7 @@ public class PlayerScript : MonoBehaviour {
         RaycastHit hit;
         Physics.Raycast (ray, out hit, Mathf.Infinity);
         Vector3 lookTarget = hit.point;
-        lookTarget.y = 1.0f;
+        lookTarget.y = c_PlayerPosYClamp;
 
         this.transform.LookAt (lookTarget);
     }
