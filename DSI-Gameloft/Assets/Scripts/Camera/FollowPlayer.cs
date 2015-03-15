@@ -6,51 +6,31 @@ public class FollowPlayer : MonoBehaviour {
     public Transform m_PlayerTrans;
     Vector3 m_DistanceToPlayer;
 
-    public float magnitude=1;
-    public float duration =1;
-
-    //IEnumerator OffSetcoroutine;
-    //IEnumerator Shakecoroutine;
-
+    public float magnitude = 1;
+    public float duration = 1;
     #endregion
 
-    void Start () {
-        Vector3 playerPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
+    void Start() {
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         m_DistanceToPlayer = this.transform.position - playerPosition;
-        //OffSetcoroutine = Offset();
-        //Shakecoroutine = Shake();
-
-        //StartCoroutine("Offset");
     }
 
-    void Update()
-    {
+    void Update() {
         Vector3 newCamPos = m_PlayerTrans.transform.position;
         newCamPos += m_DistanceToPlayer;
         this.transform.position = newCamPos;
         this.transform.LookAt(m_PlayerTrans.position);
-       // yield return null;
-        /*
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            LetsShake();
-        }
-        */
     }
 
-    public void LetsShake()
-    {
-
+    public void LetsShake() {
         StopCoroutine("Offset");
 
         StartCoroutine("Shake");
     }
 
-    IEnumerator Offset()
-    {
+    IEnumerator Offset() {
         Debug.Log("a");
-        while (this.gameObject != null)
-        {
+        while (this.gameObject != null) {
             Vector3 newCamPos = m_PlayerTrans.transform.position;
             newCamPos += m_DistanceToPlayer;
             this.transform.position = newCamPos;
@@ -59,12 +39,10 @@ public class FollowPlayer : MonoBehaviour {
         }
     }
 
-    IEnumerator Shake()
-    {
+    IEnumerator Shake() {
         float elapsed = 0.0f;
         Vector3 originalCamPos = this.transform.position;
-        while (elapsed < duration)
-        {
+        while (elapsed < duration) {
             elapsed += Time.deltaTime;
             float percentComplete = elapsed / duration;
             float damper = 1.0f - Mathf.Clamp(4.0f * percentComplete - 3.0f, 0.0f, 1.0f);
@@ -80,6 +58,5 @@ public class FollowPlayer : MonoBehaviour {
         }
 
         StartCoroutine("Offset");
-    } 
-
+    }
 }

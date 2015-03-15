@@ -25,12 +25,9 @@ public class FloorManager : MonoBehaviour {
     public bool m_KeyPoped;
     public bool m_KeyAquired;
     public bool m_HasLoadedSeed;
-
     public UIKeyScript KeyScript;
 
-
-    public Vector2 m_CurrentRoomIndex;
-
+    //public Vector2 m_CurrentRoomIndex;
     #endregion
 
     public void Init() {
@@ -42,10 +39,9 @@ public class FloorManager : MonoBehaviour {
     }
 
 
-    public void GetKey()
-    {
-       m_KeyAquired = true;
-       KeyScript.AnimKey();
+    public void GetKey() {
+        m_KeyAquired = true;
+        KeyScript.AnimKey();
     }
 
     public bool MustPopKey() {
