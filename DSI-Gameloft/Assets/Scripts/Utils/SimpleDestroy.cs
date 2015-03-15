@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SimpleDestroy : MonoBehaviour {
 
-    void DestroyNow()
+    public void DestroyNow()
     {
         Destroy(this.gameObject);
     }

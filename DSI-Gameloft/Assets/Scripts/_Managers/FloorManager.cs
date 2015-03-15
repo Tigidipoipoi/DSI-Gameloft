@@ -25,6 +25,7 @@ public class FloorManager : MonoBehaviour {
     public bool m_KeyPoped;
     public bool m_KeyAquired;
     public bool m_HasLoadedSeed;
+    public UIKeyScript KeyScript;
 
     //public Vector2 m_CurrentRoomIndex;
     #endregion
@@ -35,6 +36,12 @@ public class FloorManager : MonoBehaviour {
         Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         Transform startTrans = m_CurrentFloor.transform.Find("Start");
         playerTrans.position = startTrans.position;
+    }
+
+
+    public void GetKey() {
+        m_KeyAquired = true;
+        KeyScript.AnimKey();
     }
 
     public bool MustPopKey() {
