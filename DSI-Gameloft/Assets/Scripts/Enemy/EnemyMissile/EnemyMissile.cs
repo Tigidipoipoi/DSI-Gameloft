@@ -28,9 +28,7 @@ public class EnemyMissile : Enemy_Script
         m_IsReady = true;
         name = "EnemyMissile";
 
-        m_BulletScript = m_PrefabBullet.GetComponent<BulletScript>();
-        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
-        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+        
         
 
 	}
@@ -46,6 +44,9 @@ public class EnemyMissile : Enemy_Script
                 StopCoroutine(WaitAndShoot());
             }
             GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject ;
+            m_BulletScript = bullet.GetComponent<BulletScript>();
+            m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+            m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
             bullet.layer = LayerMask.NameToLayer("EnemyBullet");
             m_IsReady = true;
         }

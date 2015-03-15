@@ -22,6 +22,10 @@ public class TimerManager : MonoBehaviour {
     float m_RemainingTime;
     int m_FloorTime = 60;
     IEnumerator m_TimeIsRunningOut;
+
+    public float m_TimeMax;
+    public GameObject m_TimeWhite;
+    
     #endregion
 
     public void Init () {

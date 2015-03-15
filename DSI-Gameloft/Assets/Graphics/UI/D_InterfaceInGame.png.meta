@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 6cd4d585e3055cd488bf42e9df1d5f9e
+timeCreated: 1426416791
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Combo
+    21300002: ComboX
+    21300004: Combo2
+    21300006: Combo3
+    21300008: Combo4
+    21300010: Combo5
+    21300012: Combo6
+    21300014: Combo7
+    21300016: Combo8
+    21300018: Combo9
+    21300020: lock
+    21300022: pause
+    21300024: spell
+    21300026: combofondsqueelette
+    21300028: iteml1
+    21300030: item2
+    21300032: item3
+    21300034: jauge
+    21300036: coffrefond
+    21300038: clenoir
+    21300040: clefor
+    21300042: peice
+    21300044: shotgun
+    21300046: gun
+    21300048: gatling
+    21300050: dynamite
+    21300052: combosquelette3
+    21300054: combosquelette2
+    21300056: combosquelette1
+    21300058: jaugefond
+    21300060: jaugemask
+    21300062: ComboFond
+    21300064: CoffreX
+    21300066: Coffre2
+    21300068: Coffre3
+    21300070: Coffre4
+    21300072: Coffre5
+    21300074: Coffre6
+    21300076: Coffre7
+    21300078: Coffre8
+    21300080: Coffre9
+    21300082: ConsoTue
+    21300084: ConsoParalyse
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Combo
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 745
+        width: 254
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ComboX
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 741
+        width: 57
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 622
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 622
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 623
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 622
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 497
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 501
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 501
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Combo9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 501
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lock
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 342
+        width: 141
+        height: 138
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pause
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 375
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spell
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 360
+        width: 127
+        height: 129
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: combofondsqueelette
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 369
+        width: 93
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: iteml1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 224
+        width: 119
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: item2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 224
+        width: 119
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: item3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 115
+        width: 139
+        height: 111
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jauge
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 146
+        width: 559
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: coffrefond
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 371
+        width: 92
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: clenoir
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 417
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: clefor
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 415
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: peice
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 416
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shotgun
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 327
+        width: 215
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gun
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 277
+        width: 143
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gatling
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 198
+        width: 185
+        height: 123
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dynamite
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 178
+        width: 77
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: combosquelette3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 277
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: combosquelette2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 277
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: combosquelette1
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 181
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jaugefond
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 63
+        width: 531
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jaugemask
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 26
+        width: 470
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ComboFond
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 739
+        width: 401
+        height: 116
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CoffreX
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 750
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre2
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 624
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre3
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 625
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre4
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 625
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre5
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 624
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre6
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 498
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre7
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 497
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre8
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 501
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coffre9
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 501
+        width: 73
+        height: 115
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ConsoTue
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 875
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ConsoParalyse
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 875
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

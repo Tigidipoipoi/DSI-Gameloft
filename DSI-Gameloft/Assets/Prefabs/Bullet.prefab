@@ -165,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Rigidbody: {fileID: 5447314}
   m_BulletStats:
-    m_Power: 1
-    m_Speed: 10
+    m_Power: 0
+    m_Speed: 0
   m_Renderer: {fileID: 0}
   m_EnemyBulletLayer: 0
   m_EnemyLayer: 0
