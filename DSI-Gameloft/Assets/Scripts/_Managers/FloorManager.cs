@@ -26,7 +26,7 @@ public class FloorManager : MonoBehaviour {
     public bool m_KeyAquired;
     public bool m_HasLoadedSeed;
 
-    public Vector2 m_CurrentRoomIndex;
+    //public Vector2 m_CurrentRoomIndex;
     #endregion
 
     public void Init() {
