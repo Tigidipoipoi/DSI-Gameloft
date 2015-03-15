@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a7d33ed93fdfd4486d2820464c1336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DropTheKey: -1
   m_Life: 3
   m_IsAwake: 0
   m_Player: {fileID: 0}
