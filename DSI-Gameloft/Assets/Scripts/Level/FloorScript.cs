@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class FloorScript : MonoBehaviour {
     #region Members
+    // Seeding
+    public bool m_IsSeed;
+
     // Room parts
     GameObject[] m_Rooms;
     GameObject[] m_RoomPrefabs;
@@ -30,19 +33,13 @@ public class FloorScript : MonoBehaviour {
         for (int i = 0; i < c_RoomPrefabCount; ++i) {
             m_RoomPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Rooms/Room{0}", i));
         }
-
-        //m_HorDoorPrefabs = new GameObject[c_HorDoorPrefabCount];
-        //for (int i = 0; i < c_HorDoorPrefabCount; ++i) {
-        //    m_HorDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Doors/Door{0}", i));
-        //}
-
-        //m_VerDoorPrefabs = new GameObject[c_VerDoorPrefabCount];
-        //for (int i = 0; i < c_VerDoorPrefabCount; ++i) {
-        //    m_VerDoorPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Doors/Door{0}", i));
-        //}
     }
 
     void Start () {
+        if (m_IsSeed) {
+            FloorManager.instance.LoadSeed (this);
+        }
+
         List<GameObject> childGOList = new List<GameObject> ();
 
         // Rooms
@@ -80,7 +77,6 @@ public class FloorScript : MonoBehaviour {
 
     GameObject BuildDoor (Vector3 newDoorPos, DoorScript.DOOR_POSITION doorPos) {
         GameObject prefab = null;
-        bool isDoor = false;
         switch (doorPos) {
             case DoorScript.DOOR_POSITION.LEFT:
             case DoorScript.DOOR_POSITION.CENTER_HOR:

@@ -25,10 +25,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 478700}
   - 33: {fileID: 3343844}
-  - 136: {fileID: 13668792}
   - 23: {fileID: 2318548}
   - 54: {fileID: 5447314}
   - 114: {fileID: 11408308}
+  - 135: {fileID: 13596162}
   m_Layer: 11
   m_Name: Bullet
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .129999995, z: -1.17299998}
+  m_LocalPosition: {x: 0, y: 2.23000002, z: -1.16999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 412874}
@@ -166,14 +166,14 @@ MonoBehaviour:
   m_Rigidbody: {fileID: 5447314}
   m_BulletStats:
     m_Power: 1
-    m_Speed: 20
+    m_Speed: 10
   m_Renderer: {fileID: 0}
   m_EnemyBulletLayer: 0
   m_EnemyLayer: 0
   m_AllyBulletLayer: 0
   m_GroundLayer: 0
---- !u!136 &13668792
-CapsuleCollider:
+--- !u!135 &13596162
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -181,10 +181,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: .20220606
+  m_Center: {x: -.00649998337, y: 0, z: .20220606}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

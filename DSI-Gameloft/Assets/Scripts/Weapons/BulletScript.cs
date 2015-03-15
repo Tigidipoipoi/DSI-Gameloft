@@ -14,52 +14,49 @@ public class BulletScript : MonoBehaviour {
     public int m_GroundLayer;
     #endregion
 
-    public virtual void Start () {
+    public virtual void Start() {
         m_Rigidbody.velocity = this.transform.forward * m_BulletStats.m_Speed;
-        m_Renderer = this.GetComponent<Renderer> ();
-        m_EnemyBulletLayer = LayerMask.NameToLayer ("EnemyBullet");
-        m_EnemyLayer = LayerMask.NameToLayer ("Enemy");
-        m_AllyBulletLayer = LayerMask.NameToLayer ("AllyBullet");
-        m_GroundLayer = LayerMask.NameToLayer ("Ground");
+        m_Renderer = this.GetComponent<Renderer>();
+        m_EnemyBulletLayer = LayerMask.NameToLayer("EnemyBullet");
+        m_EnemyLayer = LayerMask.NameToLayer("Enemy");
+        m_AllyBulletLayer = LayerMask.NameToLayer("AllyBullet");
+        m_GroundLayer = LayerMask.NameToLayer("Ground");
 
     }
 
-    public virtual void GetDamage () {
-        Destroy (this.gameObject);
+    public virtual void GetDamage() {
+        Destroy(this.gameObject);
     }
 
-    public virtual void Update () {
-        if (!m_Renderer.IsVisibleFrom (Camera.main)) {
-            PreDestroy ();
+    public virtual void Update() {
+        if (!m_Renderer.IsVisibleFrom(Camera.main)) {
+            PreDestroy();
         }
     }
 
-    public virtual void OnCollisionEnter (Collision other) {
+    public virtual void OnCollisionEnter(Collision other) {
         GameObject otherGO = other.gameObject;
-        
-        if (otherGO.layer != this.gameObject.layer)
-        {
+
+        if (otherGO.layer != this.gameObject.layer) {
             if (this.gameObject.layer == m_EnemyBulletLayer) {
                 if (otherGO.tag == "Player") {
-                    TimerManager.instance.LoseTime (m_BulletStats.m_Power);
-                }
-            }
-            
-            if (this.gameObject.layer == m_AllyBulletLayer)
-            {
-                if (otherGO.layer == m_EnemyLayer)
-                {
-                    m_EnemyScript = otherGO.GetComponent<Enemy_Script>();
-                    m_EnemyScript.GetDamage(m_BulletStats.m_Power);
-                    
+                    TimerManager.instance.LoseTime(m_BulletStats.m_Power);
                 }
             }
 
-            PreDestroy ();
+            if (this.gameObject.layer == m_AllyBulletLayer) {
+                if (otherGO.layer == m_EnemyLayer) {
+                    m_EnemyScript = otherGO.GetComponent<Enemy_Script>();
+                    m_EnemyScript.GetDamage(m_BulletStats.m_Power);
+
+                }
+            }
+
+            PreDestroy();
         }
     }
 
-    public void PreDestroy () {
-        GameObject.Destroy (this.gameObject);
+    public void PreDestroy() {
+        GameObject.Destroy(this.gameObject);
     }
 }

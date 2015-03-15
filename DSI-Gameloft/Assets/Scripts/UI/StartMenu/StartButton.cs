@@ -2,23 +2,18 @@
 using System.Collections;
 
 public class StartButton : MonoBehaviour {
-
+    #region Members
     public GameObject m_PanelOption;
     public Transform m_InitialPosition;
 
     public bool m_Open;
+    #endregion
 
-   
-
-    public void LaunchGame()
-    {
-        Application.LoadLevel("TestLab");
+    public void LaunchGame () {
+        Application.LoadLevel ("PlayTest");
     }
 
-   
-
-    public void Exit()
-    {
-        Application.Quit();
+    public void Exit () {
+        Application.Quit ();
     }
 }

@@ -29,7 +29,7 @@ public class CastEnemyScript : MonoBehaviour
     }
     void Burn(GameObject other)
     {
-        m_PlayerScript = (PlayerScript)other.gameObject.GetComponent(typeof(PlayerScript));
+        m_PlayerScript = other.gameObject.GetComponent<PlayerScript>();
         
         StartCoroutine(Destroy());
     }

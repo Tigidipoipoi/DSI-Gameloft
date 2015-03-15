@@ -3,13 +3,16 @@ using System.Collections;
 
 public class Enemy_Script : MonoBehaviour {
     #region Members
+    // Playtest Only !
+    public int m_DropTheKey = -1;
+
     public float m_Life;
 
     public bool m_IsAwake;
 
     public Transform m_Player;
 
-    Renderer renderer;
+    Renderer m_Renderer;
 
     public GameObject m_EnnemyMissile2;
 
@@ -34,8 +37,8 @@ public class Enemy_Script : MonoBehaviour {
 
         m_FreezeDelay = 3;
 
-        renderer = this.GetComponent<Renderer> ();
-        m_StandardColor = renderer.material.color;
+        m_Renderer = this.GetComponent<Renderer> ();
+        m_StandardColor = m_Renderer.material.color;
 
         m_TimeDistributorScript = m_TimeDistributor.GetComponent<TimeDistributor> ();
         m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
@@ -59,7 +62,9 @@ public class Enemy_Script : MonoBehaviour {
 
 
     public void DestroyEnemy () {
-        bool mustPopKey = FloorManager.instance.MustPopKey ();
+        bool mustPopKey = m_DropTheKey > -1
+            ? m_DropTheKey > 0
+            : FloorManager.instance.MustPopKey ();
 
         if (name == "EnemyMissile" && m_EnnemyMissile2 != null) {
             Instantiate (m_EnnemyMissile2, this.transform.position, this.transform.rotation);
@@ -80,7 +85,7 @@ public class Enemy_Script : MonoBehaviour {
 
     public virtual void Update () {
 
-        if (renderer.IsVisibleFrom (Camera.main)) {
+        if (m_Renderer.IsVisibleFrom (Camera.main)) {
             m_IsAwake = true;
             m_Player = GameObject.FindGameObjectWithTag ("Player").transform;
         }
@@ -99,11 +104,11 @@ public class Enemy_Script : MonoBehaviour {
 
         while (time > 0) {
 
-            if (renderer.material.color == m_StandardColor) {
-                renderer.material.color = Color.red;
+            if (m_Renderer.material.color == m_StandardColor) {
+                m_Renderer.material.color = Color.red;
             }
             else {
-                renderer.material.color = m_StandardColor;
+                m_Renderer.material.color = m_StandardColor;
             }
 
             yield return new WaitForSeconds (delay);
@@ -111,11 +116,11 @@ public class Enemy_Script : MonoBehaviour {
             time -= delay;
         }
 
-        renderer.material.color = m_StandardColor;
+        m_Renderer.material.color = m_StandardColor;
         yield return null;
     }
 
     void PopKey () {
-        GameObject keyGO = Object.Instantiate (m_KeyPrefab, this.transform.position, Quaternion.identity) as GameObject;
+        Object.Instantiate (m_KeyPrefab, this.transform.position, Quaternion.identity);
     }
 }

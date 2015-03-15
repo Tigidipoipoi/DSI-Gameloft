@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ChestScript : MonoBehaviour {
-
+    #region Members
     private bool m_ChestOpen;
 
     public GameObject m_ChestLoot;
@@ -15,30 +15,27 @@ public class ChestScript : MonoBehaviour {
 
     private Animation m_Animation;
     AudioSource m_Audio;
+    #endregion
 
-	// Use this for initialization
-	void Start () {
+    void Start() {
         m_ChestOpen = false;
         m_ChestCollider = this.gameObject.GetComponent<Collider>();
         m_Animation = GetComponent<Animation>();
         m_Audio = GetComponent<AudioSource>();
-	}
+    }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag=="Player")
-        {
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
             m_Audio.Play();
             m_ChestOpen = true;
             m_ChestCollider.enabled = false;
             m_Animation.Play();
             m_ObjectParticules.SetActive(true);
-            
-            if(m_ChestLoot!=null)
-            {
-             Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+
+            if (m_ChestLoot != null) {
+                Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
             }
-            
+
             PesosManager.instance.AddPesos(m_EarnPesos);
             Destroy(this);
         }

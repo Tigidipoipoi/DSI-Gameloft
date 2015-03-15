@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 416602}
   - 33: {fileID: 3353160}
-  - 136: {fileID: 13650340}
   - 23: {fileID: 2351262}
   - 54: {fileID: 5415014}
   - 114: {fileID: 11480208}
+  - 135: {fileID: 13563766}
   m_Layer: 11
   m_Name: PiercingBullet
   m_TagString: Untagged
@@ -172,19 +172,18 @@ MonoBehaviour:
   m_EnemyLayer: 0
   m_AllyBulletLayer: 0
   m_GroundLayer: 0
---- !u!136 &13650340
-CapsuleCollider:
+--- !u!135 &13563766
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113294}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: .20220606
+  m_Center: {x: -.00649998337, y: 0, z: .20220606}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

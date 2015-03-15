@@ -49,7 +49,9 @@ public class PlayerMovement : MonoBehaviour {
         // Turret Mode
         else if (Input.GetMouseButton (0)
             && Mathf.Abs (Time.time - m_LastClickDownTime) > m_TimeBeforeTurretMode
-            && !m_PlayerScript.m_IsInTurretMode) {
+            && !m_PlayerScript.m_IsInTurretMode
+            //&& m_PlayerScript.m_EnemyTarget != null
+            ) {
             this.FreezePosition ();
 
             m_PlayerScript.m_IsInTurretMode = true;
