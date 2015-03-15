@@ -25,7 +25,8 @@ public class TimerManager : MonoBehaviour {
 
     public float m_TimeMax;
     public GameObject m_TimeWhite;
-    
+    public float pv_actuel;
+
     #endregion
 
     public void Init () {
@@ -42,6 +43,9 @@ public class TimerManager : MonoBehaviour {
             m_RemainingTime -= Time.deltaTime;
             if (UIManager.instance != null) {
                 UIManager.instance.UpdateRemainingTime (m_RemainingTime);
+
+
+
             }
             yield return null;
         }
@@ -56,4 +60,6 @@ public class TimerManager : MonoBehaviour {
     public void LoseTime (float timeLost) {
         m_RemainingTime -= timeLost;
     }
+
+
 }
