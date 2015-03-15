@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439044}
-  - 65: {fileID: 6552588}
+  - 65: {fileID: 6548654}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -326,7 +326,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112672}
   m_Mesh: {fileID: 4300000, guid: 2caebd3268dcf2245b5d1bbb533d1241, type: 3}
---- !u!65 &6552588
+--- !u!65 &6548654
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -336,8 +336,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .794880807, y: .52688545, z: .563426495}
-  m_Center: {x: .0355181657, y: -.0413126498, z: .39411661}
+  m_Size: {x: .794880807, y: .883244455, z: .563426435}
+  m_Center: {x: .0355163738, y: .136865631, z: .394120425}
 --- !u!82 &8284830
 AudioSource:
   m_ObjectHideFlags: 1

@@ -40,8 +40,7 @@ public class Enemy_Script : MonoBehaviour {
         m_Renderer = this.GetComponent<Renderer> ();
         m_StandardColor = m_Renderer.material.color;
 
-        m_TimeDistributorScript = m_TimeDistributor.GetComponent<TimeDistributor> ();
-        m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
+        
 
     }
 
@@ -73,8 +72,10 @@ public class Enemy_Script : MonoBehaviour {
 
         m_Player.GetComponent<PlayerScript> ().Unlock ();
 
-
-        Instantiate (m_TimeDistributor, this.transform.position, this.transform.rotation);
+       
+        GameObject m_PrefabTimeDistributor = Instantiate (m_TimeDistributor, this.transform.position, this.transform.rotation) as GameObject;
+        m_TimeDistributorScript = m_PrefabTimeDistributor.GetComponent<TimeDistributor>();
+        m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
 
         if (mustPopKey) {
             PopKey ();

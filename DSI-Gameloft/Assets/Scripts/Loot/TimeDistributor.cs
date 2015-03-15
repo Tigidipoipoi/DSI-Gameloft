@@ -23,46 +23,47 @@ public class TimeDistributor : MonoBehaviour {
     // Use this for initialization
 	void Start () 
     {
-
-        m_TimeBlockScript = BigTime.GetComponent<TimeBlockScript>();
-        m_TimeBlockScript.m_GainTime = m_ValeurBigTime;
-
-        m_TimeBlockScript = MedTime.GetComponent<TimeBlockScript>();
-        m_TimeBlockScript.m_GainTime = m_ValeurMedTime;
-
-        m_TimeBlockScript = SmallTime.GetComponent<TimeBlockScript>();
-        m_TimeBlockScript.m_GainTime = m_ValeurSmallTime;
-
-        m_BigTime=0;
-        m_MedTime=0;
-        m_SmallTime=0;
-
-
-        if (m_EarnTime >= (m_ValeurSmallTime*m_ValeurMedTime+(m_ValeurSmallTime*m_ValeurBigTime)+(m_ValeurSmallTime*(m_ValeurBigTime+m_ValeurMedTime))))
+        Debug.Log(m_EarnTime);
+        if (TimerManager.instance.m_RemainingTime > 0)
         {
-            Debug.Log("big");
-            m_BigTime = (int)m_EarnTime / (int)m_ValeurBigTime;
-            m_MedTime = (int)((m_EarnTime % m_ValeurBigTime) / m_ValeurMedTime);
-            m_SmallTime = (int)(((m_EarnTime % m_ValeurBigTime) % m_ValeurMedTime) / m_ValeurSmallTime);
-        }
-        else
-        {
+            m_TimeBlockScript = BigTime.GetComponent<TimeBlockScript>();
+            m_TimeBlockScript.m_GainTime = m_ValeurBigTime;
 
-            if (m_EarnTime>=m_ValeurSmallTime*m_ValeurMedTime)
+            m_TimeBlockScript = MedTime.GetComponent<TimeBlockScript>();
+            m_TimeBlockScript.m_GainTime = m_ValeurMedTime;
+
+            m_TimeBlockScript = SmallTime.GetComponent<TimeBlockScript>();
+            m_TimeBlockScript.m_GainTime = m_ValeurSmallTime;
+
+            m_BigTime=0;
+            m_MedTime=0;
+            m_SmallTime=0;
+
+       
+            if (m_EarnTime >= (m_ValeurSmallTime * m_ValeurMedTime + (m_ValeurSmallTime * m_ValeurBigTime) + (m_ValeurSmallTime * (m_ValeurBigTime + m_ValeurMedTime))))
             {
-                m_MedTime = (int)m_EarnTime / (int)m_ValeurMedTime;
-                m_SmallTime = (int)((((int)m_EarnTime % (int)m_ValeurMedTime)) / m_ValeurSmallTime);
+                m_BigTime = (int)m_EarnTime / (int)m_ValeurBigTime;
+                m_MedTime = (int)((m_EarnTime % m_ValeurBigTime) / m_ValeurMedTime);
+                m_SmallTime = (int)(((m_EarnTime % m_ValeurBigTime) % m_ValeurMedTime) / m_ValeurSmallTime);
             }
             else
             {
-                Debug.Log("small");
-                m_SmallTime = (int)m_EarnTime / (int)m_ValeurSmallTime;
+
+                if (m_EarnTime >= m_ValeurSmallTime * m_ValeurMedTime)
+                {
+                    m_MedTime = (int)m_EarnTime / (int)m_ValeurMedTime;
+                    m_SmallTime = (int)((((int)m_EarnTime % (int)m_ValeurMedTime)) / m_ValeurSmallTime);
+                }
+                else
+                {
+                    m_SmallTime = (int)m_EarnTime / (int)m_ValeurSmallTime;
+                }
             }
+
+            
+
+            StartCoroutine(Distribution());
         }
-
-
-
-        StartCoroutine(Distribution());
 	}
 	
 	IEnumerator Distribution()
