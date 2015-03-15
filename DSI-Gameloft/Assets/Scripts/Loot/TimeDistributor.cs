@@ -23,7 +23,6 @@ public class TimeDistributor : MonoBehaviour {
     // Use this for initialization
 	void Start () 
     {
-        Debug.Log(m_EarnTime);
         if (TimerManager.instance.m_RemainingTime > 0)
         {
             m_TimeBlockScript = BigTime.GetComponent<TimeBlockScript>();
