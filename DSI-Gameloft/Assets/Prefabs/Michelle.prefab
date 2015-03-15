@@ -48,7 +48,7 @@ GameObject:
   - 114: {fileID: 11476230}
   - 114: {fileID: 11468432}
   m_Layer: 0
-  m_Name: Michelle
+  m_Name: MichelleOld
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_TimeBeforeTurretMode: .200000003
   m_MoveSpeed: 7
   m_BreakDistance: .100000001
+  m_CircleTouchScript: {fileID: 0}
 --- !u!136 &13600668
 CapsuleCollider:
   m_ObjectHideFlags: 1

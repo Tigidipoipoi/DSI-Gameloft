@@ -34,7 +34,6 @@ public class FloorManager : MonoBehaviour {
         m_KeyAquired = false;
         Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         Transform startTrans = m_CurrentFloor.transform.Find("Start");
-        Debug.Log(playerTrans.position.ToString() + " | " + startTrans.position.ToString());
         playerTrans.position = startTrans.position;
     }
 
