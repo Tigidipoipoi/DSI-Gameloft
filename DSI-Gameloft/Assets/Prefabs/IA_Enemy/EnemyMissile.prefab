@@ -136,7 +136,7 @@ MonoBehaviour:
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_EnnemyMissile2: {fileID: 174872, guid: 80587eafffa26c047ba8817996eb7779, type: 2}
-  m_EarnedTime: 0
+  m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11499488}
   m_DelayBeforeShoot: 4

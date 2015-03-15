@@ -33,11 +33,18 @@ public class UIManager : MonoBehaviour {
     bool m_ComboChestCompteur;
     public float m_ComboChestTime;
     IEnumerator ComboChestCoroutine;
+
+    private float m_Time;
+    private bool m_TimeBlink;
+    private int m_TimeSizeMin=16;
+    private int m_TimeSizeMax=20;
     #endregion
 
     void Start () {
         m_IGPanel = GameObject.Find ("Canvas").transform.FindChild ("IGPanel");
         m_TimerText = m_IGPanel.FindChild ("RemainingTime").GetComponent<Text> ();
+        m_TimerText.color = Color.white;
+        m_TimerText.fontSize = m_TimeSizeMin;
         m_ComboKill = 0;
         m_ComboChest = 0;
         ComboKillCoroutine = ComboKillTimer();
@@ -45,6 +52,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public void Init () {
+
     }
 
     #region ComboKill
@@ -95,11 +103,44 @@ public class UIManager : MonoBehaviour {
     }
     #endregion
 
-    public void UpdateRemainingTime (float remainingTime) {
+    public void UpdateRemainingTime (float remainingTime, float maxtime, float pourcentagetime) {
         if (m_TimerText == null) {
             return;
         }
 
-        m_TimerText.text = string.Format ("Remaining time: {0}", remainingTime.ToString ("00.0"));
+        m_Time = pourcentagetime;
+
+        if (pourcentagetime < 20 && pourcentagetime > 0 && m_TimeBlink == false)
+        {
+            StartCoroutine(TimeBlink());
+        }
+        else if (m_TimeBlink == false)
+        {
+            m_TimerText.color = Color.white;
+            m_TimerText.fontSize = m_TimeSizeMin;
+        }
+        if (pourcentagetime <= 0)
+        {
+            m_TimerText.color = Color.red;
+            m_TimerText.fontSize = m_TimeSizeMax;
+        }
+        m_TimerText.text = string.Format ("{0}", remainingTime.ToString ("00.0"));
     }
+
+    IEnumerator TimeBlink()
+    {
+        m_TimeBlink = true;
+        while (m_Time < 20 && m_Time > 0)
+        {
+            m_TimerText.color = Color.red;
+            m_TimerText.fontSize = m_TimeSizeMax;
+            yield return new WaitForSeconds(1);
+            m_TimerText.color = Color.white;
+            m_TimerText.fontSize = m_TimeSizeMin;
+            yield return new WaitForSeconds(1);
+        }
+        m_TimeBlink = false;
+    }
+
+
 }
