@@ -24,6 +24,7 @@ public class FloorManager : MonoBehaviour {
     public FloorScript m_CurrentFloor;
     public bool m_KeyPoped;
     public bool m_KeyAquired;
+    public bool m_HasLoadedSeed;
     #endregion
 
     public void Init () {
@@ -57,5 +58,10 @@ public class FloorManager : MonoBehaviour {
 
     public void NewEnemyAppeared () {
         ++m_RemainingEnemiesCount;
+    }
+
+    public void LoadSeed (FloorScript seed) {
+        m_CurrentFloor = seed;
+        m_HasLoadedSeed = true;
     }
 }

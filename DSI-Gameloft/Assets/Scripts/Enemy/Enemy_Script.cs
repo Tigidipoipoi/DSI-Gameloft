@@ -24,13 +24,14 @@ public class Enemy_Script : MonoBehaviour {
 
     public void Awake () {
         m_KeyPrefab = Resources.Load<GameObject> ("Prefabs/Key/Key");
-        FloorManager.instance.NewEnemyAppeared ();
     }
 
     private float m_FreezeDelay;
     protected bool m_IsFreeze;
 
     public virtual void Start () {
+        FloorManager.instance.NewEnemyAppeared ();
+
         m_FreezeDelay = 3;
 
         renderer = this.GetComponent<Renderer> ();

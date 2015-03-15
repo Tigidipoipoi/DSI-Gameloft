@@ -3,6 +3,9 @@ using System.Collections;
 
 public class RoomPartScript : MonoBehaviour {
     #region Members
+    // PlayTest ONLY
+    public int m_RPIndex = -1;
+
     public RoomScript m_ParentRoom;
     public bool m_IsReachable;
     public int m_EnemyCount;
