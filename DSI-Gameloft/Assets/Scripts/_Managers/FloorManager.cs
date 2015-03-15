@@ -10,11 +10,11 @@ public class FloorManager : MonoBehaviour {
         }
     }
 
-    void Awake () {
+    void Awake() {
         if (s_Instance == null)
             s_Instance = this;
-        DontDestroyOnLoad (this);
-        this.Init ();
+        DontDestroyOnLoad(this);
+        //this.Init();
     }
     #endregion
 
@@ -29,12 +29,16 @@ public class FloorManager : MonoBehaviour {
     public Vector2 m_CurrentRoomIndex;
     #endregion
 
-    public void Init () {
+    public void Init() {
         m_KeyPoped = false;
         m_KeyAquired = false;
+        Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        Transform startTrans = m_CurrentFloor.transform.Find("Start");
+        Debug.Log(playerTrans.position.ToString() + " | " + startTrans.position.ToString());
+        playerTrans.position = startTrans.position;
     }
 
-    public bool MustPopKey () {
+    public bool MustPopKey() {
         --m_RemainingEnemiesCount;
         if (m_KeyPoped
             || m_KeyAquired) {
@@ -48,7 +52,7 @@ public class FloorManager : MonoBehaviour {
         else {
             popRate = 100 / m_RemainingEnemiesCount;
         }
-        int rng = Random.Range (0, 99);
+        int rng = Random.Range(0, 99);
 
         bool mustPopKey = popRate > rng;
         if (mustPopKey) {
@@ -58,12 +62,14 @@ public class FloorManager : MonoBehaviour {
         return mustPopKey;
     }
 
-    public void NewEnemyAppeared () {
+    public void NewEnemyAppeared() {
         ++m_RemainingEnemiesCount;
     }
 
-    public void LoadSeed (FloorScript seed) {
+    public void LoadSeed(FloorScript seed) {
         m_CurrentFloor = seed;
         m_HasLoadedSeed = true;
+
+        this.Init();
     }
 }

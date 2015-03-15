@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public float m_TimeBeforeTurretMode = 0.1f;
     public float m_MoveSpeed = 10.0f;
     public float m_BreakDistance = 0.1f;
+    public GameObject m_MoveFeedBackPrefab;
 
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
@@ -65,7 +66,10 @@ public class PlayerMovement : MonoBehaviour {
                 #endregion
 
                 m_TargetPosition = targetPos;
-                // FeedBack
+
+                #region FeedBack
+
+                #endregion
 
                 m_MoveToTarget = this.MoveToTarget();
                 this.StartCoroutine(m_MoveToTarget);
