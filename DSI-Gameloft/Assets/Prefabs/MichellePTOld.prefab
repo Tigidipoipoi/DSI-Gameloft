@@ -195,7 +195,7 @@ GameObject:
   - 114: {fileID: 11493388}
   - 114: {fileID: 11450502}
   m_Layer: 0
-  m_Name: MichellePT
+  m_Name: MichellePTOld
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1751,6 +1751,10 @@ MonoBehaviour:
   m_BulletSpawn: {fileID: 476984}
   m_Holder: {fileID: 125618}
   m_Type: 1
+  m_AudioGun: {fileID: 0}
+  m_AudioGatline: {fileID: 0}
+  m_AudioShotgun: {fileID: 0}
+  m_AudioTurrel: {fileID: 0}
 --- !u!114 &11493388
 MonoBehaviour:
   m_ObjectHideFlags: 1

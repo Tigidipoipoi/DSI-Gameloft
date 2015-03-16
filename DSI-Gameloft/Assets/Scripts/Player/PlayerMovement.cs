@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody m_Rigidbody;
     IEnumerator m_MoveToTarget;
     PlayerScript m_PlayerScript;
-
     #endregion
 
     void Start() {
@@ -122,7 +121,11 @@ public class PlayerMovement : MonoBehaviour {
             if (m_PlayerScript.m_EnemyTarget == null) {
                 Vector3 lookAtTarget = m_TargetPosition;
                 lookAtTarget.y = m_PlayerScript.c_PlayerPosYClamp;
-                this.transform.LookAt(lookAtTarget);
+                m_PlayerScript.m_DownBodyTrans.LookAt(lookAtTarget);
+
+                if (m_PlayerScript.m_EnemyTarget == null) {
+                    m_PlayerScript.m_UpBodyTrans.LookAt(lookAtTarget);
+                }
             }
 
             m_Rigidbody.velocity = (targetPos - currentPos).normalized * m_MoveSpeed;

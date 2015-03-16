@@ -61,7 +61,7 @@ public class WeaponScript : MonoBehaviour {
             case WEAPON_TYPE.GUN:
                 if(m_PlayerScript.m_IsInTurretMode)
                 {
-                    m_AudioSource.clip = m_AudioGun;
+                    //m_AudioSource.clip = m_AudioGun;
                 }
                 else
                 {

@@ -171,13 +171,13 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _node_192
-        second: {r: .867647111, g: .867647111, b: .867647111, a: 1}
-      data:
-        first:
           name: _node_781
         second: {r: .417063087, g: .769062519, b: .977941215, a: 1}
       data:
         first:
           name: _glace
         second: {r: 0, g: .568658412, b: .720588207, a: 1}
+      data:
+        first:
+          name: _node_192
+        second: {r: .867647111, g: .867647111, b: .867647111, a: 1}

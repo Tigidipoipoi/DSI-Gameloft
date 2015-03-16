@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.10000002, y: 1.65999997, z: .962000012}
+  m_LocalPosition: {x: 0, y: 2.66000009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 468496}
@@ -81,8 +81,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40, y: 1.25, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: -.300000012, z: .277142882}
+  m_LocalScale: {x: .571428597, y: .571428597, z: .571428597}
   m_Children:
   - {fileID: 438964}
   - {fileID: 465628}
@@ -153,6 +153,10 @@ MonoBehaviour:
   m_BulletSpawn: {fileID: 438964}
   m_Holder: {fileID: 0}
   m_Type: 3
+  m_AudioGun: {fileID: 0}
+  m_AudioGatline: {fileID: 0}
+  m_AudioShotgun: {fileID: 0}
+  m_AudioTurrel: {fileID: 0}
   m_PierceBulletPrefab: {fileID: 113294, guid: ca929911b9adafa4abaf7cb7bc8a2412, type: 2}
   m_HoldPower: .00999999978
   m_FireRate2: 1
@@ -167,7 +171,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .600000024
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

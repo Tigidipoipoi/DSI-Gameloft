@@ -12,33 +12,21 @@ public class PlayerScript : MonoBehaviour {
     [HideInInspector]
     public Transform m_EnemyTarget;
 
-    Transform[] m_WeaponsSlot;
-
     public WeaponScript[] m_Weapons;
-    [HideInInspector]
+    public Transform m_GunTrans;
+    public Transform m_GatlingTrans;
+    public Transform m_ShotgunTrans;
     public Renderer m_GatlingRenderer;
     IEnumerator[] m_WeaponCoroutines;
+
+    public Transform m_UpBodyTrans;
+    public Transform m_DownBodyTrans;
     #endregion
 
     void Start() {
-        m_GatlingRenderer = this.transform.FindChild("M_AV_gatling").GetComponent<Renderer>();
-
         c_PlayerPosYClamp = this.transform.position.y;
 
         m_WeaponCoroutines = new IEnumerator[m_Weapons.Length];
-
-        Transform weaponsTrans = this.transform.FindChild("Weapons");
-        int slotCount = weaponsTrans.childCount;
-        m_WeaponsSlot = new Transform[slotCount];
-        for (int i = 0; i < slotCount; ++i) {
-            m_WeaponsSlot[i] = weaponsTrans.GetChild(i);
-        }
-
-        int weaponCount = m_Weapons.Length;
-        if (m_Weapons == null
-            || weaponCount > slotCount) {
-            m_Weapons = new WeaponScript[slotCount];
-        }
 
         this.UpdateWeaponsCoroutines();
     }
@@ -48,7 +36,8 @@ public class PlayerScript : MonoBehaviour {
         if (m_EnemyTarget != null) {
             Vector3 lookAtTarget = m_EnemyTarget.position;
             lookAtTarget.y = c_PlayerPosYClamp;
-            this.transform.LookAt(lookAtTarget);
+            m_DownBodyTrans.LookAt(lookAtTarget);
+            m_UpBodyTrans.LookAt(lookAtTarget);
         }
 
         // Turret mode
@@ -67,7 +56,7 @@ public class PlayerScript : MonoBehaviour {
 
         Vector3 lookAtTarget = m_EnemyTarget.position;
         lookAtTarget.y = c_PlayerPosYClamp;
-        this.transform.LookAt(lookAtTarget);
+        m_UpBodyTrans.LookAt(lookAtTarget);
 
         int weaponCount = m_Weapons.Length;
         for (int i = 0; i < weaponCount; ++i) {
@@ -136,16 +125,17 @@ public class PlayerScript : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(ray, out hit, Mathf.Infinity);
-        Vector3 lookTarget = hit.point;
-        lookTarget.y = c_PlayerPosYClamp;
+        Vector3 lookAtTarget = hit.point;
+        lookAtTarget.y = c_PlayerPosYClamp;
 
-        this.transform.LookAt(lookTarget);
+        m_DownBodyTrans.LookAt(lookAtTarget);
+        m_UpBodyTrans.LookAt(lookAtTarget);
     }
 
     public void LootWeapon(WeaponScript lootWeapon) {
         WeaponScript sameWeaponType = null;
 
-        int slotCount = m_WeaponsSlot.Length;
+        int slotCount = m_Weapons.Length;
         for (int i = 0; i < slotCount; ++i) {
             if (m_Weapons[i] == null) {
                 continue;
@@ -161,16 +151,29 @@ public class PlayerScript : MonoBehaviour {
             return;
         }
 
-        for (int i = 0; i < slotCount; ++i) {
-            if (m_WeaponsSlot[i].childCount == 0) {
-                lootWeapon.transform.position = m_WeaponsSlot[i].position;
-                lootWeapon.transform.rotation = m_WeaponsSlot[i].rotation;
-                lootWeapon.transform.parent = m_WeaponsSlot[i];
-                m_Weapons[i] = lootWeapon;
+        switch (lootWeapon.m_Type) {
+            case WeaponScript.WEAPON_TYPE.GATLING:
+                lootWeapon.transform.position = m_GatlingTrans.position;
+                lootWeapon.transform.rotation = m_GatlingTrans.rotation;
+                lootWeapon.transform.parent = m_GatlingTrans;
+                break;
+            case WeaponScript.WEAPON_TYPE.SHOT_GUN:
+                lootWeapon.transform.position = m_ShotgunTrans.position;
+                lootWeapon.transform.rotation = m_ShotgunTrans.rotation;
+                lootWeapon.transform.parent = m_GatlingTrans;
+                m_GatlingRenderer.enabled = true;
+                Debug.Log("arg");
+                break;
+            case WeaponScript.WEAPON_TYPE.GUN:
+                lootWeapon.transform.position = m_GunTrans.position;
+                lootWeapon.transform.rotation = m_GunTrans.rotation;
+                lootWeapon.transform.parent = m_GatlingTrans;
+                break;
+        }
 
-                if (lootWeapon.m_Type == WeaponScript.WEAPON_TYPE.GATLING) {
-                    m_GatlingRenderer.enabled = true;
-                }
+        for (int i = 0; i < slotCount; ++i) {
+            if (m_Weapons[i] == null) {
+                m_Weapons[i] = lootWeapon;
 
                 this.UpdateWeaponsCoroutines();
                 return;
