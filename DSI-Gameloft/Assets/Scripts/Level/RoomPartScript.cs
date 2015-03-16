@@ -16,8 +16,8 @@ public class RoomPartScript : MonoBehaviour {
 
     GameObject m_ChildContent;
 
-    public const float c_PartWidth = 40.0f;
-    public const float c_PartHeight = 25.0f;
+    public const float c_PartWidth = 80.0f;
+    public const float c_PartHeight = 50.0f;
 
     GameObject m_WallCollider;
     #endregion

@@ -862,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 193316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.2870178, y: -.634417772, z: 23.2096424}
-  m_LocalScale: {x: 40, y: 2.5, z: 25}
+  m_LocalScale: {x: 80, y: 2.5, z: 50}
   m_Children:
   - {fileID: 474796}
   - {fileID: 414086}
@@ -2669,6 +2669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11404764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2693,6 +2694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11409176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2717,6 +2719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11409614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2729,6 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11412726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2753,6 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11415768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2765,6 +2770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11419088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2777,6 +2783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11420560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2813,6 +2820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11421940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2825,6 +2833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11422978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2837,6 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11423014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2861,6 +2871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11430204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2873,6 +2884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11431876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2885,6 +2897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11433736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2945,6 +2958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11437906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2969,6 +2983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11439130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2981,6 +2996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11443958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2993,6 +3009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11445182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3005,6 +3022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11446822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3017,6 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11447084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3053,6 +3072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11451570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3089,6 +3109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11457966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3173,6 +3194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11469502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3197,6 +3219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11477178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3209,6 +3232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11479430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3245,6 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11481654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3317,6 +3342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11488214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3353,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11492900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3377,6 +3404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11493184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3389,6 +3417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11494466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3401,6 +3430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11495676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3413,6 +3443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11495852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3425,6 +3456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11497838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3437,6 +3469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11498656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3473,6 +3506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
