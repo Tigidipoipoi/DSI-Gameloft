@@ -145,17 +145,22 @@ public class UIManager : MonoBehaviour {
         m_Time = pourcentagetime;
 
         if (pourcentagetime < 20 && pourcentagetime > 0 && m_TimeBlink == false) {
-           
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
            
             StartCoroutine(TimeBlink());
         }
         else if (m_TimeBlink == false) {
             m_TimerText.color = Color.white;
             m_TimerText.fontSize = m_TimeSizeMin;
+            
         }
         if (pourcentagetime <= 0) {
             m_TimerText.color = Color.red;
             m_TimerText.fontSize = m_TimeSizeMax;
+           
         }
         m_TimerText.text = string.Format("{0}", remainingTime.ToString("00.0"));
     }
@@ -213,17 +218,23 @@ public class UIManager : MonoBehaviour {
 
     IEnumerator TimeBlink() {
         m_TimeBlink = true;
-        if (!m_AudioSource.isPlaying)
-        {
-            m_AudioSource.Play();
-        }
+       
         while (m_Time < 20 && m_Time > 0) {
+            Debug.Log(m_Time);
             m_TimerText.color = Color.red;
             m_TimerText.fontSize = m_TimeSizeMax;
             yield return new WaitForSeconds(1);
             m_TimerText.color = Color.white;
             m_TimerText.fontSize = m_TimeSizeMin;
             yield return new WaitForSeconds(1);
+            if(m_Time<1)
+            {
+                m_Time = 0;
+            }
+        }
+        if (m_AudioSource.isPlaying)
+        {
+            m_AudioSource.Stop();
         }
         m_TimeBlink = false;
     }

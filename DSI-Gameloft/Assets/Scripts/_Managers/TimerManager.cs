@@ -30,6 +30,8 @@ public class TimerManager : MonoBehaviour {
 
     private SpriteRenderer m_Sprite;
 
+    AudioSource m_AudioSource;
+
     #endregion
 
     public void Init () {
@@ -38,6 +40,7 @@ public class TimerManager : MonoBehaviour {
         this.StartCoroutine (m_TimeIsRunningOut);
         m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
         m_Sprite = m_TimeWhite.GetComponent<SpriteRenderer>();
+        m_AudioSource=GetComponent<AudioSource>();
     }
 
     IEnumerator TimeIsRunningOut () {
@@ -62,7 +65,8 @@ public class TimerManager : MonoBehaviour {
             yield return null;
         }
 
-        // Run Over
+        //DEATH
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 
     IEnumerator BlinkBar()
