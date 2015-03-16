@@ -30,6 +30,7 @@ public class WeaponScript : MonoBehaviour {
     #endregion
 
     protected virtual void Start() {
+		m_AudioSource = GetComponent<AudioSource>();
         m_BulletLayer = LayerMask.NameToLayer(m_WeaponStats.m_IsAlly
             ? "AllyBullet"
             : "EnemyBullet");
@@ -62,40 +63,42 @@ public class WeaponScript : MonoBehaviour {
                 if(m_PlayerScript.m_IsInTurretMode)
                 {
                     m_AudioSource.clip = m_AudioGun;
+					
                 }
                 else
                 {
-
+					m_AudioSource.clip = m_AudioGun;
                 }
                 break;
 
             case WEAPON_TYPE.GATLING:
                 if (m_PlayerScript.m_IsInTurretMode)
                 {
-
+					m_AudioSource.clip = m_AudioGatline;
                 }
                 else
                 {
-
+					m_AudioSource.clip = m_AudioGatline;
                 }
                 break;
 
             case WEAPON_TYPE.SHOT_GUN:
                 if (m_PlayerScript.m_IsInTurretMode)
                 {
-
+					m_AudioSource.clip = m_AudioShotgun;
                 }
                 else
                 {
-
+					m_AudioSource.clip = m_AudioShotgun;
                 }
                 break;
 
-
-
         }
-        
-
+		if(m_AudioSource.clip!=null)
+		{
+			m_AudioSource.Play();
+		}
+		
 
 
 

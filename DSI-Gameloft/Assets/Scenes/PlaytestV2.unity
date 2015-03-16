@@ -1920,14 +1920,6 @@ Prefab:
       propertyPath: m_CircleTouchScript
       value: 
       objectReference: {fileID: 1212932842}
-    - target: {fileID: 2340422, guid: c9b5c4c39b65bf441ab75e54c53187fd, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11450502, guid: c9b5c4c39b65bf441ab75e54c53187fd, type: 2}
-      propertyPath: m_BreakDistance
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9b5c4c39b65bf441ab75e54c53187fd, type: 2}
   m_IsPrefabParent: 0
