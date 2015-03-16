@@ -94,7 +94,6 @@ public class FloorManager : MonoBehaviour {
         RoomScript[] roomScripts = m_CurrentFloor.m_Rooms.Select(x => x.GetComponent<RoomScript>()).ToArray();
         GameObject roomToLoadGO = roomScripts.FirstOrDefault(x => x.m_FloorIndex == roomIndex).gameObject;
 
-        Debug.Log(roomIndex);
         roomToLoadGO.SetActive(true);
     }
 
@@ -102,7 +101,6 @@ public class FloorManager : MonoBehaviour {
         RoomScript[] roomScripts = m_CurrentFloor.m_Rooms.Select(x => x.GetComponent<RoomScript>()).ToArray();
         GameObject roomToLoadGO = roomScripts.FirstOrDefault(x => x.m_FloorIndex == roomIndex).gameObject;
 
-        Debug.Log(roomIndex);
         roomToLoadGO.SetActive(false);
     }
 }
