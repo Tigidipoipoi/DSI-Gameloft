@@ -9,7 +9,8 @@ public class FloorScript : MonoBehaviour {
     public bool m_IsSeed;
 
     // Room parts
-    GameObject[] m_Rooms;
+    [HideInInspector]
+    public GameObject[] m_Rooms;
     GameObject[] m_RoomPrefabs;
     Transform m_RoomsContainer;
     public int m_RoomCount;
@@ -36,10 +37,6 @@ public class FloorScript : MonoBehaviour {
     }
 
     void Start () {
-        if (m_IsSeed) {
-            FloorManager.instance.LoadSeed (this);
-        }
-
         List<GameObject> childGOList = new List<GameObject> ();
 
         // Rooms
@@ -63,6 +60,10 @@ public class FloorScript : MonoBehaviour {
         m_Doors = childDSList.ToArray ();
 
         this.GenerateDoors ();
+
+        if (m_IsSeed) {
+            FloorManager.instance.LoadSeed(this);
+        }
     }
 
     void GenerateDoors () {

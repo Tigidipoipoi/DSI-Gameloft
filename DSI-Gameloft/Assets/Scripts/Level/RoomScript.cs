@@ -42,6 +42,7 @@ public class RoomScript : MonoBehaviour {
 
     // Floor
     public Vector2 m_FloorIndex;
+    public bool m_IsStartRoom;
     #endregion
 
     void Awake() {

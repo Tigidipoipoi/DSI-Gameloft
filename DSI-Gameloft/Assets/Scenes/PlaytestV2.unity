@@ -868,6 +868,34 @@ Prefab:
       propertyPath: m_Height
       value: 6.88000011
       objectReference: {fileID: 0}
+    - target: {fileID: 171114, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195178, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441934, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_IsStartRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441934, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_FloorIndex.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441576, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_Room1Index.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11441576, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_Room2Index.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458152, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
+      propertyPath: m_Room2Index.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 13503162, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
     - {fileID: 13569618, guid: b653aa17456861f4fb9d8e58e760dbfd, type: 2}
