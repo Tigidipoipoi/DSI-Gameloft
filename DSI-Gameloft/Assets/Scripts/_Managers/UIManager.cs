@@ -59,6 +59,12 @@ public class UIManager : MonoBehaviour {
         m_TimerText = m_IGPanel.FindChild("RemainingTime").GetComponent<Text>();
         m_TimerText.color = Color.white;
         m_TimerText.fontSize = m_TimeSizeMin;
+
+        m_IGPanel = GameObject.Find("Canvas").transform.FindChild("PesosPanel");
+        m_PesosText = m_IGPanel.FindChild("Pesos").GetComponent<Text>();
+        m_PesosText.color = Color.white;
+        m_PesosText.fontSize = m_TimeSizeMin;
+        m_PesosText.text = string.Format("{0}", "0");
         m_ComboKill = 0;
         m_ComboChest = 0;
         ComboKillCoroutine = ComboKillTimer();
@@ -92,7 +98,6 @@ public class UIManager : MonoBehaviour {
     #region ComboChest
     public void AddComboChest() {
         m_ComboChest++;
-        Debug.Log(m_ComboChest.ToString());
         if (m_ComboChest >= 2) {
 
 
@@ -148,16 +153,55 @@ public class UIManager : MonoBehaviour {
         m_TimerText.text = string.Format("{0}", remainingTime.ToString("00.0"));
     }
 
-    public void UpdatePesos(float pesos)
+    public void UpdatePesos(int new_pesos, int pesos)
     {
         if (m_PesosText == null)
         {
             return;
         }
 
+        StartCoroutine(AddPesos(new_pesos, pesos));
+
+       
+    }
+
+    IEnumerator AddPesos(int new_pesos, int pesos)
+    {
+        int TotalPesos=pesos;
+        
+        if (m_ComboKill>0)
+        {
+            new_pesos = (TotalPesos) * m_ComboChest;
+        }
+        else
+        {
+            new_pesos = TotalPesos;
+        }
+
+        for(int i=0; i<new_pesos;i++)
+        {
+            TotalPesos++;
+
+            if (TotalPesos % 2 == 1)
+            {
+                m_PesosText.color = Color.yellow;
+                m_PesosText.fontSize = 20;
+            }
+            else
+            {
+                m_PesosText.color = Color.white;
+                m_PesosText.fontSize = 16;
+            }
+            
+            m_PesosText.text = string.Format("{0}", TotalPesos.ToString("0"));
+            yield return new WaitForSeconds(0.2f);
+        }
+
         m_PesosText.color = Color.white;
         m_PesosText.fontSize = m_TimeSizeMin;
-        m_PesosText.text = string.Format("{0}", pesos.ToString("0"));
+        PesosManager.instance.m_Pesos = TotalPesos;
+        m_PesosText.text = string.Format("{0}", PesosManager.instance.m_Pesos.ToString("0"));
+        
     }
 
     IEnumerator TimeBlink() {
