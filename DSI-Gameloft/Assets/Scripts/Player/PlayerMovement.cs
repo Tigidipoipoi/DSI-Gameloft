@@ -3,10 +3,13 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
     #region Members
-    public float m_TimeBeforeTurretMode = 0.1f;
-    public float m_MoveSpeed = 10.0f;
+    public float m_TimeBeforeTurretMode = 0.2f;
+    public float m_MoveSpeed = 7.0f;
     public float m_BreakDistance = 0.1f;
     public CircleTouchScript m_CircleTouchScript;
+    public Animator m_UpAnimator;
+    public Animator m_DownAnimator;
+    public Animator m_GunAnimator;
 
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
@@ -101,6 +104,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     IEnumerator MoveToTarget() {
+        m_DownAnimator.SetBool("IsWalking", true);
+        m_UpAnimator.SetBool("IsWalking", true);
+        m_GunAnimator.SetBool("IsWalking", true);
         while (Vector3.Distance(this.transform.position, m_TargetPosition) > m_BreakDistance) {
             if (m_PlayerScript.m_EnemyTarget == null) {
                 Vector3 lookAtTarget = m_TargetPosition;
@@ -113,5 +119,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         m_Rigidbody.velocity = Vector3.zero;
+        m_DownAnimator.SetBool("IsWalking", false);
+        m_UpAnimator.SetBool("IsWalking", false);
+        m_GunAnimator.SetBool("IsWalking", false);
     }
 }

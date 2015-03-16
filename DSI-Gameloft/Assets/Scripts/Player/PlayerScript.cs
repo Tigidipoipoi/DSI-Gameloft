@@ -15,10 +15,14 @@ public class PlayerScript : MonoBehaviour {
     Transform[] m_WeaponsSlot;
 
     public WeaponScript[] m_Weapons;
+    [HideInInspector]
+    public Renderer m_GatlingRenderer;
     IEnumerator[] m_WeaponCoroutines;
     #endregion
 
     void Start() {
+        m_GatlingRenderer = this.transform.FindChild("M_AV_gatling").GetComponent<Renderer>();
+
         c_PlayerPosYClamp = this.transform.position.y;
 
         m_WeaponCoroutines = new IEnumerator[m_Weapons.Length];
@@ -163,6 +167,10 @@ public class PlayerScript : MonoBehaviour {
                 lootWeapon.transform.rotation = m_WeaponsSlot[i].rotation;
                 lootWeapon.transform.parent = m_WeaponsSlot[i];
                 m_Weapons[i] = lootWeapon;
+
+                if (lootWeapon.m_Type == WeaponScript.WEAPON_TYPE.GATLING) {
+                    m_GatlingRenderer.enabled = true;
+                }
 
                 this.UpdateWeaponsCoroutines();
                 return;

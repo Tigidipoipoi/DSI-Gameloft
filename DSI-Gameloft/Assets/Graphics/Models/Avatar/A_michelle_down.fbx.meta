@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: b3854c588d74df84aaadb266f475c816
+timeCreated: 1426419153
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cuisse_D
+    100004: Cuisse_G
+    100006: holster
+    100008: Main
+    100010: Pied_D
+    100012: Pied_G
+    100014: Robe
+    100016: SKe__Michelle_Down
+    100018: Sphere001.003
+    400000: //RootNode
+    400002: Cuisse_D
+    400004: Cuisse_G
+    400006: holster
+    400008: Main
+    400010: Pied_D
+    400012: Pied_G
+    400014: Robe
+    400016: SKe__Michelle_Down
+    400018: Sphere001.003
+    4300000: Sphere001.003
+    7400000: SKe__Michelle_Down|Cylinder011|Take 001|BaseLayer
+    7400002: SKe__Michelle_Down|Cylinder011|Take 001|BaseLayer.001
+    7400004: SKe__Michelle_Down|down_course
+    7400006: SKe__Michelle_Down|down_idle
+    7400008: Sphere001.003|Cylinder011|Take 001|BaseLayer
+    7400010: Sphere001.003|Cylinder011|Take 001|BaseLayer.001
+    9500000: //RootNode
+    13700000: Sphere001.003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SKe__Michelle_Down|down_course
+      takeName: SKe__Michelle_Down|down_course
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKe__Michelle_Down
+        weight: 1
+      - path: SKe__Michelle_Down/Main
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_D
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_D/Pied_D
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_G
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_G/Pied_G
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Robe
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Robe/holster
+        weight: 1
+      - path: Sphere001.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKe__Michelle_Down|down_idle
+      takeName: SKe__Michelle_Down|down_idle
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKe__Michelle_Down
+        weight: 1
+      - path: SKe__Michelle_Down/Main
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_D
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_D/Pied_D
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_G
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Cuisse_G/Pied_G
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Robe
+        weight: 1
+      - path: SKe__Michelle_Down/Main/Robe/holster
+        weight: 1
+      - path: Sphere001.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
