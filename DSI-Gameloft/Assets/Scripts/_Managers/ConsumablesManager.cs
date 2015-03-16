@@ -2,19 +2,15 @@
 using System.Collections;
 
 public class ConsumablesManager : MonoBehaviour {
-    
     #region Singleton
     static private ConsumablesManager s_Instance;
-    static public ConsumablesManager instance
-    {
-        get
-        {
+    static public ConsumablesManager instance {
+        get {
             return s_Instance;
         }
     }
 
-    void Awake()
-    {
+    void Awake() {
         if (s_Instance == null)
             s_Instance = this;
         DontDestroyOnLoad(this);
@@ -25,40 +21,29 @@ public class ConsumablesManager : MonoBehaviour {
     public bool m_FreezeEnemy;
     public bool m_KillAllEnemy;
 
-    public Collider m_Collider;
-
-    void Init()
-    {
-        m_FreezeEnemy=false;
+    void Init() {
+        m_FreezeEnemy = false;
         m_KillAllEnemy = false;
     }
 
-    public IEnumerator LetsFreeze()
-    {
+    public IEnumerator LetsFreeze() {
         m_FreezeEnemy = true;
 
-        m_Collider.enabled = true;
         yield return null;
         yield return null;
-        m_Collider.enabled = false;
         m_FreezeEnemy = false;
     }
 
-    public IEnumerator LetsKill()
-    {
+    public IEnumerator LetsKill() {
         m_KillAllEnemy = true;
 
-        m_Collider.enabled = true;
         yield return null;
         yield return null;
-        m_Collider.enabled = false;
         m_KillAllEnemy = false;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             StartCoroutine(LetsKill());
         }
     }
