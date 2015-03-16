@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Life: 10
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_Renderer: {fileID: 2355820}
+  m_Material: {fileID: 2100000, guid: 91683b68b4460e840900e55a84bcf79f, type: 2}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
@@ -132,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 2355820}
 --- !u!135 &13568576
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11486218}
   - 114: {fileID: 11453786}
   - 114: {fileID: 11487676}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyMissile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Life: 5
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_Renderer: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}

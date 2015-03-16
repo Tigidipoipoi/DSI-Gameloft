@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11430552}
   - 114: {fileID: 11423936}
   - 114: {fileID: 11437878}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11430552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +136,9 @@ MonoBehaviour:
   m_Life: 5
   m_IsAwake: 0
   m_Player: {fileID: 0}
-  m_EnnemyMissile2: {fileID: 174872, guid: 80587eafffa26c047ba8817996eb7779, type: 2}
+  m_Renderer: {fileID: 2348538}
+  m_Material: {fileID: 2100000, guid: b2dfed7dd26814541af059ccdadfa548, type: 2}
+  m_EnnemyMissile2: {fileID: 122746, guid: 2e4bb6d42f5925843a243e609d92df43, type: 2}
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11437878}

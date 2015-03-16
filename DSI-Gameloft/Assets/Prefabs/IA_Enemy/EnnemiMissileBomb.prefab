@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11400668}
   - 135: {fileID: 13578224}
   - 54: {fileID: 5448558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnnemiMissileBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489874}
   - 96: {fileID: 9687914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

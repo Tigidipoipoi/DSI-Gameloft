@@ -6,13 +6,16 @@ public class Enemy_Script : MonoBehaviour {
     // Playtest Only !
     public int m_DropTheKey = -1;
 
+    float c_EnemyYPosClamp;
+
     public float m_Life;
 
     public bool m_IsAwake;
 
     public Transform m_Player;
 
-    Renderer m_Renderer;
+    public Renderer m_Renderer;
+    public Material m_Material;
 
     public GameObject m_EnnemyMissile2;
 
@@ -20,22 +23,27 @@ public class Enemy_Script : MonoBehaviour {
     public GameObject m_TimeDistributor;
     private TimeDistributor m_TimeDistributorScript;
     private GameObject m_KeyPrefab;
+
+    float m_FreezeDelay;
+    protected bool m_IsFreeze;
     #endregion
 
     public void Awake() {
         m_KeyPrefab = Resources.Load<GameObject>("Prefabs/Key/Key");
     }
 
-    float m_FreezeDelay;
-    protected bool m_IsFreeze;
-
     public virtual void Start() {
-        m_Player =  GameObject.FindGameObjectWithTag("Player").transform;
+        c_EnemyYPosClamp = this.transform.position.y;
+
+        m_Player = GameObject.FindGameObjectWithTag("Player").transform;
         FloorManager.instance.NewEnemyAppeared();
 
         m_FreezeDelay = 3.0f;
 
-        m_Renderer = this.GetComponent<Renderer>();
+        if (m_Renderer == null) {
+            m_Renderer = this.GetComponent<Renderer>();
+        }
+        m_Material = m_Renderer.material;
     }
 
     public void GetDamage(float m_Damage) {
@@ -51,8 +59,6 @@ public class Enemy_Script : MonoBehaviour {
         yield return new WaitForSeconds(m_FreezeDelay);
         m_IsFreeze = false;
     }
-
-
 
     public void DestroyEnemy() {
         bool mustPopKey = m_DropTheKey > -1
@@ -84,7 +90,6 @@ public class Enemy_Script : MonoBehaviour {
     }
 
     public virtual void Update() {
-
         if (m_Renderer.IsVisibleFrom(Camera.main)) {
             m_IsAwake = true;
             m_Player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -93,30 +98,31 @@ public class Enemy_Script : MonoBehaviour {
             m_IsAwake = false;
         }
 
-        transform.LookAt(m_Player, Vector3.up);
+        Vector3 playerPos = m_Player.transform.position;
+        playerPos.y = c_EnemyYPosClamp;
+        transform.LookAt(playerPos, Vector3.up);
 
 
 
     }
 
     public IEnumerator blink(float time = 0.5f) {
-        float delay = 0.15f;
+        //float delay = 0.15f;
 
-        while (time > 0) {
+        //while (time > 0) {
+        //    if (m_Material.GetFloat("Dommages") == 0.0f) {
+        //        m_Material.SetFloat("Dommages", 1.0f);
+        //    }
+        //    else {
+        //        m_Material.SetFloat("Dommages", 0.0f);
+        //    }
 
-            if (m_Renderer.material.GetFloat("Dommages")==0) {
-                m_Renderer.material.SetFloat("Dommages", 1);
-            }
-            else {
-                m_Renderer.material.SetFloat("Dommages", 0);
-            }
+        //    yield return new WaitForSeconds(delay);
 
-            yield return new WaitForSeconds(delay);
+        //    time -= delay;
+        //}
 
-            time -= delay;
-        }
-
-        m_Renderer.material.SetFloat("Dommages", 0);
+        //m_Material.SetFloat("Dommages", 0.0f);
         yield return null;
     }
 
