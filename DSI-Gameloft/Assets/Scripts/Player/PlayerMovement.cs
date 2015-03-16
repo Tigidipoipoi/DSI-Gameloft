@@ -118,7 +118,6 @@ public class PlayerMovement : MonoBehaviour {
             if (m_PlayerScript.m_EnemyTarget == null) {
                 Vector3 lookAtTarget = m_TargetPosition;
                 lookAtTarget.y = m_PlayerScript.c_PlayerPosYClamp;
-                Debug.Log(lookAtTarget.ToString());
                 this.transform.LookAt(lookAtTarget);
             }
 

@@ -35,7 +35,7 @@ public class Enemy_Script : MonoBehaviour {
     public virtual void Start() {
         c_EnemyYPosClamp = this.transform.position.y;
 
-        m_Player = GameObject.FindGameObjectWithTag("Player").transform;
+        //m_Player = GameObject.FindGameObjectWithTag("Player").transform;
         FloorManager.instance.NewEnemyAppeared();
 
         m_FreezeDelay = 6.5f;
@@ -98,12 +98,11 @@ public class Enemy_Script : MonoBehaviour {
             m_IsAwake = false;
         }
 
-        Vector3 playerPos = m_Player.transform.position;
-        playerPos.y = c_EnemyYPosClamp;
-        transform.LookAt(playerPos, Vector3.up);
-
-
-
+        if (m_Player != null) {
+            Vector3 playerPos = m_Player.transform.position;
+            playerPos.y = c_EnemyYPosClamp;
+            transform.LookAt(playerPos, Vector3.up);
+        }
     }
 
     public IEnumerator blink(float time = 0.5f) {
