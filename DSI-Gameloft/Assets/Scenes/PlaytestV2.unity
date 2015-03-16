@@ -2136,6 +2136,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .998889863
       objectReference: {fileID: 0}
+    - target: {fileID: 11425592, guid: fcbc03025dc88c947bce6ed1b6afd369, type: 2}
+      propertyPath: m_FreezeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b0a4b138e33f52841acb4484850b514d, type: 3}
+    - target: {fileID: 11433292, guid: fcbc03025dc88c947bce6ed1b6afd369, type: 2}
+      propertyPath: m_FreezeClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b0a4b138e33f52841acb4484850b514d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcbc03025dc88c947bce6ed1b6afd369, type: 2}
   m_IsPrefabParent: 0
