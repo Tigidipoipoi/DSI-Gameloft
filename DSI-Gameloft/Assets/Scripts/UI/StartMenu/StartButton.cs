@@ -13,6 +13,16 @@ public class StartButton : MonoBehaviour {
         Application.LoadLevel ("PlayTestV2");
     }
 
+    IEnumerator DisplayLoadingScreen() {
+        // SetActive Loading Screen
+
+
+
+        yield return null;
+    }
+
+
+
     public void Exit () {
         Application.Quit ();
     }
