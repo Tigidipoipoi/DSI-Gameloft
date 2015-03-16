@@ -29,11 +29,23 @@ public class UIManager : MonoBehaviour {
     public float m_ComboKillTime;
     IEnumerator ComboKillCoroutine;
 
+        //Animation
+            //Général
+            public bool m_IsNewComboChest;
+
+            public AnimationComboChest m_AnimationComboChest;
+            public AnimationComboChestLetters m_AnimationComboChestLetters;
+            public AnimationNumbers m_AnimationNumbers;
+            public AnimationCrane m_AnimationCrane;
+            public AnimationCroix m_AnimationCroix;
+
+    //Combo Chest
     public int m_ComboChest;
     bool m_ComboChestCompteur;
     public float m_ComboChestTime;
     IEnumerator ComboChestCoroutine;
 
+    //Barre de temps
     private float m_Time;
     private bool m_TimeBlink;
     private int m_TimeSizeMin=16;
@@ -48,7 +60,7 @@ public class UIManager : MonoBehaviour {
         m_ComboKill = 0;
         m_ComboChest = 0;
         ComboKillCoroutine = ComboKillTimer();
-        //ComboChestCoroutine = 
+        ComboChestCoroutine = ComboChestTimer();
     }
 
     public void Init () {
@@ -83,22 +95,40 @@ public class UIManager : MonoBehaviour {
     public void AddComboChest()
     {
         m_ComboChest++;
+        if (m_ComboChest >= 2)
+        {
+            
+            m_AnimationComboChest.StartCombo(true);
+            m_AnimationNumbers.StartCombo(m_ComboChest);
+            m_AnimationComboChestLetters.StartCombo();
+            m_AnimationCroix.StartCombo();
+        }
         if (m_ComboChestCompteur == false)
         {
+
             m_ComboChestCompteur = true;
-            StartCoroutine(ComboChestCoroutine);
+            StartCoroutine("ComboChestTimer");
         }
         else
         {
-            StopCoroutine(ComboChestCoroutine);
-            StartCoroutine(ComboChestCoroutine);
+            StopCoroutine("ComboChestTimer");
+            StartCoroutine("ComboChestTimer");
         }
     }
 
     IEnumerator ComboChestTimer()
     {
+    
         yield return new WaitForSeconds(m_ComboChestTime);
+    
         m_ComboChestCompteur = false;
+        
+        
+        if (m_ComboChest >= 2)
+        {
+            m_AnimationNumbers.StartCombo(m_ComboChest);
+            m_AnimationComboChest.StartCombo(false);
+        }
         m_ComboChest = 0;
     }
     #endregion

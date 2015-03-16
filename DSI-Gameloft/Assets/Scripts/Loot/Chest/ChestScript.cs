@@ -32,6 +32,8 @@ public class ChestScript : MonoBehaviour {
             m_Animation.Play();
             m_ObjectParticules.SetActive(true);
 
+            UIManager.instance.AddComboChest();
+
             if (m_ChestLoot != null) {
                 Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
             }

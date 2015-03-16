@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour {
                 Ray rayCM = new Ray(rayOrigin, estimatedWay);
 
                 if (Physics.Raycast(rayCM, out hit, Vector3.Distance(rayOrigin, targetPos), m_MoveObstrusiveLayerMask)) {
-                    Debug.Log("Must change target");
                     estimatedWay = hit.point - this.transform.position;
                     estimatedWay -= estimatedWay.normalized * m_ColliderRadius;
                     targetPos = estimatedWay + this.transform.position;
