@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody m_Rigidbody;
     IEnumerator m_MoveToTarget;
     PlayerScript m_PlayerScript;
+
     #endregion
 
     void Start() {
@@ -92,6 +93,9 @@ public class PlayerMovement : MonoBehaviour {
             m_PlayerScript.Unlock();
             m_PlayerScript.UpdateWeaponsHoming(isHoming: false);
             m_PlayerScript.StartCoroutine("TurretShoot");
+
+
+
         }
         // End of Turret Mode
         else if (Input.GetMouseButtonUp(0)) {

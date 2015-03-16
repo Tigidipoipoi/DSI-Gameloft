@@ -21,6 +21,12 @@ public class WeaponScript : MonoBehaviour {
     protected int m_BulletLayer;
     protected PlayerScript m_PlayerScript;
     public WEAPON_TYPE m_Type;
+
+    AudioSource m_AudioSource;
+    public AudioClip m_AudioGun;
+    public AudioClip m_AudioGatline;
+    public AudioClip m_AudioShotgun;
+    public AudioClip m_AudioTurrel;
     #endregion
 
     protected virtual void Start() {
@@ -47,6 +53,52 @@ public class WeaponScript : MonoBehaviour {
             m_BulletSpawn.position, m_BulletSpawn.rotation) as GameObject;
         bulletGO.layer = m_BulletLayer;
         bulletGO.GetComponent<BulletScript>().m_BulletStats.m_Power = m_WeaponStats.m_Power;
+
+        //
+        
+        switch (m_Type)
+        {
+            case WEAPON_TYPE.GUN:
+                if(m_PlayerScript.m_IsInTurretMode)
+                {
+                    m_AudioSource.clip = m_AudioGun;
+                }
+                else
+                {
+
+                }
+                break;
+
+            case WEAPON_TYPE.GATLING:
+                if (m_PlayerScript.m_IsInTurretMode)
+                {
+
+                }
+                else
+                {
+
+                }
+                break;
+
+            case WEAPON_TYPE.SHOT_GUN:
+                if (m_PlayerScript.m_IsInTurretMode)
+                {
+
+                }
+                else
+                {
+
+                }
+                break;
+
+
+
+        }
+        
+
+
+
+
 
         if (m_WeaponStats.m_IsHoming) {
             if (m_Holder.tag == "Player") {
