@@ -16,10 +16,16 @@ public class TimeBlockScript : MonoBehaviour {
 
     public float m_GainTime;
 
+    AudioSource m_AudioSource;
+    bool m_IsCatch;
+
     void Start()
     {
+        m_AudioSource = GetComponent<AudioSource>();
+
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Player = GameObject.FindGameObjectWithTag("Player").transform;
+        m_IsCatch = false;
     }
 
 	// Update is called once per frame
@@ -38,13 +44,20 @@ public class TimeBlockScript : MonoBehaviour {
                 m_Rigidbody.velocity = m_Direction * m_Speed;
             }
         }
+
+        if (!m_AudioSource.isPlaying && m_IsCatch==true)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Player")
         {
+            m_AudioSource.Play();
             TimerManager.instance.AddTime(m_GainTime);
+            m_IsCatch = true;
             Destroy(this.gameObject);
         }
     }
