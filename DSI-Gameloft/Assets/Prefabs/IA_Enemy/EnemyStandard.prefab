@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DropTheKey: -1
-  m_Life: 50
+  m_Life: 3
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_Renderer: {fileID: 13782520}
