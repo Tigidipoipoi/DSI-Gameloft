@@ -11,10 +11,10 @@ GameObject:
   - 33: {fileID: 3334328}
   - 23: {fileID: 2355820}
   - 54: {fileID: 5418172}
-  - 135: {fileID: 13568576}
   - 114: {fileID: 11467918}
   - 114: {fileID: 11410804}
   - 114: {fileID: 11424140}
+  - 136: {fileID: 13630302}
   m_Layer: 12
   m_Name: EnemyExplosive
   m_TagString: Untagged
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
   m_Renderer: {fileID: 2355820}
---- !u!135 &13568576
-SphereCollider:
+--- !u!136 &13630302
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -144,9 +144,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.74780321
-  m_Center: {x: .0434187651, y: -.173283517, z: -.00266009569}
+  m_Radius: 1.27999997
+  m_Height: 5.73999977
+  m_Direction: 1
+  m_Center: {x: -.00267207623, y: 1.03999996, z: -.0433831811}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
