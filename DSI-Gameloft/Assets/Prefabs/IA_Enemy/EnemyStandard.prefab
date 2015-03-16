@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_PointForShoot: {fileID: 400934}
   m_BulletScript: {fileID: 11460544, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_BulletPower: 1
-  m_BulletSpeed: 10
+  m_BulletSpeed: 20
 --- !u!136 &13619600
 CapsuleCollider:
   m_ObjectHideFlags: 1
