@@ -248,6 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8ec127bcb5ac548a18adfb9194a59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RemainingTime: 0
+  m_TimeWhite: {fileID: 0}
 --- !u!114 &11462044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,8 +263,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComboKill: 0
   m_ComboKillTime: 0
+  m_IsNewComboChest: 0
+  m_AnimationComboChest: {fileID: 0}
+  m_AnimationComboChestLetters: {fileID: 0}
+  m_AnimationNumbers: {fileID: 0}
+  m_AnimationCrane: {fileID: 0}
+  m_AnimationCroix: {fileID: 0}
   m_ComboChest: 0
-  m_ComboChestTime: 0
 --- !u!114 &11472650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +286,8 @@ MonoBehaviour:
   m_CurrentFloor: {fileID: 0}
   m_KeyPoped: 0
   m_KeyAquired: 0
+  m_HasLoadedSeed: 0
+  KeyScript: {fileID: 0}
 --- !u!114 &11475534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FreezeEnemy: 0
   m_KillAllEnemy: 0
-  m_Collider: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
