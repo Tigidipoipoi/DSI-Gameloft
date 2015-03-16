@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108834}
   m_LocalRotation: {x: -.0187685527, y: -.585160196, z: -.810586095, w: .0136222141}
-  m_LocalPosition: {x: -.681999981, y: 1.17900002, z: 8.43599987}
+  m_LocalPosition: {x: -39.7712402, y: 1.25, z: 6.5705924}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 470804}
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ChestLoot: {fileID: 0}
-  m_EarnPesos: 0
+  m_EarnPesos: 10
   m_ObjectParticules: {fileID: 104934}
 --- !u!135 &13593812
 SphereCollider:

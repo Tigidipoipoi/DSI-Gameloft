@@ -98,7 +98,6 @@ public class UIManager : MonoBehaviour {
     #region ComboChest
     public void AddComboChest() {
         m_ComboChest++;
-        Debug.Log(m_ComboChest.ToString());
         if (m_ComboChest >= 2) {
 
 
@@ -169,6 +168,15 @@ public class UIManager : MonoBehaviour {
     IEnumerator AddPesos(int new_pesos, int pesos)
     {
         int TotalPesos=pesos;
+        
+        if (m_ComboKill>0)
+        {
+            new_pesos = (TotalPesos) * m_ComboChest;
+        }
+        else
+        {
+            new_pesos = TotalPesos;
+        }
 
         for(int i=0; i<new_pesos;i++)
         {
