@@ -10,7 +10,6 @@ public class ConsumablesButtonScript : MonoBehaviour {
     void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();
-
     }
 
     public void DestroyNow(string consumable)
@@ -23,6 +22,8 @@ public class ConsumablesButtonScript : MonoBehaviour {
                 m_AudioSource.Play();
             }
             ConsumablesManager.instance.StartCoroutine("LetsFreeze");
+            ShakeManager.instance.LetsShake(1000);
+            Handheld.Vibrate();
 
         }
 
@@ -37,7 +38,7 @@ public class ConsumablesButtonScript : MonoBehaviour {
             ShakeManager.instance.LetsShake(1000);
             Handheld.Vibrate();
         }
-
+            
         Destroy(this.gameObject,2);
     }
 }

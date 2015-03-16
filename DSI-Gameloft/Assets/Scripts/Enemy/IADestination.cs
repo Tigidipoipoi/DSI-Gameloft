@@ -57,6 +57,7 @@ public class IADestination : MonoBehaviour {
             {
                 m_IsAtDistance = true;
                 m_Rigidbody.velocity = Vector3.zero;
+                Debug.Log(Vector3.Distance(this.transform.position, m_Destination_Cible.position));
                 if (m_RotateAroundPlayer == true)
                 {
                     if (m_ChangeRotate)

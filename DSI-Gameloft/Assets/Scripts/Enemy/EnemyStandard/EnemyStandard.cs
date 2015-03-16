@@ -9,7 +9,7 @@ public class EnemyStandard : Enemy_Script
     private bool m_IsReady;
 
     public float m_DelayBeforeShoot;
-
+    public float m_DelayAfterShoot;
     public GameObject m_PrefabBullet;
     public Transform m_PointForShoot;
 
@@ -41,7 +41,9 @@ public class EnemyStandard : Enemy_Script
             m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
             m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
             bullet.layer = LayerMask.NameToLayer("EnemyBullet");
+            yield return new WaitForSeconds(m_DelayAfterShoot);
             m_IsReady = true;
+
         }
     }
 
