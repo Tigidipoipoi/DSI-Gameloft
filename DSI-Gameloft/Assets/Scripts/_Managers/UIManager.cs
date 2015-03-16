@@ -41,6 +41,8 @@ public class UIManager : MonoBehaviour {
     public AnimationCrane m_AnimationCrane;
     public AnimationCroix m_AnimationCroix;
 
+    AudioSource m_AudioSource;
+
     //Combo Chest
     public int m_ComboChest;
     bool m_ComboChestCompteur;
@@ -55,6 +57,9 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     void Start() {
+
+        m_AudioSource = GetComponent<AudioSource>();
+
         m_IGPanel = GameObject.Find("Canvas").transform.FindChild("IGPanel");
         m_TimerText = m_IGPanel.FindChild("RemainingTime").GetComponent<Text>();
         m_TimerText.color = Color.white;
@@ -140,6 +145,8 @@ public class UIManager : MonoBehaviour {
         m_Time = pourcentagetime;
 
         if (pourcentagetime < 20 && pourcentagetime > 0 && m_TimeBlink == false) {
+           
+           
             StartCoroutine(TimeBlink());
         }
         else if (m_TimeBlink == false) {
@@ -206,6 +213,10 @@ public class UIManager : MonoBehaviour {
 
     IEnumerator TimeBlink() {
         m_TimeBlink = true;
+        if (!m_AudioSource.isPlaying)
+        {
+            m_AudioSource.Play();
+        }
         while (m_Time < 20 && m_Time > 0) {
             m_TimerText.color = Color.red;
             m_TimerText.fontSize = m_TimeSizeMax;

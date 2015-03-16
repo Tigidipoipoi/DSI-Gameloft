@@ -20,7 +20,7 @@ public class TimerManager : MonoBehaviour {
 
     #region Members
     public float m_RemainingTime;
-    int m_FloorTime = 120;
+    int m_FloorTime = 10;
     IEnumerator m_TimeIsRunningOut;
 
     public GameObject m_TimeWhite;
@@ -92,6 +92,7 @@ public class TimerManager : MonoBehaviour {
         m_Sprite.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         m_Sprite.color = Color.white;
+        Handheld.Vibrate();
     }
 
 
