@@ -29,19 +29,16 @@ public class Enemy_Script : MonoBehaviour {
         m_KeyPrefab = Resources.Load<GameObject>("Prefabs/Key/Key");
     }
 
-    private float m_FreezeDelay;
+    float m_FreezeDelay;
     protected bool m_IsFreeze;
 
     public virtual void Start() {
         FloorManager.instance.NewEnemyAppeared();
 
-        m_FreezeDelay = 3;
+        m_FreezeDelay = 3.0f;
 
         m_Renderer = this.GetComponent<Renderer>();
         m_StandardColor = m_Renderer.material.color;
-
-
-
     }
 
     public void GetDamage(float m_Damage) {
@@ -69,8 +66,10 @@ public class Enemy_Script : MonoBehaviour {
             GameObject firstChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
             GameObject secondChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
 
-            firstChild.GetComponent<Enemy_Script>().m_DropTheKey = m_DropTheKey;
-            secondChild.GetComponent<Enemy_Script>().m_DropTheKey = m_DropTheKey;
+            firstChild.GetComponent<Enemy_Script>().m_DropTheKey = m_DropTheKey > 0
+                ? 0 : m_DropTheKey;
+            secondChild.GetComponent<Enemy_Script>().m_DropTheKey = m_DropTheKey > 0
+                ? 0 : m_DropTheKey;
         }
 
         m_Player.GetComponent<PlayerScript>().Unlock();
