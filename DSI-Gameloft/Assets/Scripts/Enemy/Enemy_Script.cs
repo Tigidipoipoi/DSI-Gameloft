@@ -16,9 +16,6 @@ public class Enemy_Script : MonoBehaviour {
 
     public GameObject m_EnnemyMissile2;
 
-    private Color m_StandardColor;
-
-
     public float m_EarnedTime;
     public GameObject m_TimeDistributor;
     private TimeDistributor m_TimeDistributorScript;
@@ -33,12 +30,12 @@ public class Enemy_Script : MonoBehaviour {
     protected bool m_IsFreeze;
 
     public virtual void Start() {
+        m_Player =  GameObject.FindGameObjectWithTag("Player").transform;
         FloorManager.instance.NewEnemyAppeared();
 
         m_FreezeDelay = 3.0f;
 
         m_Renderer = this.GetComponent<Renderer>();
-        m_StandardColor = m_Renderer.material.color;
     }
 
     public void GetDamage(float m_Damage) {
@@ -107,11 +104,11 @@ public class Enemy_Script : MonoBehaviour {
 
         while (time > 0) {
 
-            if (m_Renderer.material.color == m_StandardColor) {
-                m_Renderer.material.color = Color.red;
+            if (m_Renderer.material.GetFloat("Dommages")==0) {
+                m_Renderer.material.SetFloat("Dommages", 1);
             }
             else {
-                m_Renderer.material.color = m_StandardColor;
+                m_Renderer.material.SetFloat("Dommages", 0);
             }
 
             yield return new WaitForSeconds(delay);
@@ -119,7 +116,7 @@ public class Enemy_Script : MonoBehaviour {
             time -= delay;
         }
 
-        m_Renderer.material.color = m_StandardColor;
+        m_Renderer.material.SetFloat("Dommages", 0);
         yield return null;
     }
 

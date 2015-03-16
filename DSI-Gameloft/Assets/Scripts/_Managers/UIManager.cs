@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour {
     Transform m_IGPanel;
     // Temp
     Text m_TimerText;
+    // Pesos
+    Text m_PesosText;
     //Combo Kill
     public int m_ComboKill;
     bool m_ComboKillCompteur;
@@ -144,6 +146,18 @@ public class UIManager : MonoBehaviour {
             m_TimerText.fontSize = m_TimeSizeMax;
         }
         m_TimerText.text = string.Format("{0}", remainingTime.ToString("00.0"));
+    }
+
+    public void UpdatePesos(float pesos)
+    {
+        if (m_PesosText == null)
+        {
+            return;
+        }
+
+        m_PesosText.color = Color.white;
+        m_PesosText.fontSize = m_TimeSizeMin;
+        m_PesosText.text = string.Format("{0}", pesos.ToString("0"));
     }
 
     IEnumerator TimeBlink() {
