@@ -11,8 +11,8 @@ public class FollowPlayer : MonoBehaviour {
     #endregion
 
     void Start() {
-        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        m_DistanceToPlayer = this.transform.position - playerPosition;
+        m_PlayerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        m_DistanceToPlayer = this.transform.position - m_PlayerTrans.position;
     }
 
     void Update() {

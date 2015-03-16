@@ -48,7 +48,7 @@ public class PlayerScript : MonoBehaviour {
         if (m_EnemyTarget != null) {
             Vector3 lookAtTarget = m_EnemyTarget.position;
             lookAtTarget.y = c_PlayerPosYClamp;
-            this.transform.LookAt(m_EnemyTarget.position);
+            this.transform.LookAt(lookAtTarget);
         }
 
         // Turret mode
@@ -67,7 +67,7 @@ public class PlayerScript : MonoBehaviour {
 
         Vector3 lookAtTarget = m_EnemyTarget.position;
         lookAtTarget.y = c_PlayerPosYClamp;
-        this.transform.LookAt(m_EnemyTarget.position);
+        this.transform.LookAt(lookAtTarget);
 
         int weaponCount = m_Weapons.Length;
         for (int i = 0; i < weaponCount; ++i) {

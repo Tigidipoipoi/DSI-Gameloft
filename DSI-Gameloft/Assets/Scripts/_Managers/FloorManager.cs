@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 public class FloorManager : MonoBehaviour {
     #region Singleton
@@ -27,7 +29,7 @@ public class FloorManager : MonoBehaviour {
     public bool m_HasLoadedSeed;
     public UIKeyScript KeyScript;
 
-    //public Vector2 m_CurrentRoomIndex;
+    public Vector2 m_CurrentRoomIndex;
     #endregion
 
     public void Init() {
@@ -36,6 +38,15 @@ public class FloorManager : MonoBehaviour {
         Transform playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         Transform startTrans = m_CurrentFloor.transform.Find("Start");
         playerTrans.position = startTrans.position;
+
+        RoomScript[] roomScripts = m_CurrentFloor.m_Rooms.Select(x => x.GetComponent<RoomScript>()).ToArray();
+        m_CurrentRoomIndex = roomScripts.FirstOrDefault(x => x.m_IsStartRoom).m_FloorIndex;
+        int roomCount = roomScripts.Length;
+        for (int i = 0; i < roomCount; ++i) {
+            if (roomScripts[i].m_FloorIndex != m_CurrentRoomIndex) {
+                roomScripts[i].gameObject.SetActive(false);
+            }
+        }
     }
 
 
@@ -77,5 +88,21 @@ public class FloorManager : MonoBehaviour {
         m_HasLoadedSeed = true;
 
         this.Init();
+    }
+
+    public void LoadRoam(Vector2 roomIndex) {
+        RoomScript[] roomScripts = m_CurrentFloor.m_Rooms.Select(x => x.GetComponent<RoomScript>()).ToArray();
+        GameObject roomToLoadGO = roomScripts.FirstOrDefault(x => x.m_FloorIndex == roomIndex).gameObject;
+
+        Debug.Log(roomIndex);
+        roomToLoadGO.SetActive(true);
+    }
+
+    public void UnloadRoam(Vector2 roomIndex) {
+        RoomScript[] roomScripts = m_CurrentFloor.m_Rooms.Select(x => x.GetComponent<RoomScript>()).ToArray();
+        GameObject roomToLoadGO = roomScripts.FirstOrDefault(x => x.m_FloorIndex == roomIndex).gameObject;
+
+        Debug.Log(roomIndex);
+        roomToLoadGO.SetActive(false);
     }
 }

@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
                 #region Check walls on the way
                 Vector3 rayOrigin = this.transform.position;
                 Vector3 estimatedWay = targetPos - this.transform.position;
-                rayOrigin.y = 1.5f;
+                rayOrigin.y = 2.5f;
                 Ray rayCM = new Ray(rayOrigin, estimatedWay);
 
                 if (Physics.Raycast(rayCM, out hit, Vector3.Distance(rayOrigin, targetPos), m_MoveObstrusiveLayerMask)) {
@@ -83,6 +83,9 @@ public class PlayerMovement : MonoBehaviour {
             && !m_PlayerScript.m_IsInTurretMode
             //&& m_PlayerScript.m_EnemyTarget != null
             ) {
+            m_DownAnimator.SetBool("IsWalking", false);
+            m_UpAnimator.SetBool("IsWalking", false);
+            m_GunAnimator.SetBool("IsWalking", false);
             this.FreezePosition();
 
             m_PlayerScript.m_IsInTurretMode = true;
@@ -106,15 +109,24 @@ public class PlayerMovement : MonoBehaviour {
         m_DownAnimator.SetBool("IsWalking", true);
         m_UpAnimator.SetBool("IsWalking", true);
         m_GunAnimator.SetBool("IsWalking", true);
-        while (Vector3.Distance(this.transform.position, m_TargetPosition) > m_BreakDistance) {
+
+        Vector3 currentPos = this.transform.position;
+        currentPos.y = 0.0f;
+        Vector3 targetPos = m_TargetPosition;
+        targetPos.y = 0.0f;
+        while (Vector3.Distance(currentPos, targetPos) > m_BreakDistance) {
             if (m_PlayerScript.m_EnemyTarget == null) {
                 Vector3 lookAtTarget = m_TargetPosition;
                 lookAtTarget.y = m_PlayerScript.c_PlayerPosYClamp;
                 this.transform.LookAt(lookAtTarget);
             }
 
-            m_Rigidbody.velocity = (m_TargetPosition - this.transform.position).normalized * m_MoveSpeed;
+            m_Rigidbody.velocity = (targetPos - currentPos).normalized * m_MoveSpeed;
             yield return null;
+            currentPos = this.transform.position;
+            currentPos.y = 0.0f;
+            targetPos = m_TargetPosition;
+            targetPos.y = 0.0f;
         }
 
         m_Rigidbody.velocity = Vector3.zero;

@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPlayerTarget: 0
+  m_Renderer: {fileID: 0}
 --- !u!114 &11437346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,9 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aedf4d5ba097eb4b8c7cf8cf03cd6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DropTheKey: -1
   m_Life: 10
   m_IsAwake: 0
   m_Player: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_Material: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 0}
@@ -171,9 +175,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 2
+  m_Height: 4
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
