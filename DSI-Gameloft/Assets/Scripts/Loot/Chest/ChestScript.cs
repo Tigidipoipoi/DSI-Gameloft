@@ -26,20 +26,25 @@ public class ChestScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            m_Audio.Play();
-            m_ChestOpen = true;
-            m_ChestCollider.enabled = false;
-            m_Animation.Play();
-            m_ObjectParticules.SetActive(true);
+            if (TimerManager.instance.m_RemainingTime > 0)
+            {
+                m_Audio.Play();
+                m_ChestOpen = true;
+                m_ChestCollider.enabled = false;
+                m_Animation.Play();
+                m_ObjectParticules.SetActive(true);
 
-            UIManager.instance.AddComboChest();
+                UIManager.instance.AddComboChest();
+                UIManager.instance.UpdatePesos(m_EarnPesos, PesosManager.instance.m_Pesos);
 
-            if (m_ChestLoot != null) {
-                Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+                if (m_ChestLoot != null)
+                {
+                    Instantiate(m_ChestLoot, this.transform.position + Random.insideUnitSphere, this.transform.rotation);
+                }
+
+                PesosManager.instance.AddPesos(m_EarnPesos);
+                Destroy(this);
             }
-
-            PesosManager.instance.AddPesos(m_EarnPesos);
-            Destroy(this);
         }
     }
 }

@@ -33,7 +33,7 @@ public class Enemy_Script : MonoBehaviour {
         m_Player =  GameObject.FindGameObjectWithTag("Player").transform;
         FloorManager.instance.NewEnemyAppeared();
 
-        m_FreezeDelay = 3.0f;
+        m_FreezeDelay = 6.5f;
 
         m_Renderer = this.GetComponent<Renderer>();
     }
