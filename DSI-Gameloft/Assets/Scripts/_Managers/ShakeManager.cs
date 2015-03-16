@@ -17,7 +17,7 @@ public class ShakeManager : MonoBehaviour {
         mainCamera = Camera.main;
         if (s_Instance == null)
             s_Instance = this;
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     #endregion
 

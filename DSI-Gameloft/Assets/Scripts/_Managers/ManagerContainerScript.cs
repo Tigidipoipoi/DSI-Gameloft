@@ -3,6 +3,6 @@ using System.Collections;
 
 public class ManagerContainerScript : MonoBehaviour {
     void Awake () {
-        DontDestroyOnLoad (this.gameObject);
+        //DontDestroyOnLoad (this.gameObject);
     }
 }

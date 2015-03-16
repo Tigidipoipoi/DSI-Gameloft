@@ -13,7 +13,7 @@ public class FloorManager : MonoBehaviour {
     void Awake() {
         if (s_Instance == null)
             s_Instance = this;
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         //this.Init();
     }
     #endregion

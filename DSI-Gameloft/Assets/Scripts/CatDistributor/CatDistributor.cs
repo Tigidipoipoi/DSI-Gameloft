@@ -10,11 +10,11 @@ public class CatDistributor : MonoBehaviour {
     public Transform gauche;
     public Transform droit;
 
-    private int m_RescuedCatCount = 100;
+    private int m_RescuedCatCount = 0;
     #endregion
 
     void Start() {
-        //m_RescuedCatCount = PlayerPrefs.GetInt("RescuedCats", 0);
+        m_RescuedCatCount = PlayerPrefs.GetInt("RescuedCats", 0);
 
         if (m_RescuedCatCount > 0) {
             StartCoroutine(LootCat());
