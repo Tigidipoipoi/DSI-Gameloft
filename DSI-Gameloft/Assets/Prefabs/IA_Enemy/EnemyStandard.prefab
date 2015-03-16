@@ -1070,7 +1070,8 @@ MonoBehaviour:
   m_EarnedTime: 10
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11479768}
-  m_DelayBeforeShoot: 3.5
+  m_DelayBeforeShoot: 0
+  m_DelayAfterShoot: 3
   m_PrefabBullet: {fileID: 148624, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
   m_PointForShoot: {fileID: 400934}
   m_BulletScript: {fileID: 11460544, guid: 0c2ac067f1b29a3428d866abe2d381c8, type: 2}
