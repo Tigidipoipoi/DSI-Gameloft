@@ -1187,7 +1187,7 @@ Transform:
   m_Children:
   - {fileID: 592864507}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &2050065771
 GameObject:
   m_PrefabParentObject: {fileID: 126716, guid: c6d53bf901fdc104490279a15826617b, type: 2}
