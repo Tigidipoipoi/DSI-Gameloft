@@ -575,7 +575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!1 &391447764
 GameObject:
   m_PrefabParentObject: {fileID: 154056, guid: c6d53bf901fdc104490279a15826617b, type: 2}
