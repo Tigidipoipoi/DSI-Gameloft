@@ -1668,6 +1668,7 @@ MonoBehaviour:
   m_UpBodyTrans: {fileID: 444604}
   m_DownBodyTrans: {fileID: 461478}
   m_LootClip: {fileID: 0}
+  m_UpAnimator: {fileID: 9586962}
 --- !u!114 &11472142
 MonoBehaviour:
   m_ObjectHideFlags: 1

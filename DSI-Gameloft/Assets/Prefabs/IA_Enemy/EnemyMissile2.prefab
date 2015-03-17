@@ -133,22 +133,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DropTheKey: -1
-  m_Life: 5
+  m_Life: 2
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_Renderer: {fileID: 0}
   m_Material: {fileID: 0}
   m_EnnemyMissile2: {fileID: 0}
-  m_EarnedTime: 10
+  m_EarnedTime: 6
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_Mouvement: {fileID: 11487676}
-  m_DelayBeforeShoot: 4
+  m_DelayBeforeShoot: 0
+  m_DelayAfterShoot: 4
   m_PrefabBullet: {fileID: 100546, guid: a9f3de5f30334c34881ddbb0cc1533bf, type: 2}
   m_BulletScript: {fileID: 11400668, guid: a9f3de5f30334c34881ddbb0cc1533bf, type: 2}
-  m_BulletPower: 5
-  m_BulletSpeed: 10
+  m_BulletPower: 7
+  m_BulletSpeed: 5
   m_PointForShoot: {fileID: 453426}
-  m_RangeForShoot: 0
+  m_RangeForShoot: 20
 --- !u!114 &11487676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,10 +164,10 @@ MonoBehaviour:
   m_Destination_Cible: {fileID: 0}
   m_SpeedMax: 2
   m_Acceleration: 1
-  m_BreakDistance: 5
+  m_BreakDistance: 12
   m_IsAtDistance: 0
   m_RotateAroundPlayer: 1
-  m_RotateSpeed: 30
+  m_RotateSpeed: 15
 --- !u!136 &13697054
 CapsuleCollider:
   m_ObjectHideFlags: 1
