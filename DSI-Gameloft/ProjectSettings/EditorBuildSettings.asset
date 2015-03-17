@@ -13,7 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
   - enabled: 0
     path: Assets/Scenes/Playtest.unity
-  - enabled: 0
-    path: Assets/Scenes/PlaytestV2.unity
   - enabled: 1
+    path: Assets/Scenes/PlaytestV2.unity
+  - enabled: 0
     path: Assets/Scenes/PlaytestV3.unity
