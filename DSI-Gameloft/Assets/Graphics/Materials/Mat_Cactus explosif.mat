@@ -147,7 +147,7 @@ Material:
       data:
         first:
           name: _Dommages
-        second: 0
+        second: 1
       data:
         first:
           name: _node_3947

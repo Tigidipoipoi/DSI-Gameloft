@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff2913e8267c97641a851f6c61119465
+guid: 32323a76afece6f4eac9e817b48e92ae
 timeCreated: 1426361633
 licenseType: Free
 ModelImporter:
@@ -39,6 +39,7 @@ ModelImporter:
     100062: Pouce_G_2
     100064: SKE_Cactus1
     100066: tete
+    100068: CactusNormal
     400000: bras_D
     400002: bras_G
     400004: corps
@@ -73,7 +74,9 @@ ModelImporter:
     400062: Pouce_G_2
     400064: SKE_Cactus1
     400066: tete
+    400068: CactusNormal
     4300000: Cylinder011.001
+    4300002: CactusNormal
     7400000: SKE_Cactus1|Cylinder011|Take 001|BaseLayer
     7400002: SKE_Cactus1|Cylinder011|Take 001|BaseLayer.001
     7400004: SKE_Cactus1|idle
@@ -84,6 +87,7 @@ ModelImporter:
     7400014: Cylinder011.001|Cylinder011|Take 001|BaseLayer.001
     9500000: //RootNode
     13700000: Cylinder011.001
+    13700002: CactusNormal
   materials:
     importMaterials: 1
     materialName: 0
@@ -104,13 +108,13 @@ ModelImporter:
       name: SKE_Cactus1|idle
       takeName: SKE_Cactus1|idle
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -298,7 +302,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 1bcf47ae2d9edfc4d91c60d2f8bcd227
+timeCreated: 1426524909
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CactusExplose
+    100004: corps
+    100006: cuisse-D
+    100008: cuisse-G
+    100010: explosifs
+    100012: Main_D
+    100014: Main_G
+    100016: Pelvis
+    100018: Pied_D
+    100020: Pied_DG
+    100022: SKE_CactusExplosif
+    100024: tete
+    400000: //RootNode
+    400002: CactusExplose
+    400004: corps
+    400006: cuisse-D
+    400008: cuisse-G
+    400010: explosifs
+    400012: Main_D
+    400014: Main_G
+    400016: Pelvis
+    400018: Pied_D
+    400020: Pied_DG
+    400022: SKE_CactusExplosif
+    400024: tete
+    4300000: CactusExplose
+    7400000: SKE_CactusExplosif|CourseExplo
+    7400002: SKE_CactusExplosif|Cylinder011|Take 001|BaseLayer
+    7400004: SKE_CactusExplosif|Cylinder011|Take 001|BaseLayer.001
+    7400006: SKE_CactusExplosif|IdleExplo
+    7400008: SKE_CactusExplosif|Object001.001|Take 001|BaseLayer
+    7400010: SKE_CactusExplosif|Object001|Take 001|BaseLayer
+    7400012: SKE_CactusExplosif|Sphere001.004|Take 001|BaseLayer
+    7400014: SKE_CactusExplosif|Sphere003|Take 001|BaseLayer
+    7400016: SKE_CactusExplosif|Sphere003|Take 001|BaseLayer.001
+    7400018: SKE_CactusExplosif|Sphere003|Take 001|BaseLayer.002
+    7400020: CactusExplose|Cylinder011|Take 001|BaseLayer
+    7400022: CactusExplose|Cylinder011|Take 001|BaseLayer.001
+    7400024: CactusExplose|Object001.001|Take 001|BaseLayer
+    7400026: CactusExplose|Object001|Take 001|BaseLayer
+    7400028: CactusExplose|Sphere001.004|Take 001|BaseLayer
+    7400030: CactusExplose|Sphere003|Take 001|BaseLayer
+    7400032: CactusExplose|Sphere003|Take 001|BaseLayer.001
+    7400034: CactusExplose|Sphere003|Take 001|BaseLayer.002
+    7400036: Scene
+    9500000: //RootNode
+    13700000: CactusExplose
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SKE_CactusExplosif|CourseExplo
+      takeName: SKE_CactusExplosif|CourseExplo
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CactusExplose
+        weight: 1
+      - path: SKE_CactusExplosif
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/explosifs
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/Main_D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/Main_G
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_CactusExplosif|IdleExplo
+      takeName: SKE_CactusExplosif|IdleExplo
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CactusExplose
+        weight: 1
+      - path: SKE_CactusExplosif
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/explosifs
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/Main_D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/Main_G
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_CactusExplosif/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

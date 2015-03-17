@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: e49c788e7a75fca49bb24c26def23075
+timeCreated: 1426526341
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bras_D
+    100004: bras_G
+    100006: CactusMissile
+    100008: corps
+    100010: cuisse-D
+    100012: cuisse-G
+    100014: epaule_D
+    100016: epaule_G
+    100018: foulard
+    100020: index_D_1
+    100022: index_D_2
+    100024: index_G_1
+    100026: index_G_2
+    100028: Main_D
+    100030: Main_D.001
+    100032: Main_D.002
+    100034: Main_D.003
+    100036: Main_G
+    100038: majeur_D_1
+    100040: majeur_D_2
+    100042: majeur_G_1
+    100044: majeur_G_2
+    100046: Pelvis
+    100048: Pied_D
+    100050: Pied_DG
+    100052: Pouce_D_1
+    100054: Pouce_D_2
+    100056: Pouce_G_1
+    100058: Pouce_G_2
+    100060: SKE_CactusMissile
+    100062: tete
+    400000: //RootNode
+    400002: bras_D
+    400004: bras_G
+    400006: CactusMissile
+    400008: corps
+    400010: cuisse-D
+    400012: cuisse-G
+    400014: epaule_D
+    400016: epaule_G
+    400018: foulard
+    400020: index_D_1
+    400022: index_D_2
+    400024: index_G_1
+    400026: index_G_2
+    400028: Main_D
+    400030: Main_D.001
+    400032: Main_D.002
+    400034: Main_D.003
+    400036: Main_G
+    400038: majeur_D_1
+    400040: majeur_D_2
+    400042: majeur_G_1
+    400044: majeur_G_2
+    400046: Pelvis
+    400048: Pied_D
+    400050: Pied_DG
+    400052: Pouce_D_1
+    400054: Pouce_D_2
+    400056: Pouce_G_1
+    400058: Pouce_G_2
+    400060: SKE_CactusMissile
+    400062: tete
+    4300000: CactusMissile
+    7400000: SKE_CactusMissile|CourseMissile
+    7400002: SKE_CactusMissile|Cylinder011|Take 001|BaseLayer
+    7400004: SKE_CactusMissile|Cylinder011|Take 001|BaseLayer.001
+    7400006: SKE_CactusMissile|IdleMissile
+    7400008: SKE_CactusMissile|Object001.001|Take 001|BaseLayer
+    7400010: SKE_CactusMissile|Object001|Take 001|BaseLayer
+    7400012: SKE_CactusMissile|Sphere001.004|Take 001|BaseLayer
+    7400014: SKE_CactusMissile|Sphere003|Take 001|BaseLayer
+    7400016: SKE_CactusMissile|Sphere003|Take 001|BaseLayer.001
+    7400018: SKE_CactusMissile|Sphere003|Take 001|BaseLayer.002
+    7400020: SKE_CactusMissile|TirMissile
+    7400022: SKE_CactusMissile|TirMissile.001
+    7400024: CactusMissile|Cylinder011|Take 001|BaseLayer
+    7400026: CactusMissile|Cylinder011|Take 001|BaseLayer.001
+    7400028: CactusMissile|Object001.001|Take 001|BaseLayer
+    7400030: CactusMissile|Object001|Take 001|BaseLayer
+    7400032: CactusMissile|Sphere001.004|Take 001|BaseLayer
+    7400034: CactusMissile|Sphere003|Take 001|BaseLayer
+    7400036: CactusMissile|Sphere003|Take 001|BaseLayer.001
+    7400038: CactusMissile|Sphere003|Take 001|BaseLayer.002
+    7400040: Scene
+    9500000: //RootNode
+    13700000: CactusMissile
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SKE_CactusMissile|CourseMissile
+      takeName: SKE_CactusMissile|CourseMissile
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002/Main_D.003
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_CactusMissile|IdleMissile
+      takeName: SKE_CactusMissile|IdleMissile
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002/Main_D.003
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_CactusMissile|TirMissile
+      takeName: SKE_CactusMissile|TirMissile
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Main_D.001/Main_D.002/Main_D.003
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_CactusMissile/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

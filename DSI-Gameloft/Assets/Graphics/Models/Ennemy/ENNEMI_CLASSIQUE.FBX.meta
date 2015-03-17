@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: ff2913e8267c97641a851f6c61119465
+timeCreated: 1426361633
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bras_D
+    100002: bras_G
+    100004: corps
+    100006: cuisse-D
+    100008: cuisse-G
+    100010: Cylinder011.001
+    100012: epaule_D
+    100014: epaule_G
+    100016: foulard
+    100018: Holster
+    100020: index_D_1
+    100022: index_D_2
+    100024: index_G_1
+    100026: index_G_2
+    100028: //RootNode
+    100030: Main_D
+    100032: Main_G
+    100034: majeur_D_1
+    100036: majeur_D_2
+    100038: majeur_G_1
+    100040: majeur_G_2
+    100042: Pelvis
+    100044: petitdoigt_D_1
+    100046: petitdoigt_D_2
+    100048: petitdoigt_G_1
+    100050: petitdoigt_G_2
+    100052: Pied_D
+    100054: Pied_DG
+    100056: Pouce_D_1
+    100058: Pouce_D_2
+    100060: Pouce_G_1
+    100062: Pouce_G_2
+    100064: SKE_Cactus1
+    100066: tete
+    400000: bras_D
+    400002: bras_G
+    400004: corps
+    400006: cuisse-D
+    400008: cuisse-G
+    400010: Cylinder011.001
+    400012: epaule_D
+    400014: epaule_G
+    400016: foulard
+    400018: Holster
+    400020: index_D_1
+    400022: index_D_2
+    400024: index_G_1
+    400026: index_G_2
+    400028: //RootNode
+    400030: Main_D
+    400032: Main_G
+    400034: majeur_D_1
+    400036: majeur_D_2
+    400038: majeur_G_1
+    400040: majeur_G_2
+    400042: Pelvis
+    400044: petitdoigt_D_1
+    400046: petitdoigt_D_2
+    400048: petitdoigt_G_1
+    400050: petitdoigt_G_2
+    400052: Pied_D
+    400054: Pied_DG
+    400056: Pouce_D_1
+    400058: Pouce_D_2
+    400060: Pouce_G_1
+    400062: Pouce_G_2
+    400064: SKE_Cactus1
+    400066: tete
+    4300000: Cylinder011.001
+    7400000: SKE_Cactus1|Cylinder011|Take 001|BaseLayer
+    7400002: SKE_Cactus1|Cylinder011|Take 001|BaseLayer.001
+    7400004: SKE_Cactus1|idle
+    7400006: SKE_Cactus1|idleTir
+    7400008: SKE_Cactus1|marche
+    7400010: SKE_Cactus1|marcheTir
+    7400012: Cylinder011.001|Cylinder011|Take 001|BaseLayer
+    7400014: Cylinder011.001|Cylinder011|Take 001|BaseLayer.001
+    9500000: //RootNode
+    13700000: Cylinder011.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SKE_Cactus1|idle
+      takeName: SKE_Cactus1|idle
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder011.001
+        weight: 1
+      - path: SKE_Cactus1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1/petitdoigt_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1/petitdoigt_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/Holster
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_Cactus1|idleTir
+      takeName: SKE_Cactus1|idleTir
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder011.001
+        weight: 1
+      - path: SKE_Cactus1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1/petitdoigt_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1/petitdoigt_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/Holster
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_Cactus1|marche
+      takeName: SKE_Cactus1|marche
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder011.001
+        weight: 1
+      - path: SKE_Cactus1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1/petitdoigt_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1/petitdoigt_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/Holster
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: SKE_Cactus1|marcheTir
+      takeName: SKE_Cactus1|marcheTir
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder011.001
+        weight: 1
+      - path: SKE_Cactus1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/index_D_1/index_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/majeur_D_1/majeur_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/petitdoigt_D_1/petitdoigt_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_D/bras_D/Main_D/Pouce_D_1/Pouce_D_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/index_G_1/index_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/majeur_G_1/majeur_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/petitdoigt_G_1/petitdoigt_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/epaule_G/bras_G/Main_G/Pouce_G_1/Pouce_G_2
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/foulard
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/Holster
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/corps/tete
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-D/Pied_D
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G
+        weight: 1
+      - path: SKE_Cactus1/Pelvis/cuisse-G/Pied_DG
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
