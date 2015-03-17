@@ -20,7 +20,7 @@ public class TimerManager : MonoBehaviour {
 
     #region Members
     public float m_RemainingTime;
-    int m_FloorTime = 10;
+    int m_FloorTime = 120;
     IEnumerator m_TimeIsRunningOut;
 
     public GameObject m_TimeWhite;
@@ -32,6 +32,10 @@ public class TimerManager : MonoBehaviour {
 
     AudioSource m_AudioSource;
 
+	private Material m_Material_1;
+	private Material m_Material_2;
+	public Renderer m_RendererUP;
+	public Renderer m_RendererDOWN;
     #endregion
 
     public void Init () {
@@ -41,6 +45,8 @@ public class TimerManager : MonoBehaviour {
         m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
         m_Sprite = m_TimeWhite.GetComponent<SpriteRenderer>();
         m_AudioSource=GetComponent<AudioSource>();
+		m_Material_1 = m_RendererUP.material;
+		m_Material_2 = m_RendererDOWN.material;
     }
 
     IEnumerator TimeIsRunningOut () {
@@ -69,6 +75,37 @@ public class TimerManager : MonoBehaviour {
         m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 
+	public IEnumerator BlinkMichelle(float time = 0.5f)
+	{
+		float delay = 0.15f;
+
+		while (time > 0) {
+		    if (m_Material_1.GetFloat("_Dommages") == 0.0f) {
+		        m_Material_1.SetFloat("_Dommages", 1.0f);
+		    }
+		    else {
+		        m_Material_1.SetFloat("_Dommages", 0.0f);
+		    }
+
+			if (m_Material_2.GetFloat("_Dommages") == 0.0f)
+			{
+				m_Material_2.SetFloat("_Dommages", 1.0f);
+			}
+			else
+			{
+				m_Material_2.SetFloat("_Dommages", 0.0f);
+			}
+
+		    yield return new WaitForSeconds(delay);
+
+		    time -= delay;
+		}
+
+		m_Material_1.SetFloat("_Dommages", 0.0f);
+		m_Material_2.SetFloat("_Dommages", 0.0f);
+		yield return null;
+	}
+
     IEnumerator BlinkBar()
     {
         IsBlinking = true;
@@ -93,6 +130,7 @@ public class TimerManager : MonoBehaviour {
     }
     IEnumerator LoseTimeBlink()
     {
+		StartCoroutine(BlinkMichelle());
         m_Sprite.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         m_Sprite.color = Color.white;

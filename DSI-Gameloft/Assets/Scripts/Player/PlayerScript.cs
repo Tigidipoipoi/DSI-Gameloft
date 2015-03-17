@@ -16,7 +16,6 @@ public class PlayerScript : MonoBehaviour {
     public Transform m_GunTrans;
     public Transform m_GatlingTrans;
     public Transform m_ShotgunTrans;
-    public Renderer m_GatlingRenderer;
     IEnumerator[] m_WeaponCoroutines;
 
     public Transform m_UpBodyTrans;
@@ -168,8 +167,6 @@ public class PlayerScript : MonoBehaviour {
                 lootWeapon.transform.position = m_ShotgunTrans.position;
                 lootWeapon.transform.rotation = m_ShotgunTrans.rotation;
                 lootWeapon.transform.parent = m_GatlingTrans;
-                m_GatlingRenderer.enabled = true;
-                Debug.Log("arg");
                 break;
             case WeaponScript.WEAPON_TYPE.GUN:
                 lootWeapon.transform.position = m_GunTrans.position;

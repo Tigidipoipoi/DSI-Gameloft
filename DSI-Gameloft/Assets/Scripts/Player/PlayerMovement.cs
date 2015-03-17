@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
                 #region Check walls on the way
                 Vector3 rayOrigin = this.transform.position;
                 Vector3 estimatedWay = targetPos - this.transform.position;
-                rayOrigin.y = 2.5f;
+                rayOrigin.y = m_PlayerScript.c_PlayerPosYClamp;
                 Ray rayCM = new Ray(rayOrigin, estimatedWay);
 
                 if (Physics.Raycast(rayCM, out hit, Vector3.Distance(rayOrigin, targetPos), m_MoveObstrusiveLayerMask)) {
