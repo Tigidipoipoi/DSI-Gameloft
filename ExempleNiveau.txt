@@ -1,1 +1,1 @@
-adb install -l "C:\Users\sig4gp\Desktop\Je suis une brique\DSI-Gameloft.apk"
+adb install -l "C:\Users\sig4gp\Desktop\Je suis une brique\LosGatosDeLaMuerte.apk"
