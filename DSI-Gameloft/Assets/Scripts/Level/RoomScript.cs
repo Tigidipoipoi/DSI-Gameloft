@@ -20,7 +20,7 @@ public class RoomScript : MonoBehaviour {
 
     #region Members
     // Room parts
-    GameObject[] m_RoomParts;
+    RoomPartScript[] m_RoomParts;
     GameObject[] m_RoomPartPrefabs;
     Transform m_RoomPartsContainer;
 
@@ -80,7 +80,10 @@ public class RoomScript : MonoBehaviour {
 
             childGOList.Add(childRPScript.gameObject);
         }
-        m_RoomParts = childGOList.Where(x => x.GetComponent<RoomPartScript>().m_IsReachable).ToArray();
+        m_RoomParts = childGOList
+            .Select(x => x.GetComponent<RoomPartScript>())
+            .Where(y => y.m_IsReachable)
+            .ToArray();
 
         // Walls
         m_WallsContainer = this.transform.FindChild("Walls");
@@ -100,16 +103,15 @@ public class RoomScript : MonoBehaviour {
     public void GenerateRoomParts() {
         int roomPartsCount = m_RoomParts.Length;
         for (int i = 0; i < roomPartsCount; ++i) {
-            RoomPartScript roomPartScript = m_RoomParts[i].GetComponent<RoomPartScript>();
             int rngRPPrefabIndex = Random.Range(0, c_RoomPartPrefabCount);
-            if (roomPartScript.m_RPIndex > -1
-                && roomPartScript.m_RPIndex < c_RoomPartPrefabCount) {
-                rngRPPrefabIndex = roomPartScript.m_RPIndex;
+            if (m_RoomParts[i].m_RPIndex > -1
+                && m_RoomParts[i].m_RPIndex < c_RoomPartPrefabCount) {
+                rngRPPrefabIndex = m_RoomParts[i].m_RPIndex;
             }
 
-            roomPartScript.AttachContent(m_RoomPartPrefabs[rngRPPrefabIndex]);
+            m_RoomParts[i].AttachContent(m_RoomPartPrefabs[rngRPPrefabIndex]);
 
-            roomPartScript.m_ParentRoom = this;
+            m_RoomParts[i].m_ParentRoom = this;
         }
     }
 
