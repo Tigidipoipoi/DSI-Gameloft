@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyStandard : Enemy_Script
-{
-
+public class EnemyStandard : Enemy_Script {
+    #region Members
     public IADestination m_Mouvement;
 
     private bool m_IsReady;
@@ -17,64 +16,56 @@ public class EnemyStandard : Enemy_Script
     public float m_BulletPower;
     public float m_BulletSpeed;
 
-	// Use this for initialization
-	public override void Start () 
-    {
+    Animator m_Animator;
+    #endregion
+
+    public override void Start() {
         base.Start();
         m_IsReady = true;
 
-	}
-	
-    IEnumerator WaitAndShoot()
-    {
-        if (m_IsAwake == true)
-        {
+        m_Animator = this.GetComponent<Animator>();
+    }
+
+    IEnumerator WaitAndShoot() {
+        if (m_IsAwake == true) {
+            //m_Animator.SetTrigger("Aiming");
             yield return new WaitForSeconds(m_DelayBeforeShoot);
 
-            if(m_Mouvement.m_IsAtDistance == false)
-            {
+            if (m_Mouvement.m_IsAtDistance == false) {
                 StopCoroutine(WaitAndShoot());
             }
 
-            GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject ;
+            GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject;
             m_BulletScript = bullet.GetComponent<BulletScript>();
             m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
             m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
             bullet.layer = LayerMask.NameToLayer("EnemyBullet");
+
             yield return new WaitForSeconds(m_DelayAfterShoot);
             m_IsReady = true;
-
         }
     }
 
-	// Update is called once per frame
-	public override void Update () 
-    {
+    public override void Update() {
         base.Update();
 
-        if (m_Mouvement.m_Destination_Cible == null)
-        {
+        if (m_Mouvement.m_Destination_Cible == null) {
             m_Mouvement.m_Destination_Cible = m_Player;
         }
 
-        if (m_IsAwake == true)
-        {
-            if (m_Mouvement.m_IsAtDistance == true && m_IsReady == true)
-            {
+        if (m_IsAwake == true) {
+            if (m_Mouvement.m_IsAtDistance == true && m_IsReady == true) {
                 m_IsReady = false;
 
                 StartCoroutine(WaitAndShoot());
-
             }
         }
 
-        if (m_IsFreeze == true)
-        {
+        if (m_IsFreeze == true) {
             m_Mouvement.enabled = false;
         }
-        else
-        {
+        else {
             m_Mouvement.enabled = true;
         }
-	}
+    }
 }

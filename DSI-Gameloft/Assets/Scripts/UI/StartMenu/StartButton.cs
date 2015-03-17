@@ -9,21 +9,11 @@ public class StartButton : MonoBehaviour {
     public bool m_Open;
     #endregion
 
-    public void LaunchGame () {
-        Application.LoadLevel ("PlayTestV2");
+    public void LaunchGame() {
+        Application.LoadLevel("PlayTestV2");
     }
 
-    IEnumerator DisplayLoadingScreen() {
-        // SetActive Loading Screen
-
-
-
-        yield return null;
-    }
-
-
-
-    public void Exit () {
-        Application.Quit ();
+    public void Exit() {
+        Application.Quit();
     }
 }

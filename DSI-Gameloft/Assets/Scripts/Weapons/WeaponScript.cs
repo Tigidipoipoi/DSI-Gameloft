@@ -30,7 +30,7 @@ public class WeaponScript : MonoBehaviour {
     #endregion
 
     protected virtual void Start() {
-		m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();
         m_BulletLayer = LayerMask.NameToLayer(m_WeaponStats.m_IsAlly
             ? "AllyBullet"
             : "EnemyBullet");
@@ -56,52 +56,39 @@ public class WeaponScript : MonoBehaviour {
         bulletGO.GetComponent<BulletScript>().m_BulletStats.m_Power = m_WeaponStats.m_Power;
 
         //
-        
-        switch (m_Type)
-        {
+
+        switch (m_Type) {
             case WEAPON_TYPE.GUN:
-                if(m_PlayerScript.m_IsInTurretMode)
-                {
+                if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioGun;
-					
                 }
-                else
-                {
-					m_AudioSource.clip = m_AudioGun;
+                else {
+                    m_AudioSource.clip = m_AudioGun;
                 }
                 break;
 
             case WEAPON_TYPE.GATLING:
-                if (m_PlayerScript.m_IsInTurretMode)
-                {
-					m_AudioSource.clip = m_AudioGatline;
+                if (m_PlayerScript.m_IsInTurretMode) {
+                    m_AudioSource.clip = m_AudioGatline;
                 }
-                else
-                {
-					m_AudioSource.clip = m_AudioGatline;
+                else {
+                    m_AudioSource.clip = m_AudioGatline;
                 }
                 break;
 
             case WEAPON_TYPE.SHOT_GUN:
-                if (m_PlayerScript.m_IsInTurretMode)
-                {
-					m_AudioSource.clip = m_AudioShotgun;
+                if (m_PlayerScript.m_IsInTurretMode) {
+                    m_AudioSource.clip = m_AudioShotgun;
                 }
-                else
-                {
-					m_AudioSource.clip = m_AudioShotgun;
+                else {
+                    m_AudioSource.clip = m_AudioShotgun;
                 }
                 break;
 
         }
-		if(m_AudioSource.clip!=null)
-		{
-			m_AudioSource.Play();
-		}
-		
-
-
-
+        if (m_AudioSource.clip != null) {
+            m_AudioSource.Play();
+        }
 
         if (m_WeaponStats.m_IsHoming) {
             if (m_Holder.tag == "Player") {
