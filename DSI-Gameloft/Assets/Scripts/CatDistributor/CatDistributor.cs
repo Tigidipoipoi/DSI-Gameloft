@@ -14,7 +14,7 @@ public class CatDistributor : MonoBehaviour {
     #endregion
 
     void Start() {
-        //m_RescuedCatCount = PlayerPrefs.GetInt("RescuedCats", 0);
+        m_RescuedCatCount = PlayerPrefs.GetInt("RescuedCats", 0);
 
         if (m_RescuedCatCount > 0) {
             StartCoroutine(LootCat());
