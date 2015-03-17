@@ -28,9 +28,11 @@ using System.Collections;
 
 public enum EventManagerType
 {
-	PLAYER_HIT,
-	ENEMY_HIT,
-	SHOT_BULLET
+	GUN_SHOOT,
+	GATLINE_SHOOT,
+	SHOT_GUN,
+	ITEM_DROP,
+	ENEMY_ACTION
 }
 
 public class EventManagerScript : MonoBehaviour {
@@ -47,8 +49,15 @@ public class EventManagerScript : MonoBehaviour {
 			return s_Instance;
 		}
 	}
+	#endregion
 
+	#region Members
 
+	public GameObject FXGunPrefab;
+	public GameObject FXGatelinePrefab;
+	public GameObject FXShotGunPrefab;
+
+	#endregion
 
 	void Awake()
 	{
@@ -56,7 +65,28 @@ public class EventManagerScript : MonoBehaviour {
 			s_Instance = this;
 		//DontDestroyOnLoad(this);
 	}
-	#endregion
+
+	void Start()
+	{
+		EventManagerScript.onEvent += (EventManagerType emt, GameObject go) =>
+		{
+			switch (emt)
+			{
+				case EventManagerType.GUN_SHOOT:
+					Instantiate(FXGunPrefab, go.transform.position, go.transform.rotation);
+					break;
+
+				case EventManagerType.GATLINE_SHOOT:
+					
+					break;
+
+				case EventManagerType.SHOT_GUN:
+					
+					break;
+			}
+		};
+	}
+
 	public static void emit(EventManagerType emt, GameObject go)
 	{
 		if(onEvent!=null)
@@ -64,6 +94,6 @@ public class EventManagerScript : MonoBehaviour {
 			onEvent(emt,go);
 		}
 	}
-
+	
 
 }
