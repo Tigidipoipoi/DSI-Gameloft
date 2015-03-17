@@ -21,9 +21,13 @@ public class PlayerScript : MonoBehaviour {
 
     public Transform m_UpBodyTrans;
     public Transform m_DownBodyTrans;
+
+	AudioSource m_AudioSource;
+	public AudioClip m_LootClip;
     #endregion
 
     void Start() {
+		m_AudioSource = GetComponent<AudioSource>();
         c_PlayerPosYClamp = this.transform.position.y;
 
         m_WeaponCoroutines = new IEnumerator[m_Weapons.Length];
@@ -134,6 +138,8 @@ public class PlayerScript : MonoBehaviour {
 
     public void LootWeapon(WeaponScript lootWeapon) {
         WeaponScript sameWeaponType = null;
+
+		
 
         int slotCount = m_Weapons.Length;
         for (int i = 0; i < slotCount; ++i) {
