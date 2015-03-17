@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ShaderForgeInternal
+  m_Shader: {fileID: 4800000, guid: c9027d777d3d5d042816c34f6d0a85a0, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _node_58
+        second:
+          m_Texture: {fileID: 2800000, guid: bf9ad5447279f7842bc3356c8a32c60a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_57
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _node_32
+        second: 2
+      data:
+        first:
+          name: _node_32_copy
+        second: 6
+    m_Colors:
+      data:
+        first:
+          name: _node_5
+        second: {r: 1, g: .3979716, b: .220588207, a: 1}
+      data:
+        first:
+          name: _node_5_copy
+        second: {r: 1, g: .953346789, b: .323529392, a: 1}

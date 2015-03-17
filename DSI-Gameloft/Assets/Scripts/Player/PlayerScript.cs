@@ -143,6 +143,9 @@ public class PlayerScript : MonoBehaviour {
     public void LootWeapon(WeaponScript lootWeapon) {
         WeaponScript sameWeaponType = null;
 
+        m_AudioSource.clip = m_LootClip;
+        m_AudioSource.Play();
+
         int slotCount = m_Weapons.Length;
         for (int i = 0; i < slotCount; ++i) {
             if (m_Weapons[i] == null) {
