@@ -195,7 +195,7 @@ GameObject:
   - 114: {fileID: 11493388}
   - 114: {fileID: 11450502}
   m_Layer: 0
-  m_Name: MichellePT
+  m_Name: MichellePTOld
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1843,7 +1843,12 @@ MonoBehaviour:
   - {fileID: 11453534}
   - {fileID: 0}
   - {fileID: 0}
+  m_GunTrans: {fileID: 0}
+  m_GatlingTrans: {fileID: 0}
+  m_ShotgunTrans: {fileID: 0}
   m_GatlingRenderer: {fileID: 0}
+  m_UpBodyTrans: {fileID: 0}
+  m_DownBodyTrans: {fileID: 0}
 --- !u!136 &13604504
 CapsuleCollider:
   m_ObjectHideFlags: 1
