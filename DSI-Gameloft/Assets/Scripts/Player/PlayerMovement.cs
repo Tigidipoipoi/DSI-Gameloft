@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
     public CircleTouchScript m_CircleTouchScript;
     public Animator m_UpAnimator;
     public Animator m_DownAnimator;
-    public Animator m_GunAnimator;
 
     float m_LastClickDownTime;
     int m_EnemyOrObstacleLayerMask;
@@ -85,21 +84,21 @@ public class PlayerMovement : MonoBehaviour {
             ) {
             m_DownAnimator.SetBool("IsWalking", false);
             m_UpAnimator.SetBool("IsWalking", false);
-            m_GunAnimator.SetBool("IsWalking", false);
             this.FreezePosition();
 
+            m_UpAnimator.SetBool("IsAiming", true);
             m_PlayerScript.m_IsInTurretMode = true;
             m_PlayerScript.Unlock();
             m_PlayerScript.UpdateWeaponsHoming(isHoming: false);
             m_PlayerScript.StartCoroutine("TurretShoot");
-
-
-
         }
         // End of Turret Mode
         else if (Input.GetMouseButtonUp(0)) {
-            m_PlayerScript.m_IsInTurretMode = false;
-            m_PlayerScript.UpdateWeaponsHoming(isHoming: true);
+            if (m_PlayerScript.m_IsInTurretMode) {
+                m_UpAnimator.SetBool("IsAiming", false);
+                m_PlayerScript.m_IsInTurretMode = false;
+                m_PlayerScript.UpdateWeaponsHoming(isHoming: true);
+            }
         }
     }
 
@@ -111,7 +110,6 @@ public class PlayerMovement : MonoBehaviour {
     IEnumerator MoveToTarget() {
         m_DownAnimator.SetBool("IsWalking", true);
         m_UpAnimator.SetBool("IsWalking", true);
-        m_GunAnimator.SetBool("IsWalking", true);
 
         Vector3 currentPos = this.transform.position;
         currentPos.y = 0.0f;
@@ -139,6 +137,5 @@ public class PlayerMovement : MonoBehaviour {
         m_Rigidbody.velocity = Vector3.zero;
         m_DownAnimator.SetBool("IsWalking", false);
         m_UpAnimator.SetBool("IsWalking", false);
-        m_GunAnimator.SetBool("IsWalking", false);
     }
 }

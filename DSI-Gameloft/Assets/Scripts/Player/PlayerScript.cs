@@ -21,12 +21,14 @@ public class PlayerScript : MonoBehaviour {
     public Transform m_UpBodyTrans;
     public Transform m_DownBodyTrans;
 
-	AudioSource m_AudioSource;
-	public AudioClip m_LootClip;
+    AudioSource m_AudioSource;
+    public AudioClip m_LootClip;
+
+    public Animator m_UpAnimator;
     #endregion
 
     void Start() {
-		m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();
         c_PlayerPosYClamp = this.transform.position.y;
 
         m_WeaponCoroutines = new IEnumerator[m_Weapons.Length];
@@ -55,6 +57,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
         m_EnemyTarget = enemyLockScript.transform;
+        m_UpAnimator.SetBool("IsAiming", true);
         enemyLockScript.m_IsPlayerTarget = true;
 
         Vector3 lookAtTarget = m_EnemyTarget.position;
@@ -76,6 +79,7 @@ public class PlayerScript : MonoBehaviour {
 
         m_EnemyTarget.GetComponent<EnemyLock>().m_IsPlayerTarget = false;
         m_EnemyTarget = null;
+        m_UpAnimator.SetBool("IsAiming", false);
 
         int weaponCount = m_Weapons.Length;
         for (int i = 0; i < weaponCount; ++i) {
@@ -90,6 +94,7 @@ public class PlayerScript : MonoBehaviour {
         for (int i = 0; i < weaponCount; ++i) {
             if (m_Weapons[i] != null) {
                 m_WeaponCoroutines[i] = m_Weapons[i].AutoFire();
+                m_Weapons[i].m_Holder = this.gameObject;
             }
         }
     }
@@ -138,8 +143,8 @@ public class PlayerScript : MonoBehaviour {
     public void LootWeapon(WeaponScript lootWeapon) {
         WeaponScript sameWeaponType = null;
 
-		m_AudioSource.clip = m_LootClip;
-		m_AudioSource.Play();
+        m_AudioSource.clip = m_LootClip;
+        m_AudioSource.Play();
 
         int slotCount = m_Weapons.Length;
         for (int i = 0; i < slotCount; ++i) {
@@ -166,12 +171,12 @@ public class PlayerScript : MonoBehaviour {
             case WeaponScript.WEAPON_TYPE.SHOT_GUN:
                 lootWeapon.transform.position = m_ShotgunTrans.position;
                 lootWeapon.transform.rotation = m_ShotgunTrans.rotation;
-                lootWeapon.transform.parent = m_GatlingTrans;
+                lootWeapon.transform.parent = m_ShotgunTrans;
                 break;
             case WeaponScript.WEAPON_TYPE.GUN:
                 lootWeapon.transform.position = m_GunTrans.position;
                 lootWeapon.transform.rotation = m_GunTrans.rotation;
-                lootWeapon.transform.parent = m_GatlingTrans;
+                lootWeapon.transform.parent = m_GunTrans;
                 break;
         }
 

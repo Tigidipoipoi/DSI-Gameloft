@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d7b2b67e0165f469f3b132a12e9959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DropTheKey: 0
-  m_Life: 10
+  m_DropTheKey: -1
+  m_Life: 6
   m_IsAwake: 0
   m_Player: {fileID: 0}
   m_Renderer: {fileID: 2355820}
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_TimeDistributor: {fileID: 100638, guid: 70e1a6f114e77544497afacce9a269c8, type: 2}
   m_ExplosionDelay: .75
   m_Mouvement: {fileID: 11424140}
-  m_RadiusExplosion: 10
-  m_ExplosionDamages: 20
+  m_RadiusExplosion: 6
+  m_ExplosionDamages: 9
 --- !u!114 &11424140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Destination_Cible: {fileID: 0}
-  m_SpeedMax: 3
+  m_SpeedMax: 4
   m_Acceleration: .0250000004
-  m_BreakDistance: 1.5
+  m_BreakDistance: 5
   m_IsAtDistance: 0
   m_RotateAroundPlayer: 0
   m_RotateSpeed: 200

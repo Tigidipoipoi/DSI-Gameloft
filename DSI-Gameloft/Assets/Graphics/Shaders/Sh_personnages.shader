@@ -89,8 +89,7 @@ Shader "Shader Forge/personnages" {
 ////// Lighting:
 ////// Emissive:
                 float4 _diffuse_var = tex2D(_diffuse,TRANSFORM_TEX(i.uv0, _diffuse));
-                float3 node_3040 = (_diffuse_var.rgb+_Dommages);
-                float3 emissive = node_3040;
+                float3 emissive = (_diffuse_var.rgb+_Dommages);
                 float3 finalColor = emissive;
                 fixed4 finalRGBA = fixed4(finalColor,1);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
