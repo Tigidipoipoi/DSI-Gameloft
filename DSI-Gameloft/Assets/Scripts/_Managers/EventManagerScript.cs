@@ -31,8 +31,9 @@ public enum EventManagerType
 	GUN_SHOOT,
 	GATLINE_SHOOT,
 	SHOT_GUN,
+	TOURELLE,
 	ITEM_DROP,
-	ENEMY_ACTION
+	ENEMY_ACTION,
 }
 
 public class EventManagerScript : MonoBehaviour {

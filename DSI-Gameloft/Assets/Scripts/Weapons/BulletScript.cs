@@ -38,7 +38,6 @@ public class BulletScript : MonoBehaviour {
         GameObject otherGO = other.gameObject;
 
         if (otherGO.layer != this.gameObject.layer) {
-            Debug.Log(other.gameObject.name);
             bool isEnemyBullet = this.gameObject.layer == m_EnemyBulletLayer;
 
             if (isEnemyBullet) {
