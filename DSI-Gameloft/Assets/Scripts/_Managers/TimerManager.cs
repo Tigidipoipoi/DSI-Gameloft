@@ -74,30 +74,30 @@ public class TimerManager : MonoBehaviour {
     }
 
     public IEnumerator BlinkMichelle(float time = 0.5f) {
-        float delay = 0.15f;
+        //float delay = 0.15f;
 
-        while (time > 0) {
-            if (m_Material_1.GetFloat("_Dommages") == 0.0f) {
-                m_Material_1.SetFloat("_Dommages", 1.0f);
-            }
-            else {
-                m_Material_1.SetFloat("_Dommages", 0.0f);
-            }
+        //while (time > 0) {
+        //    if (m_Material_1.GetFloat("_Dommages") == 0.0f) {
+        //        m_Material_1.SetFloat("_Dommages", 1.0f);
+        //    }
+        //    else {
+        //        m_Material_1.SetFloat("_Dommages", 0.0f);
+        //    }
 
-            if (m_Material_2.GetFloat("_Dommages") == 0.0f) {
-                m_Material_2.SetFloat("_Dommages", 1.0f);
-            }
-            else {
-                m_Material_2.SetFloat("_Dommages", 0.0f);
-            }
+        //    if (m_Material_2.GetFloat("_Dommages") == 0.0f) {
+        //        m_Material_2.SetFloat("_Dommages", 1.0f);
+        //    }
+        //    else {
+        //        m_Material_2.SetFloat("_Dommages", 0.0f);
+        //    }
 
-            yield return new WaitForSeconds(delay);
+        //    yield return new WaitForSeconds(delay);
 
-            time -= delay;
-        }
+        //    time -= delay;
+        //}
 
-        m_Material_1.SetFloat("_Dommages", 0.0f);
-        m_Material_2.SetFloat("_Dommages", 0.0f);
+        //m_Material_1.SetFloat("_Dommages", 0.0f);
+        //m_Material_2.SetFloat("_Dommages", 0.0f);
         yield return null;
     }
 

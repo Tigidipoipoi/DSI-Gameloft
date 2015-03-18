@@ -75,7 +75,8 @@ public class Enemy_Script : MonoBehaviour {
             ? m_DropTheKey > 0
             : FloorManager.instance.MustPopKey();
 
-        if (name == "EnemyMissile" && m_EnnemyMissile2 != null) {
+        if (this.name == "EnemyMissile"
+            && m_EnnemyMissile2 != null) {
             GameObject firstChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
             GameObject secondChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
 
@@ -117,22 +118,22 @@ public class Enemy_Script : MonoBehaviour {
     }
 
     public IEnumerator blink(float time = 0.5f) {
-        float delay = 0.15f;
+        //float delay = 0.15f;
 
-        while (time > 0) {
-            if (m_Material.GetFloat("_Dommages") == 0.0f) {
-                m_Material.SetFloat("_Dommages", 1.0f);
-            }
-            else {
-                m_Material.SetFloat("_Dommages", 0.0f);
-            }
+        //while (time > 0) {
+        //    if (m_Material.GetFloat("_Dommages") == 0.0f) {
+        //        m_Material.SetFloat("_Dommages", 1.0f);
+        //    }
+        //    else {
+        //        m_Material.SetFloat("_Dommages", 0.0f);
+        //    }
 
-            yield return new WaitForSeconds(delay);
+        //    yield return new WaitForSeconds(delay);
 
-            time -= delay;
-        }
+        //    time -= delay;
+        //}
 
-        m_Material.SetFloat("_Dommages", 0.0f);
+        //m_Material.SetFloat("_Dommages", 0.0f);
         yield return null;
     }
 
