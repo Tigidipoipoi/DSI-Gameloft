@@ -28,22 +28,26 @@ public class EnemyStandard : Enemy_Script {
 
     IEnumerator WaitAndShoot() {
         if (m_IsAwake == true) {
-            //m_Animator.SetTrigger("Aiming");
             yield return new WaitForSeconds(m_DelayBeforeShoot);
 
-            if (m_Mouvement.m_IsAtDistance == false) {
+            if (!m_Mouvement.m_IsAtDistance) {
                 StopCoroutine(WaitAndShoot());
             }
 
-            GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject;
-            m_BulletScript = bullet.GetComponent<BulletScript>();
-            m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
-            m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
-            bullet.layer = LayerMask.NameToLayer("EnemyBullet");
-
-            yield return new WaitForSeconds(m_DelayAfterShoot);
-            m_IsReady = true;
+            Debug.Log("ARG");
+            m_Animator.SetTrigger("Shoot");
         }
+    }
+
+    IEnumerator Shoot() {
+        GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject;
+        m_BulletScript = bullet.GetComponent<BulletScript>();
+        m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
+        m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+        bullet.layer = LayerMask.NameToLayer("EnemyBullet");
+
+        yield return new WaitForSeconds(m_DelayAfterShoot);
+        m_IsReady = true;
     }
 
     public override void Update() {
