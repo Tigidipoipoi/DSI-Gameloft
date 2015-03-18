@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mat_Michelle
-  m_Shader: {fileID: 4800000, guid: 546e08e13650e9645896bf3187c8d604, type: 3}
+  m_Shader: {fileID: 10708, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 879c7f7d8a01ca84cbfbba764c160e7f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -33,13 +33,6 @@ Material:
           name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _diffuse
-        second:
-          m_Texture: {fileID: 2800000, guid: 214e176101225314da644958d70a20bf, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -86,6 +79,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: 214e176101225314da644958d70a20bf, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _node_6043
         second:
           m_Texture: {fileID: 2800000, guid: 879c7f7d8a01ca84cbfbba764c160e7f, type: 3}
@@ -103,10 +103,6 @@ Material:
       data:
         first:
           name: _DstBlend
-        second: 0
-      data:
-        first:
-          name: _Dommages
         second: 0
       data:
         first:
@@ -147,6 +143,10 @@ Material:
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _Dommages
         second: 0
       data:
         first:
