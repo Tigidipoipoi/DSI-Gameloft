@@ -22,30 +22,30 @@ public class RoomPartScript : MonoBehaviour {
     GameObject m_WallCollider;
     #endregion
 
-    void Awake () {
-        m_WallCollider = Resources.Load<GameObject> ("Prefabs/Wall/WallCollider");
+    void Awake() {
+        m_WallCollider = Resources.Load<GameObject>("Prefabs/Wall/WallCollider");
     }
 
-    public void AttachContent (GameObject prefab) {
+    public void AttachContent(GameObject prefab) {
         int childCount = this.transform.childCount;
         for (int i = 0; i < childCount; ++i) {
-            Destroy (this.transform.GetChild (i).gameObject);
+            Destroy(this.transform.GetChild(i).gameObject);
         }
 
-        m_ChildContent = Object.Instantiate (prefab,
+        m_ChildContent = Object.Instantiate(prefab,
             this.transform.position, Quaternion.identity) as GameObject; ;
         m_ChildContent.name = "Content";
         m_ChildContent.transform.parent = this.transform;
     }
 
-    public void AttachContent (GameObject wall, bool isWall) {
+    public void AttachContent(GameObject wall, bool isWall) {
         int childCount = this.transform.childCount;
         for (int i = 0; i < childCount; ++i) {
-            Destroy (this.transform.GetChild (i).gameObject);
+            Destroy(this.transform.GetChild(i).gameObject);
         }
 
-        GameObject wallCollider = Object.Instantiate (m_WallCollider,
-            this.transform.position, Quaternion.identity) as GameObject;
+        GameObject wallCollider = Object.Instantiate(m_WallCollider,
+                this.transform.position, Quaternion.identity) as GameObject;
 
         wallCollider.name = "Collider";
         wallCollider.transform.parent = this.transform;

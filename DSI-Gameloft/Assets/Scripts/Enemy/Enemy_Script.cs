@@ -78,16 +78,16 @@ public class Enemy_Script : MonoBehaviour {
 
         m_Player.GetComponent<PlayerScript>().Unlock();
 
-		if (TimerManager.instance.m_RemainingTime >= 0)
-		{
-			GameObject m_PrefabTimeDistributor = Instantiate(m_TimeDistributor, this.transform.position, this.transform.rotation) as GameObject;
-			m_TimeDistributorScript = m_PrefabTimeDistributor.GetComponent<TimeDistributor>();
-			m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
-		}
+        if (TimerManager.instance.m_RemainingTime >= 0) {
+            GameObject m_PrefabTimeDistributor = Instantiate(m_TimeDistributor, this.transform.position, this.transform.rotation) as GameObject;
+            m_TimeDistributorScript = m_PrefabTimeDistributor.GetComponent<TimeDistributor>();
+            m_TimeDistributorScript.m_EarnTime = m_EarnedTime;
+        }
         if (mustPopKey) {
             PopKey();
         }
 
+        ++FloorManager.instance.m_KilledEnemiesCount;
         Destroy(this.gameObject);
     }
 
@@ -111,12 +111,11 @@ public class Enemy_Script : MonoBehaviour {
         float delay = 0.15f;
 
         while (time > 0) {
-			if (m_Material.GetFloat("_Dommages") == 0.0f)
-			{
-				m_Material.SetFloat("_Dommages", 1.0f);
+            if (m_Material.GetFloat("_Dommages") == 0.0f) {
+                m_Material.SetFloat("_Dommages", 1.0f);
             }
             else {
-				m_Material.SetFloat("_Dommages", 0.0f);
+                m_Material.SetFloat("_Dommages", 0.0f);
             }
 
             yield return new WaitForSeconds(delay);
@@ -124,7 +123,7 @@ public class Enemy_Script : MonoBehaviour {
             time -= delay;
         }
 
-		m_Material.SetFloat("_Dommages", 0.0f);
+        m_Material.SetFloat("_Dommages", 0.0f);
         yield return null;
     }
 

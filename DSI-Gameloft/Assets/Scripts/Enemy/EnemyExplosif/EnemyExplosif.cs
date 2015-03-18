@@ -43,7 +43,6 @@ public class EnemyExplosif : Enemy_Script {
                 m_BulletScript = (BulletScript)hitColliders[i].GetComponent(typeof(Enemy_Script));
                 m_BulletScript.GetDamage();
             }
-
         }
     }
 
