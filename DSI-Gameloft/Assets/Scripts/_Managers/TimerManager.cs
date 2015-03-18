@@ -20,7 +20,8 @@ public class TimerManager : MonoBehaviour {
 
     #region Members
     public float m_RemainingTime;
-    public int m_FloorTime = 120;
+    public int m_FloorTime = 120
+		;
     IEnumerator m_TimeIsRunningOut;
 
     public GameObject m_TimeWhite;
