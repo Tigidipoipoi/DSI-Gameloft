@@ -76,6 +76,9 @@ public class EventManagerScript : MonoBehaviour {
 		{
 			onEvent(emt,go);
 		}
+
+
+
 	}
 
 

@@ -37,9 +37,10 @@ public class FXManager : MonoBehaviour {
 			m_PlayerChild = m_Player;
 			m_Player = m_Player.parent;
 		}
-
+		
 		switch(emt)
 		{
+			
 			//Bullets
 			case EventManagerType.GUN_SHOOT:
 				Instance = Instantiate(FXGunShoot, go.transform.position, m_PlayerChild.rotation) as GameObject;
