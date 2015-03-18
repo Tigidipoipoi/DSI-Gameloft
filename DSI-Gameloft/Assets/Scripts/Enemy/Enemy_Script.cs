@@ -45,16 +45,23 @@ public class Enemy_Script : MonoBehaviour {
             m_Renderer = this.GetComponent<Renderer>();
         }
         m_Material = m_Renderer.material;
+	
     }
 
     public void GetDamage(float m_Damage) {
 		EventManagerScript.emit(EventManagerType.ENEMY_DAMAGE, this.gameObject);
-        StartCoroutine(blink());
+        //StartCoroutine(blink());
         m_Life -= m_Damage;
+
+
+
         if (m_Life <= 0) {
             this.DestroyEnemy();
         }
     }
+
+
+
 
     public IEnumerator FreezeEnemy() {
         m_IsFreeze = true;
