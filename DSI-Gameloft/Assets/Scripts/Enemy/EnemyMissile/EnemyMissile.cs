@@ -13,7 +13,7 @@ public class EnemyMissile : Enemy_Script {
 
     public GameObject m_PrefabBullet;
 
-    public BulletScript m_BulletScript;
+    public HomingBulletScript m_BulletScript;
     public float m_BulletPower;
     public float m_BulletSpeed;
 
@@ -26,7 +26,6 @@ public class EnemyMissile : Enemy_Script {
     public override void Start() {
         base.Start();
         m_IsReady = true;
-        name = "EnemyMissile";
     }
 
     IEnumerator WaitAndShoot() {
@@ -43,9 +42,10 @@ public class EnemyMissile : Enemy_Script {
 
     public IEnumerator Shoot() {
         GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject;
-        m_BulletScript = bullet.GetComponent<BulletScript>();
+        m_BulletScript = bullet.GetComponent<HomingBulletScript>();
         m_BulletScript.m_BulletStats.m_Power = m_BulletPower;
         m_BulletScript.m_BulletStats.m_Speed = m_BulletSpeed;
+        m_BulletScript.m_Target = m_Player;
         bullet.layer = LayerMask.NameToLayer("EnemyBullet");
 
         yield return new WaitForSeconds(m_DelayAfterShoot);

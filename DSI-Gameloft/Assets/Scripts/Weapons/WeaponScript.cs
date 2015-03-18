@@ -35,8 +35,6 @@ public class WeaponScript : MonoBehaviour {
             ? "AllyBullet"
             : "EnemyBullet");
         m_PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-
-        m_Type = WEAPON_TYPE.NONE;
     }
 
     public virtual IEnumerator AutoFire() {

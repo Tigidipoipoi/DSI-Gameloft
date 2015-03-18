@@ -10,11 +10,11 @@ public class TimerManager : MonoBehaviour {
         }
     }
 
-    void Awake () {
+    void Awake() {
         if (s_Instance == null)
             s_Instance = this;
         //DontDestroyOnLoad (this);
-        this.Init ();
+        this.Init();
     }
     #endregion
 
@@ -32,24 +32,24 @@ public class TimerManager : MonoBehaviour {
 
     AudioSource m_AudioSource;
 
-	private Material m_Material_1;
-	private Material m_Material_2;
-	public Renderer m_RendererUP;
-	public Renderer m_RendererDOWN;
+    private Material m_Material_1;
+    private Material m_Material_2;
+    public Renderer m_RendererUP;
+    public Renderer m_RendererDOWN;
     #endregion
 
-    public void Init () {
+    public void Init() {
         m_RemainingTime = m_FloorTime;
-        m_TimeIsRunningOut = TimeIsRunningOut ();
-        this.StartCoroutine (m_TimeIsRunningOut);
+        m_TimeIsRunningOut = TimeIsRunningOut();
+        this.StartCoroutine(m_TimeIsRunningOut);
         m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
         m_Sprite = m_TimeWhite.GetComponent<SpriteRenderer>();
-        m_AudioSource=GetComponent<AudioSource>();
-		m_Material_1 = m_RendererUP.material;
-		m_Material_2 = m_RendererDOWN.material;
+        m_AudioSource = GetComponent<AudioSource>();
+        m_Material_1 = m_RendererUP.material;
+        m_Material_2 = m_RendererDOWN.material;
     }
 
-    IEnumerator TimeIsRunningOut () {
+    IEnumerator TimeIsRunningOut() {
         // Wait for the start
         yield return null;
 
@@ -58,15 +58,12 @@ public class TimerManager : MonoBehaviour {
             if (UIManager.instance != null) {
                 UIManager.instance.UpdateRemainingTime(m_RemainingTime, m_FloorTime, m_TimePourcentage);
                 m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
-               
+
                 m_TimeWhite.transform.localPosition = new Vector3((m_TimePourcentage * pixel) - 5.16f, 0, 0);
 
-                if(m_TimePourcentage<20 && IsBlinking == false)
-                {
+                if (m_TimePourcentage < 20 && IsBlinking == false) {
                     StartCoroutine(BlinkBar());
                 }
-
-
             }
             yield return null;
         }
@@ -75,73 +72,63 @@ public class TimerManager : MonoBehaviour {
         m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 
-	public IEnumerator BlinkMichelle(float time = 0.5f)
-	{
-		float delay = 0.15f;
+    public IEnumerator BlinkMichelle(float time = 0.5f) {
+        float delay = 0.15f;
 
-		while (time > 0) {
-		    if (m_Material_1.GetFloat("_Dommages") == 0.0f) {
-		        m_Material_1.SetFloat("_Dommages", 1.0f);
-		    }
-		    else {
-		        m_Material_1.SetFloat("_Dommages", 0.0f);
-		    }
+        while (time > 0) {
+            if (m_Material_1.GetFloat("_Dommages") == 0.0f) {
+                m_Material_1.SetFloat("_Dommages", 1.0f);
+            }
+            else {
+                m_Material_1.SetFloat("_Dommages", 0.0f);
+            }
 
-			if (m_Material_2.GetFloat("_Dommages") == 0.0f)
-			{
-				m_Material_2.SetFloat("_Dommages", 1.0f);
-			}
-			else
-			{
-				m_Material_2.SetFloat("_Dommages", 0.0f);
-			}
+            if (m_Material_2.GetFloat("_Dommages") == 0.0f) {
+                m_Material_2.SetFloat("_Dommages", 1.0f);
+            }
+            else {
+                m_Material_2.SetFloat("_Dommages", 0.0f);
+            }
 
-		    yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(delay);
 
-		    time -= delay;
-		}
+            time -= delay;
+        }
 
-		m_Material_1.SetFloat("_Dommages", 0.0f);
-		m_Material_2.SetFloat("_Dommages", 0.0f);
-		yield return null;
-	}
+        m_Material_1.SetFloat("_Dommages", 0.0f);
+        m_Material_2.SetFloat("_Dommages", 0.0f);
+        yield return null;
+    }
 
-    IEnumerator BlinkBar()
-    {
+    IEnumerator BlinkBar() {
         IsBlinking = true;
-        while (m_TimePourcentage < 20)
-        {
+        while (m_TimePourcentage < 20) {
             m_Sprite.color = Color.red;
             yield return new WaitForSeconds(1);
             m_Sprite.color = Color.white;
             yield return new WaitForSeconds(1);
-
         }
         m_Sprite.color = Color.white;
 
         IsBlinking = false;
     }
 
-    IEnumerator AddTimeBlink()
-    {
-            m_Sprite.color = Color.yellow;
-            yield return new WaitForSeconds(0.3f);
-            m_Sprite.color = Color.white;
+    IEnumerator AddTimeBlink() {
+        m_Sprite.color = Color.yellow;
+        yield return new WaitForSeconds(0.3f);
+        m_Sprite.color = Color.white;
     }
-    IEnumerator LoseTimeBlink()
-    {
-		StartCoroutine(BlinkMichelle());
+    IEnumerator LoseTimeBlink() {
+        StartCoroutine(BlinkMichelle());
         m_Sprite.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         m_Sprite.color = Color.white;
-        Handheld.Vibrate();
     }
 
 
-    public void AddTime (float timeEarned) {
+    public void AddTime(float timeEarned) {
         m_RemainingTime += timeEarned;
-        if(m_RemainingTime>m_FloorTime)
-        {
+        if (m_RemainingTime > m_FloorTime) {
             m_RemainingTime = m_FloorTime;
         }
         m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
@@ -149,12 +136,10 @@ public class TimerManager : MonoBehaviour {
         StartCoroutine(AddTimeBlink());
     }
 
-    public void LoseTime (float timeLost) {
+    public void LoseTime(float timeLost) {
         m_RemainingTime -= timeLost;
         m_TimePourcentage = (m_RemainingTime * 100) / m_FloorTime;
         m_TimeWhite.transform.localPosition = new Vector3((m_TimePourcentage * pixel) - 5.16f, 0, 0);
         StartCoroutine(LoseTimeBlink());
     }
-
-
 }

@@ -157,6 +157,7 @@ public class PlayerScript : MonoBehaviour {
 
             if (m_Weapons[i].m_Type == lootWeapon.m_Type) {
                 sameWeaponType = m_Weapons[i];
+                break;
             }
         }
 
