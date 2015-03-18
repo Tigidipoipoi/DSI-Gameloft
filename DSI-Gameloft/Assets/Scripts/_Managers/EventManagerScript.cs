@@ -33,7 +33,10 @@ public enum EventManagerType
 	SHOT_GUN,
 	TOURELLE,
 	ITEM_DROP,
-	ENEMY_ACTION,
+	ENEMY_DAMAGE,
+	ENEMY_DEATH,
+	EXPLOSION,
+	TIME_DROP
 }
 
 public class EventManagerScript : MonoBehaviour {
@@ -75,6 +78,9 @@ public class EventManagerScript : MonoBehaviour {
 		{
 			onEvent(emt,go);
 		}
+
+
+
 	}
 
 

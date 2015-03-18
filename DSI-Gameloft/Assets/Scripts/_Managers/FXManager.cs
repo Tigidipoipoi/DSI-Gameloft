@@ -23,7 +23,15 @@ public class FXManager : MonoBehaviour {
 	public GameObject FXGatLine;
 	public GameObject FXShotGun;
 
+	public GameObject FXTimeDrop;
+
 	public GameObject FXTourelle;
+
+	public GameObject FXEnemyDamage;
+
+	public GameObject FXEnemyDeath;
+
+	public GameObject FXExplosion;
 	#endregion
 
 
@@ -35,9 +43,10 @@ public class FXManager : MonoBehaviour {
 			m_PlayerChild = m_Player;
 			m_Player = m_Player.parent;
 		}
-
+		
 		switch(emt)
 		{
+			
 			//Bullets
 			case EventManagerType.GUN_SHOOT:
 				Instance = Instantiate(FXGunShoot, go.transform.position, m_PlayerChild.rotation) as GameObject;
@@ -62,6 +71,20 @@ public class FXManager : MonoBehaviour {
 				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
 				Destroy(Instance, 0.35f);
 				break;
+
+			case EventManagerType.ENEMY_DAMAGE:
+				Instance = Instantiate(FXEnemyDamage, go.transform.position, go.transform.rotation) as GameObject;
+				Destroy(Instance, 1.7f);
+				break;
+
+			case EventManagerType.ENEMY_DEATH:
+				Instance = Instantiate(FXEnemyDeath, go.transform.position, go.transform.rotation) as GameObject;
+				break;
+
+			case EventManagerType.EXPLOSION:
+				Instance = Instantiate(FXExplosion, go.transform.position, go.transform.rotation) as GameObject;
+				break;
+
 
 		}
 
