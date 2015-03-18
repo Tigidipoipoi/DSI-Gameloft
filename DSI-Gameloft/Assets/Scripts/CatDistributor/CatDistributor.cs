@@ -23,7 +23,7 @@ public class CatDistributor : MonoBehaviour {
 
     IEnumerator LootCat() {
         for (int i = 0; i < m_RescuedCatCount; i++) {
-            Instantiate(ChatListe[Random.Range(0, ChatListe.Count)], new Vector3(Random.Range(gauche.position.x, droit.position.x), gauche.position.y, gauche.position.z), Random.rotation);
+            Instantiate(ChatListe[Random.Range(0, ChatListe.Count)], this.transform.position, Random.rotation);
             yield return new WaitForSeconds(0.1f);
         }
     }
