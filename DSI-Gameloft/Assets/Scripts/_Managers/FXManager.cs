@@ -22,6 +22,8 @@ public class FXManager : MonoBehaviour {
 	public GameObject FXGunShoot;
 	public GameObject FXGatLine;
 	public GameObject FXShotGun;
+
+	public GameObject FXTourelle;
 	#endregion
 
 
@@ -34,20 +36,31 @@ public class FXManager : MonoBehaviour {
 			m_Player = m_Player.parent;
 		}
 
-
 		switch(emt)
 		{
+			//Bullets
 			case EventManagerType.GUN_SHOOT:
 				Instance = Instantiate(FXGunShoot, go.transform.position, m_PlayerChild.rotation) as GameObject;
-				Instance.transform.eulerAngles = new Vector3(Instance.transform.rotation.x, m_PlayerChild.transform.rotation.y , Instance.transform.rotation.z);
+				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
+				Destroy(Instance, 1.0f);
 				break;
 
 			case EventManagerType.GATLINE_SHOOT:
-				Instantiate(FXGatLine, go.transform.position, go.transform.rotation);
+				Instance = Instantiate(FXGatLine, go.transform.position, m_PlayerChild.rotation) as GameObject;
+				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
+				Destroy(Instance, 1.0f);
 				break;
 
 			case EventManagerType.SHOT_GUN:
-				Instantiate(FXShotGun, go.transform.position, go.transform.rotation);
+				Instance = Instantiate(FXShotGun, go.transform.position, m_PlayerChild.rotation) as GameObject;
+				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
+				Destroy(Instance, 1.0f);
+				break;
+
+			case EventManagerType.TOURELLE:
+				Instance = Instantiate(FXTourelle, go.transform.position, m_PlayerChild.rotation) as GameObject;
+				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
+				Destroy(Instance, 0.35f);
 				break;
 
 		}

@@ -1667,7 +1667,7 @@ MonoBehaviour:
   m_ShotgunTrans: {fileID: 454816}
   m_UpBodyTrans: {fileID: 444604}
   m_DownBodyTrans: {fileID: 461478}
-  m_LootClip: {fileID: 0}
+  m_LootClip: {fileID: 8300000, guid: eb6e9b3f6fb1fe340bb7a5dc59c009df, type: 3}
   m_UpAnimator: {fileID: 9586962}
 --- !u!114 &11472142
 MonoBehaviour:
@@ -1686,6 +1686,7 @@ MonoBehaviour:
   m_CircleTouchScript: {fileID: 0}
   m_UpAnimator: {fileID: 9586962}
   m_DownAnimator: {fileID: 9533926}
+  m_BulletSpawn: {fileID: 469032}
 --- !u!114 &11490682
 MonoBehaviour:
   m_ObjectHideFlags: 1
