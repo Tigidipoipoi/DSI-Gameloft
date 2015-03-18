@@ -1681,7 +1681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TimeBeforeTurretMode: .200000003
-  m_MoveSpeed: 7
+  m_MoveSpeed: 14
   m_BreakDistance: 1
   m_CircleTouchScript: {fileID: 0}
   m_UpAnimator: {fileID: 9586962}
