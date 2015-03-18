@@ -48,6 +48,7 @@ public class Enemy_Script : MonoBehaviour {
     }
 
     public void GetDamage(float m_Damage) {
+		EventManagerScript.emit(EventManagerType.ENEMY_DAMAGE, this.gameObject);
         StartCoroutine(blink());
         m_Life -= m_Damage;
         if (m_Life <= 0) {
@@ -62,6 +63,7 @@ public class Enemy_Script : MonoBehaviour {
     }
 
     public void DestroyEnemy() {
+		EventManagerScript.emit(EventManagerType.ENEMY_DEATH, this.gameObject);
         bool mustPopKey = m_DropTheKey > -1
             ? m_DropTheKey > 0
             : FloorManager.instance.MustPopKey();

@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9577004}
   - 114: {fileID: 11496310}
   - 114: {fileID: 11483284}
+  - 114: {fileID: 11449130}
   m_Layer: 0
   m_Name: CirclTouch
   m_TagString: Untagged
@@ -80,6 +81,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11449130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03d80e906d7bbf49978cf404089d323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11483284
 MonoBehaviour:
   m_ObjectHideFlags: 1

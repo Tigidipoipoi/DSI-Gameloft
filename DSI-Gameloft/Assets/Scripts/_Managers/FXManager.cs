@@ -26,6 +26,12 @@ public class FXManager : MonoBehaviour {
 	public GameObject FXTimeDrop;
 
 	public GameObject FXTourelle;
+
+	public GameObject FXEnemyDamage;
+
+	public GameObject FXEnemyDeath;
+
+	public GameObject FXExplosion;
 	#endregion
 
 
@@ -66,9 +72,19 @@ public class FXManager : MonoBehaviour {
 				Destroy(Instance, 0.35f);
 				break;
 
-			case EventManagerType.TIME_DROP:
-				Instance = Instantiate(FXTimeDrop, go.transform.position, go.transform.rotation) as GameObject;
+			case EventManagerType.ENEMY_DAMAGE:
+				Instance = Instantiate(FXEnemyDamage, go.transform.position, go.transform.rotation) as GameObject;
+				Destroy(Instance, 1.7f);
 				break;
+
+			case EventManagerType.ENEMY_DEATH:
+				Instance = Instantiate(FXEnemyDeath, go.transform.position, go.transform.rotation) as GameObject;
+				break;
+
+			case EventManagerType.EXPLOSION:
+				Instance = Instantiate(FXExplosion, go.transform.position, go.transform.rotation) as GameObject;
+				break;
+
 
 		}
 

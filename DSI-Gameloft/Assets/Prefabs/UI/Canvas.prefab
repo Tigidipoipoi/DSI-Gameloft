@@ -294,6 +294,7 @@ GameObject:
   - 114: {fileID: 11441414}
   - 95: {fileID: 9547080}
   - 114: {fileID: 11425592}
+  - 82: {fileID: 8270458}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -434,6 +435,7 @@ GameObject:
   - 114: {fileID: 11433192}
   - 114: {fileID: 11483812}
   - 114: {fileID: 11433292}
+  - 82: {fileID: 8213170}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -453,6 +455,7 @@ GameObject:
   - 114: {fileID: 11439148}
   - 95: {fileID: 9516294}
   - 114: {fileID: 11446754}
+  - 114: {fileID: 11469340}
   m_Layer: 5
   m_Name: Numbers
   m_TagString: Untagged
@@ -460,6 +463,144 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &8213170
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191386}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8270458
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169200}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9503350
 Animator:
   serializedVersion: 3
@@ -770,6 +911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215263b9febac65469ef3bfa85e6c1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_FreezeClip: {fileID: 8300000, guid: b0a4b138e33f52841acb4484850b514d, type: 3}
+  m_DeathClip: {fileID: 8300000, guid: 89e0f714bbeb1264c9209ee2e129fb43, type: 3}
 --- !u!114 &11429684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -823,6 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215263b9febac65469ef3bfa85e6c1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_FreezeClip: {fileID: 8300000, guid: b0a4b138e33f52841acb4484850b514d, type: 3}
+  m_DeathClip: {fileID: 8300000, guid: 89e0f714bbeb1264c9209ee2e129fb43, type: 3}
 --- !u!114 &11435232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -908,9 +1053,9 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300004, guid: 6cd4d585e3055cd488bf42e9df1d5f9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad61a8460d10b2a43bd37352f4b206cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1234,6 +1379,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11469340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6532e9317f4da0640b10779efca01b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpyAmp: {x: 5, y: 5}
+  minBumpyFreq: 10
+  maxBumpyFreq: 10
 --- !u!114 &11471886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1920,7 +2079,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197556}
-  m_LocalRotation: {x: 0, y: 0, z: .0460964628, w: .998937011}
+  m_LocalRotation: {x: 0, y: 0, z: .047106456, w: .998889863}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1928,8 +2087,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -282.99823, y: 108.999298}
-  m_SizeDelta: {x: 36, y: 57}
+  m_AnchoredPosition: {x: -265.630005, y: 105}
+  m_SizeDelta: {x: 105.400002, y: 166.899994}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22486246
 RectTransform:
