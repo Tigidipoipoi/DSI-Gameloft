@@ -10,8 +10,6 @@ public class UIKeyScript : MonoBehaviour {
         m_Animator = GetComponent<Animator>();
     }
 
-
-
     public void AnimKey()
     {
         m_Animator.SetTrigger("GetKey");
