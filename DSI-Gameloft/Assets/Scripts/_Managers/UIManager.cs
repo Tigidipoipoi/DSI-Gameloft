@@ -158,19 +158,37 @@ public class UIManager : MonoBehaviour {
 
         }
         if (pourcentagetime <= 0) {
+			remainingTime = 0;
             m_TimerText.color = Color.red;
             m_TimerText.fontSize = m_TimeSizeMax;
 
         }
         m_TimerText.text = string.Format("{0}", remainingTime.ToString("00.0"));
+		
+		if (TimerManager.instance.m_RemainingTime <= 0)
+		{
+			m_PesosText.color = Color.red;
+			m_PesosText.fontSize = 20;
+			PesosManager.instance.m_Pesos = 0;
+			m_PesosText.text = string.Format("{0}", PesosManager.instance.m_Pesos.ToString("0"));
+		}
     }
 
     public void UpdatePesos(int newPesos, int pesos) {
         if (m_PesosText == null) {
             return;
         }
-
-        StartCoroutine(AddPesos(newPesos, pesos));
+		if (TimerManager.instance.m_RemainingTime > 0)
+		{
+			StartCoroutine(AddPesos(newPesos, pesos));
+		}
+		else
+		{
+			m_PesosText.color = Color.red;
+			m_PesosText.fontSize = 20;
+			PesosManager.instance.m_Pesos = 0;
+			m_PesosText.text = string.Format("{0}", PesosManager.instance.m_Pesos.ToString("0"));
+		}
     }
 
     IEnumerator AddPesos(int newPesos, int pesos) {

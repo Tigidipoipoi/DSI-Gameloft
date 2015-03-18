@@ -130,6 +130,9 @@ public class Enemy_Script : MonoBehaviour {
     }
 
     void PopKey() {
-        Object.Instantiate(m_KeyPrefab, this.transform.position, Quaternion.identity);
+		if (TimerManager.instance.m_RemainingTime > 0)
+		{
+			Object.Instantiate(m_KeyPrefab, this.transform.position, Quaternion.identity);
+		}
     }
 }
