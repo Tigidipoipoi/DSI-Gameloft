@@ -1,1 +1,1 @@
-adb install -l "C:\Users\sig4gp\Desktop\Je suis une brique\NoTimeToWest.apk"
+adb install -l "C:\Users\sig4gp\Desktop\Je suis une brique\DSI-Gameloft\Builds\NoTimeToWest.apk"

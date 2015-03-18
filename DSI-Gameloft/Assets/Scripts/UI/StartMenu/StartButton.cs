@@ -10,7 +10,7 @@ public class StartButton : MonoBehaviour {
     #endregion
 
     public void LaunchGame() {
-        Application.LoadLevel("PlayTestV2");
+        Application.LoadLevel("PlayTestV3");
     }
 
     public void Exit() {
