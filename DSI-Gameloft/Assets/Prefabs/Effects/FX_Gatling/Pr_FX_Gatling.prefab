@@ -3315,7 +3315,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 901565dbbe6ae6d47b8a06cffce3fead, type: 2}
+  - {fileID: 2100000, guid: 7378b9836b57ca5439293ae1eb2eebaf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
