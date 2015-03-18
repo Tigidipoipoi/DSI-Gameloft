@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     IEnumerator m_MoveToTarget;
     PlayerScript m_PlayerScript;
 
-	public Transform m_BulletSpawn;
+    public Transform m_BulletSpawn;
     #endregion
 
     void Start() {
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
             m_PlayerScript.Unlock();
             m_PlayerScript.UpdateWeaponsHoming(isHoming: false);
             m_PlayerScript.StartCoroutine("TurretShoot");
-			
+
         }
         // End of Turret Mode
         else if (Input.GetMouseButtonUp(0)) {
@@ -105,9 +105,15 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void FreezePosition() {
+    public void FreezePosition(bool disableInputs = false) {
         this.StopCoroutine(m_MoveToTarget);
         m_Rigidbody.velocity = Vector3.zero;
+        m_DownAnimator.SetBool("IsWalking", false);
+        m_UpAnimator.SetBool("IsWalking", false);
+
+        if (disableInputs) {
+            this.enabled = false;
+        }
     }
 
     IEnumerator MoveToTarget() {

@@ -25,6 +25,8 @@ public class DoorScript : MonoBehaviour {
 
     Vector3 m_EnteringVelocity;
     Vector3 m_NormAxis;
+
+    const float c_EnteringRoomOffset = 5.0f;
     #endregion
 
     void Start() {
@@ -55,44 +57,89 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            m_EnteringVelocity = other.GetComponent<Rigidbody>().velocity;
+            //m_EnteringVelocity = other.GetComponent<Rigidbody>().velocity;
 
-            Vector2 roomToLoadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
-                ? m_Room2Index
-                : m_Room1Index;
+            this.StartCoroutine("DoorTransition");
 
-            FloorManager.instance.LoadRoam(roomToLoadIndex);
+            //Vector2 roomToLoadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
+            //    ? m_Room2Index
+            //    : m_Room1Index;
+
+            //FloorManager.instance.LoadRoam(roomToLoadIndex);
         }
     }
 
-    void OnTriggerExit(Collider other) {
-        if (other.tag == "Player") {
-            Debug.Log("Transition end!");
-            Vector3 enterVelFormated = this.FormatVelocityToAxis(m_EnteringVelocity.normalized, m_NormAxis);
-            Vector3 exitVelFormated = this.FormatVelocityToAxis(other.GetComponent<Rigidbody>().velocity.normalized, m_NormAxis);
+    IEnumerator DoorTransition() {
+        PlayerMovement playerMoveScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMoveScript.FreezePosition(disableInputs: true);
 
-            float velsAngle = Vector3.Angle(enterVelFormated, exitVelFormated);
+        Vector2 roomToLoadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
+            ? m_Room2Index
+            : m_Room1Index;
+        Vector2 roomToUnloadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
+            ? m_Room1Index
+            : m_Room2Index;
 
-            // Same side
-            if (velsAngle >= 90.0f) {
-                Vector2 roomToUnloadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
-                    ? m_Room2Index
-                    : m_Room1Index;
+        FloorManager.instance.LoadRoam(roomToLoadIndex);
 
-                FloorManager.instance.LoadRoam(roomToUnloadIndex);
-            }
-            else {
-                Vector2 roomToUnloadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
-                    ? m_Room1Index
-                    : m_Room2Index;
-                Vector2 newRoomIndex = roomToUnloadIndex == m_Room2Index
-                    ? m_Room1Index
-                    : m_Room2Index;
+        // ToDo: display transition screen
+        yield return new WaitForSeconds(0.1f);
+        // ToDo: hide transition screen
 
-                FloorManager.instance.UnloadRoam(roomToUnloadIndex);
-                FloorManager.instance.m_CurrentRoomIndex = newRoomIndex;
-            }
+        Vector3 warpPos = playerMoveScript.transform.position;
+
+        // Right => Left
+        if ((int)roomToLoadIndex.x > (int)roomToUnloadIndex.x) {
+            warpPos.x += SceneryScript.c_PartWidth + c_EnteringRoomOffset;
         }
+        // Left => Right
+        else if ((int)roomToLoadIndex.x < (int)roomToUnloadIndex.x) {
+            warpPos.x -= SceneryScript.c_PartWidth + c_EnteringRoomOffset;
+        }
+        // Up => Down
+        else if ((int)roomToLoadIndex.y > (int)roomToUnloadIndex.y) {
+            warpPos.z -= SceneryScript.c_PartHeight + c_EnteringRoomOffset;
+        }
+        // Down => Up
+        else if ((int)roomToLoadIndex.y < (int)roomToUnloadIndex.y) {
+            warpPos.z += SceneryScript.c_PartHeight + c_EnteringRoomOffset;
+        }
+
+        playerMoveScript.transform.position = warpPos;
+
+        FloorManager.instance.UnloadRoam(roomToUnloadIndex);
+        FloorManager.instance.m_CurrentRoomIndex = roomToLoadIndex;
+
+        playerMoveScript.enabled = true;
+    }
+
+    void OnTriggerExit(Collider other) {
+        //if (other.tag == "Player") {
+        //    Vector3 enterVelFormated = this.FormatVelocityToAxis(m_EnteringVelocity.normalized, m_NormAxis);
+        //    Vector3 exitVelFormated = this.FormatVelocityToAxis(other.GetComponent<Rigidbody>().velocity.normalized, m_NormAxis);
+
+        //    float velsAngle = Vector3.Angle(enterVelFormated, exitVelFormated);
+
+        //    // Same side
+        //    if (velsAngle >= 90.0f) {
+        //        Vector2 roomToUnloadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
+        //            ? m_Room2Index
+        //            : m_Room1Index;
+
+        //        FloorManager.instance.LoadRoam(roomToUnloadIndex);
+        //    }
+        //    else {
+        //        Vector2 roomToUnloadIndex = m_Room1Index == FloorManager.instance.m_CurrentRoomIndex
+        //            ? m_Room1Index
+        //            : m_Room2Index;
+        //        Vector2 newRoomIndex = roomToUnloadIndex == m_Room2Index
+        //            ? m_Room1Index
+        //            : m_Room2Index;
+
+        //        FloorManager.instance.UnloadRoam(roomToUnloadIndex);
+        //        FloorManager.instance.m_CurrentRoomIndex = newRoomIndex;
+        //    }
+        //}
     }
 
     Vector3 FormatVelocityToAxis(Vector3 velocity, Vector3 axis) {
