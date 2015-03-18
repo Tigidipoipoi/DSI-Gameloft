@@ -4,16 +4,13 @@ using System.Collections;
 public class PesosManager : MonoBehaviour {
     #region Singleton
     static private PesosManager s_Instance;
-    static public PesosManager instance
-    {
-        get
-        {
+    static public PesosManager instance {
+        get {
             return s_Instance;
         }
     }
 
-    void Awake()
-    {
+    void Awake() {
         if (s_Instance == null)
             s_Instance = this;
         //DontDestroyOnLoad(this);
@@ -27,18 +24,15 @@ public class PesosManager : MonoBehaviour {
 
     #endregion
 
-    public void Init()
-    {
+    public void Init() {
         m_Pesos = 0;
     }
 
-	public void AddPesos(int pesos)
-    {
+    public void AddPesos(int pesos) {
         m_Pesos += pesos;
     }
 
-    public void SavePesos()
-    {
+    public void SavePesos() {
         PlayerPrefs.SetInt("Pesos", PlayerPrefs.GetInt("Pesos", 0) + m_Pesos);
     }
 

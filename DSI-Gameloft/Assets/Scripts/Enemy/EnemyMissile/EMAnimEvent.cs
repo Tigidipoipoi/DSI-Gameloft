@@ -9,7 +9,6 @@ public class EMAnimEvent : MonoBehaviour {
     }
 
     public void Shoot() {
-        Debug.Log("Call");
         m_EMScript.StartCoroutine("Shoot");
     }
 }

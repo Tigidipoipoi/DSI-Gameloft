@@ -79,7 +79,10 @@ public class PlayerScript : MonoBehaviour {
 
         m_EnemyTarget.GetComponent<EnemyLock>().m_IsPlayerTarget = false;
         m_EnemyTarget = null;
-        m_UpAnimator.SetBool("IsAiming", false);
+
+        if (!m_IsInTurretMode) {
+            m_UpAnimator.SetBool("IsAiming", false);
+        }
 
         int weaponCount = m_Weapons.Length;
         for (int i = 0; i < weaponCount; ++i) {

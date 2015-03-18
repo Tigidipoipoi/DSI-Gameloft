@@ -21,7 +21,16 @@ public class FloorManager : MonoBehaviour {
     #endregion
 
     #region Members
+    // Enemies
+    [HideInInspector]
+    public int m_KilledEnemiesCount;
     public int m_RemainingEnemiesCount;
+
+    // Chests
+    [HideInInspector]
+    public int m_OpenedChestsCount;
+    public int m_RemainingChestsCount;
+
     public GameObject[] m_FloorPrefabs;
     public FloorScript m_CurrentFloor;
     public bool m_KeyPoped;
@@ -48,7 +57,6 @@ public class FloorManager : MonoBehaviour {
             }
         }
     }
-
 
     public void GetKey() {
         m_KeyAquired = true;
@@ -83,6 +91,10 @@ public class FloorManager : MonoBehaviour {
         ++m_RemainingEnemiesCount;
     }
 
+    public void NewChestAppeared() {
+        ++m_RemainingChestsCount;
+    }
+
     public void LoadSeed(FloorScript seed) {
         m_CurrentFloor = seed;
         m_HasLoadedSeed = true;
@@ -102,5 +114,17 @@ public class FloorManager : MonoBehaviour {
         GameObject roomToLoadGO = roomScripts.FirstOrDefault(x => x.m_FloorIndex == roomIndex).gameObject;
 
         roomToLoadGO.SetActive(false);
+    }
+
+    public int ComputeScore() {
+        int score = 0;
+
+        score = (int)((m_OpenedChestsCount
+            * (5 + TimerManager.instance.m_RemainingTime * 0.02f)
+            + (m_KilledEnemiesCount * 0.15f)) * 100);
+
+        PlayerPrefs.SetString("Score", score.ToString());
+
+        return score;
     }
 }

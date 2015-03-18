@@ -34,7 +34,6 @@ public class EnemyStandard : Enemy_Script {
                 StopCoroutine(WaitAndShoot());
             }
 
-            Debug.Log("ARG");
             m_Animator.SetTrigger("Shoot");
         }
     }
