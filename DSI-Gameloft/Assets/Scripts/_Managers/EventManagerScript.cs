@@ -52,10 +52,6 @@ public class EventManagerScript : MonoBehaviour {
 	#endregion
 
 	#region Members
-
-	public GameObject FXGunPrefab;
-	public GameObject FXGatelinePrefab;
-	public GameObject FXShotGunPrefab;
 	
 	#endregion
 
@@ -68,29 +64,15 @@ public class EventManagerScript : MonoBehaviour {
 
 	void Start()
 	{
-		EventManagerScript.onEvent += (EventManagerType emt, GameObject go) =>{};
+		EventManagerScript.onEvent += (EventManagerType emt, GameObject go) => { Debug.Log("&"); };
 	}
 
 	public static void emit(EventManagerType emt, GameObject go)
 	{
+		
 		if(onEvent!=null)
 		{
 			onEvent(emt,go);
-		}
-
-		switch (emt)
-		{
-			case EventManagerType.GUN_SHOOT:
-				
-				break;
-
-			case EventManagerType.GATLINE_SHOOT:
-
-				break;
-
-			case EventManagerType.SHOT_GUN:
-
-				break;
 		}
 	}
 
