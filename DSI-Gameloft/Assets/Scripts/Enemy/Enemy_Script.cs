@@ -68,7 +68,8 @@ public class Enemy_Script : MonoBehaviour {
             ? m_DropTheKey > 0
             : FloorManager.instance.MustPopKey();
 
-        if (name == "EnemyMissile" && m_EnnemyMissile2 != null) {
+        if (this.name == "EnemyMissile"
+            && m_EnnemyMissile2 != null) {
             GameObject firstChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
             GameObject secondChild = Instantiate(m_EnnemyMissile2, this.transform.position, this.transform.rotation) as GameObject;
 

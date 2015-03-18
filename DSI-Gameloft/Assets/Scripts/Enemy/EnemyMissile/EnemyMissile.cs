@@ -25,13 +25,15 @@ public class EnemyMissile : Enemy_Script {
 
     public override void Start() {
         base.Start();
+
         m_IsReady = true;
+        this.name = "EnemyMissile";
     }
 
     IEnumerator WaitAndShoot() {
         if (m_IsAwake) {
             yield return new WaitForSeconds(m_DelayBeforeShoot);
-            if (m_Mouvement.m_IsAtDistance == false
+            if (!m_Mouvement.m_IsAtDistance
                 && (Vector3.Distance(this.transform.position, m_Mouvement.m_Destination_Cible.position) <= m_RangeForShoot)) {
                 StopCoroutine(WaitAndShoot());
             }
