@@ -56,9 +56,10 @@ public class WeaponScript : MonoBehaviour {
         bulletGO.GetComponent<BulletScript>().m_BulletStats.m_Power = m_WeaponStats.m_Power;
 
         //
-
+		EventManagerScript.emit(EventManagerType.GUN_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
         switch (m_Type) {
             case WEAPON_TYPE.GUN:
+				
                 if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioGun;
                 }

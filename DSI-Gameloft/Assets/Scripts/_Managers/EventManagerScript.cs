@@ -56,7 +56,7 @@ public class EventManagerScript : MonoBehaviour {
 	public GameObject FXGunPrefab;
 	public GameObject FXGatelinePrefab;
 	public GameObject FXShotGunPrefab;
-
+	
 	#endregion
 
 	void Awake()
@@ -68,23 +68,7 @@ public class EventManagerScript : MonoBehaviour {
 
 	void Start()
 	{
-		EventManagerScript.onEvent += (EventManagerType emt, GameObject go) =>
-		{
-			switch (emt)
-			{
-				case EventManagerType.GUN_SHOOT:
-					Instantiate(FXGunPrefab, go.transform.position, go.transform.rotation);
-					break;
-
-				case EventManagerType.GATLINE_SHOOT:
-					
-					break;
-
-				case EventManagerType.SHOT_GUN:
-					
-					break;
-			}
-		};
+		EventManagerScript.onEvent += (EventManagerType emt, GameObject go) =>{};
 	}
 
 	public static void emit(EventManagerType emt, GameObject go)
@@ -93,7 +77,22 @@ public class EventManagerScript : MonoBehaviour {
 		{
 			onEvent(emt,go);
 		}
+
+		switch (emt)
+		{
+			case EventManagerType.GUN_SHOOT:
+				
+				break;
+
+			case EventManagerType.GATLINE_SHOOT:
+
+				break;
+
+			case EventManagerType.SHOT_GUN:
+
+				break;
+		}
 	}
-	
+
 
 }
