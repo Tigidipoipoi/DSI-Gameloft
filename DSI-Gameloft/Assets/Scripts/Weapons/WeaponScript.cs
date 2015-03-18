@@ -56,6 +56,7 @@ public class WeaponScript : MonoBehaviour {
         switch (m_Type) {
             case WEAPON_TYPE.GUN:
                 EventManagerScript.emit(EventManagerType.GUN_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
+
                 if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioGun;
                     EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);

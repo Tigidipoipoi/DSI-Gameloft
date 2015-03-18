@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour {
     public float m_ComboKillTime;
     IEnumerator ComboKillCoroutine;
 
+	public SoundComboScript SoundCombo;
+
     //Animation
     //Général
     public bool m_IsNewComboChest;
@@ -101,8 +103,10 @@ public class UIManager : MonoBehaviour {
 
     #region ComboChest
     public void AddComboChest() {
+
         m_ComboChest++;
-        if (m_ComboChest >= 2) {
+		if (m_ComboChest >= 2) {
+			SoundCombo.LetsSound(m_ComboChest);
             m_AnimationComboChest.StartCombo(true);
             m_AnimationNumbers.StartCombo(m_ComboChest);
             m_AnimationComboChestLetters.StartCombo();
