@@ -34,6 +34,7 @@ public enum EventManagerType
 	TOURELLE,
 	ITEM_DROP,
 	ENEMY_ACTION,
+	TIME_DROP
 }
 
 public class EventManagerScript : MonoBehaviour {

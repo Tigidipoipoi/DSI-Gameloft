@@ -23,6 +23,8 @@ public class FXManager : MonoBehaviour {
 	public GameObject FXGatLine;
 	public GameObject FXShotGun;
 
+	public GameObject FXTimeDrop;
+
 	public GameObject FXTourelle;
 	#endregion
 
@@ -61,6 +63,10 @@ public class FXManager : MonoBehaviour {
 				Instance = Instantiate(FXTourelle, go.transform.position, m_PlayerChild.rotation) as GameObject;
 				Instance.transform.Rotate(m_PlayerChild.up, 180.0f);
 				Destroy(Instance, 0.35f);
+				break;
+
+			case EventManagerType.TIME_DROP:
+				Instance = Instantiate(FXTimeDrop, go.transform.position, go.transform.rotation) as GameObject;
 				break;
 
 		}
