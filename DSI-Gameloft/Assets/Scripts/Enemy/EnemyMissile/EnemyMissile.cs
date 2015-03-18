@@ -42,7 +42,6 @@ public class EnemyMissile : Enemy_Script {
     }
 
     public IEnumerator Shoot() {
-        Debug.Log("Answer");
         GameObject bullet = Instantiate(m_PrefabBullet, m_PointForShoot.position, this.transform.rotation) as GameObject;
         m_BulletScript = bullet.GetComponent<BulletScript>();
         m_BulletScript.m_BulletStats.m_Power = m_BulletPower;

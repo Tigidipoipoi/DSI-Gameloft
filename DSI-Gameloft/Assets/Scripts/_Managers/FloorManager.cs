@@ -58,7 +58,6 @@ public class FloorManager : MonoBehaviour {
         }
     }
 
-
     public void GetKey() {
         m_KeyAquired = true;
         KeyScript.AnimKey();
@@ -123,6 +122,8 @@ public class FloorManager : MonoBehaviour {
         score = (int)((m_OpenedChestsCount
             * (5 + TimerManager.instance.m_RemainingTime * 0.02f)
             + (m_KilledEnemiesCount * 0.15f)) * 100);
+
+        PlayerPrefs.SetString("Score", score.ToString());
 
         return score;
     }

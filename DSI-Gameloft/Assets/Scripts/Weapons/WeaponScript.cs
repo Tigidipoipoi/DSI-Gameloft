@@ -36,9 +36,7 @@ public class WeaponScript : MonoBehaviour {
             : "EnemyBullet");
         m_PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
 
-        if (m_Type == null) {
-            m_Type = WEAPON_TYPE.NONE;
-        }
+        m_Type = WEAPON_TYPE.NONE;
     }
 
     public virtual IEnumerator AutoFire() {
@@ -56,14 +54,13 @@ public class WeaponScript : MonoBehaviour {
         bulletGO.GetComponent<BulletScript>().m_BulletStats.m_Power = m_WeaponStats.m_Power;
 
         //
-		
+
         switch (m_Type) {
             case WEAPON_TYPE.GUN:
-				Debug.Log("a");
-				EventManagerScript.emit(EventManagerType.GUN_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
+                EventManagerScript.emit(EventManagerType.GUN_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
                 if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioGun;
-					EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
+                    EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
                 }
                 else {
                     m_AudioSource.clip = m_AudioGun;
@@ -71,10 +68,10 @@ public class WeaponScript : MonoBehaviour {
                 break;
 
             case WEAPON_TYPE.GATLING:
-				EventManagerScript.emit(EventManagerType.GATLINE_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
+                EventManagerScript.emit(EventManagerType.GATLINE_SHOOT, this.transform.FindChild("BulletSpawn").gameObject);
                 if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioGatline;
-					EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
+                    EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
                 }
                 else {
                     m_AudioSource.clip = m_AudioGatline;
@@ -82,10 +79,10 @@ public class WeaponScript : MonoBehaviour {
                 break;
 
             case WEAPON_TYPE.SHOT_GUN:
-				EventManagerScript.emit(EventManagerType.SHOT_GUN, this.transform.FindChild("BulletSpawn").gameObject);
+                EventManagerScript.emit(EventManagerType.SHOT_GUN, this.transform.FindChild("BulletSpawn").gameObject);
                 if (m_PlayerScript.m_IsInTurretMode) {
                     m_AudioSource.clip = m_AudioShotgun;
-					EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
+                    EventManagerScript.emit(EventManagerType.TOURELLE, m_BulletSpawn.gameObject);
                 }
                 else {
                     m_AudioSource.clip = m_AudioShotgun;

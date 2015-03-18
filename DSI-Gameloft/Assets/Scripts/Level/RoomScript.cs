@@ -32,7 +32,7 @@ public class RoomScript : MonoBehaviour {
     Transform m_WallsContainer;
 
     // Constants
-    public const int c_RoomPartPrefabCount = 24;
+    public const int c_RoomPartPrefabCount = 23;
     public const int c_WallHorPrefabCount = 1;
     public const int c_WallVerPrefabCount = 1;
     public const int c_WallCornerPrefabCount = 1;

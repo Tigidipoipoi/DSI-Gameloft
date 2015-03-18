@@ -3,8 +3,6 @@ using System.Collections;
 
 public class ChestScript : MonoBehaviour {
     #region Members
-    private bool m_ChestOpen;
-
     public GameObject m_ChestLoot;
 
     private Collider m_ChestCollider;
@@ -18,7 +16,6 @@ public class ChestScript : MonoBehaviour {
     #endregion
 
     void Start() {
-        m_ChestOpen = false;
         m_ChestCollider = this.gameObject.GetComponent<Collider>();
         m_Animation = GetComponent<Animation>();
         m_Audio = GetComponent<AudioSource>();
@@ -30,7 +27,6 @@ public class ChestScript : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             if (TimerManager.instance.m_RemainingTime > 0) {
                 m_Audio.Play();
-                m_ChestOpen = true;
                 m_ChestCollider.enabled = false;
                 m_Animation.Play();
                 m_ObjectParticules.SetActive(true);

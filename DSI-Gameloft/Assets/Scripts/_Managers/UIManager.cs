@@ -45,7 +45,6 @@ public class UIManager : MonoBehaviour {
     public int m_ComboChest;
     bool m_ComboChestCompteur;
     float m_ComboChestTime = 20.0f;
-    IEnumerator ComboChestCoroutine;
 
     //Barre de temps
     private float m_Time;
@@ -74,7 +73,6 @@ public class UIManager : MonoBehaviour {
         m_ComboKill = 0;
         m_ComboChest = 0;
         ComboKillCoroutine = ComboKillTimer();
-        ComboChestCoroutine = ComboChestTimer();
 
         // GameOver transforms
         m_GameOverPanel = canvasTrans.FindChild("GameOverPanel");
@@ -251,5 +249,11 @@ public class UIManager : MonoBehaviour {
         screenTrans.gameObject.SetActive(true);
 
         Time.timeScale = 0.0f;
+    }
+
+    public void ContinueButton() {
+        Time.timeScale = 1.0f;
+
+        Application.LoadLevel("StartMenu");
     }
 }
