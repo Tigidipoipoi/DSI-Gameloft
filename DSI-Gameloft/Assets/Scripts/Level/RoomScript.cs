@@ -52,7 +52,7 @@ public class RoomScript : MonoBehaviour {
         }
 
         m_WallHorPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallH");
-        m_WallVerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallH");
+        m_WallVerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallV");
         m_WallCornerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/Corner");
     }
 
