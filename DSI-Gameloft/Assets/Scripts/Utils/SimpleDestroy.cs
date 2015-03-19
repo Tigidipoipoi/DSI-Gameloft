@@ -3,8 +3,8 @@ using System.Collections;
 
 public class SimpleDestroy : MonoBehaviour {
 
-    void Start()
+    public void DestroyNow()
     {
-        Destroy(this.gameObject,1.0f);
+        Destroy(this.gameObject);
     }
 }
