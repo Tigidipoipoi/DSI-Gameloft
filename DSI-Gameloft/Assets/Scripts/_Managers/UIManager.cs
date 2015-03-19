@@ -222,7 +222,6 @@ public class UIManager : MonoBehaviour {
         m_TimeBlink = true;
 
         while (m_Time < 20 && m_Time > 0) {
-            Debug.Log(m_Time);
             m_TimerText.color = Color.red;
             m_TimerText.fontSize = m_TimeSizeMax;
             yield return new WaitForSeconds(1);

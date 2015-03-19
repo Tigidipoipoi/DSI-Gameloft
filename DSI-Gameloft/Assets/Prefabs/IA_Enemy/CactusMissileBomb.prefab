@@ -11,11 +11,11 @@ GameObject:
   - 33: {fileID: 3335976}
   - 23: {fileID: 2377760}
   - 114: {fileID: 11400668}
-  - 135: {fileID: 13578224}
   - 54: {fileID: 5448558}
+  - 136: {fileID: 13612796}
   m_Layer: 10
   m_Name: CactusMissileBomb
-  m_TagString: Untagged
+  m_TagString: Bombe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b2dfed7dd26814541af059ccdadfa548, type: 2}
+  - {fileID: 2100000, guid: ee977c701358e4b4cb23655561f5ad9a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_EnemyLayer: 0
   m_AllyBulletLayer: 0
   m_GroundLayer: 0
---- !u!135 &13578224
-SphereCollider:
+--- !u!136 &13612796
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -181,9 +181,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .980000019
-  m_Center: {x: -6.2584877e-07, y: -.319999993, z: 8.94069672e-08}
+  m_Radius: .923697591
+  m_Height: 5.67999983
+  m_Direction: 1
+  m_Center: {x: -6.2584877e-07, y: 1.52999997, z: 8.94069672e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

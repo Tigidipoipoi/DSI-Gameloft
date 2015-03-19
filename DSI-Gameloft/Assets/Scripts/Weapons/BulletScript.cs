@@ -21,7 +21,6 @@ public class BulletScript : MonoBehaviour {
         m_EnemyLayer = LayerMask.NameToLayer("Enemy");
         m_AllyBulletLayer = LayerMask.NameToLayer("AllyBullet");
         m_GroundLayer = LayerMask.NameToLayer("Ground");
-
     }
 
     public virtual void GetDamage() {
@@ -66,6 +65,17 @@ public class BulletScript : MonoBehaviour {
     }
 
     public void PreDestroy() {
-        GameObject.Destroy(this.gameObject);
+		if(this.gameObject.tag=="Bombe")
+		{
+			EventManagerScript.emit(EventManagerType.EXPLOSION, this.gameObject);
+			GameObject.Destroy(this.gameObject, 0.7f);
+		}
+		else
+		{
+			GameObject.Destroy(this.gameObject);
+		}
+		
+
+        
     }
 }
