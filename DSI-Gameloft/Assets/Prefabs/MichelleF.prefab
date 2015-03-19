@@ -1092,7 +1092,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80, y: 0, z: -6}
+  m_LocalPosition: {x: -114, y: 0, z: -49}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children:
   - {fileID: 444604}
@@ -1581,7 +1581,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1739,10 +1739,11 @@ MonoBehaviour:
   m_BulletSpawn: {fileID: 469032}
   m_Holder: {fileID: 0}
   m_Type: 1
-  m_AudioGun: {fileID: 8300000, guid: 575627785f036d6428eb109e748f292a, type: 3}
+  m_AudioGun: {fileID: 8300000, guid: c6803c9ac032fce4ca8ba3ff51679afc, type: 3}
   m_AudioGatline: {fileID: 8300000, guid: 85c9c23eda627b34aa8908c2ccf219b8, type: 3}
-  m_AudioShotgun: {fileID: 8300000, guid: 575627785f036d6428eb109e748f292a, type: 3}
+  m_AudioShotgun: {fileID: 8300000, guid: c6803c9ac032fce4ca8ba3ff51679afc, type: 3}
   m_AudioTurrel: {fileID: 0}
+  m_Epaule: {fileID: 0}
 --- !u!136 &13691752
 CapsuleCollider:
   m_ObjectHideFlags: 1

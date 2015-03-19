@@ -131,7 +131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -212,10 +212,11 @@ MonoBehaviour:
   m_BulletSpawn: {fileID: 489952}
   m_Holder: {fileID: 0}
   m_Type: 1
-  m_AudioGun: {fileID: 8300000, guid: 575627785f036d6428eb109e748f292a, type: 3}
+  m_AudioGun: {fileID: 8300000, guid: c6803c9ac032fce4ca8ba3ff51679afc, type: 3}
   m_AudioGatline: {fileID: 8300000, guid: 85c9c23eda627b34aa8908c2ccf219b8, type: 3}
-  m_AudioShotgun: {fileID: 8300000, guid: 575627785f036d6428eb109e748f292a, type: 3}
+  m_AudioShotgun: {fileID: 8300000, guid: c6803c9ac032fce4ca8ba3ff51679afc, type: 3}
   m_AudioTurrel: {fileID: 0}
+  m_Epaule: {fileID: 0}
 --- !u!114 &11496570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd786b28f5e5b86409556cfd700fb91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MagnetizeDistance: 0
 --- !u!135 &13541830
 SphereCollider:
   m_ObjectHideFlags: 1
