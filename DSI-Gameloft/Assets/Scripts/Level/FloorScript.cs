@@ -29,58 +29,54 @@ public class FloorScript : MonoBehaviour {
     public Vector2 m_FloorSize;
     #endregion
 
-    void Awake() {
+    void Awake () {
         m_RoomPrefabs = new GameObject[c_RoomPrefabCount];
         for (int i = 0; i < c_RoomPrefabCount; ++i) {
-            m_RoomPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/Rooms/Room{0}", i));
+            m_RoomPrefabs[i] = Resources.Load<GameObject> (string.Format ("Prefabs/Rooms/Room{0}", i));
         }
     }
 
-    void Start() {
-        List<GameObject> childGOList = new List<GameObject>();
+    void Start () {
+        List<GameObject> childGOList = new List<GameObject> ();
 
         // Rooms
-        m_RoomsContainer = this.transform.FindChild("Rooms");
+        m_RoomsContainer = this.transform.FindChild ("Rooms");
         for (int i = 0; i < m_RoomCount; ++i) {
-            RoomScript childRScript = m_RoomsContainer.GetChild(i).GetComponent<RoomScript>();
+            RoomScript childRScript = m_RoomsContainer.GetChild (i).GetComponent<RoomScript> ();
 
-            childGOList.Add(childRScript.gameObject);
+            childGOList.Add (childRScript.gameObject);
         }
-        m_Rooms = childGOList.ToArray();
+        m_Rooms = childGOList.ToArray ();
 
         // Doors
-        m_DoorContainer = this.transform.FindChild("Doors");
+        m_DoorContainer = this.transform.FindChild ("Doors");
         int doorCount = m_DoorContainer.childCount;
-        List<DoorScript> childDSList = new List<DoorScript>();
+        List<DoorScript> childDSList = new List<DoorScript> ();
         for (int i = 0; i < doorCount; ++i) {
-            DoorScript childDScript = m_DoorContainer.GetChild(i).GetComponent<DoorScript>();
+            DoorScript childDScript = m_DoorContainer.GetChild (i).GetComponent<DoorScript> ();
 
-            childDSList.Add(childDScript);
+            childDSList.Add (childDScript);
         }
-        m_Doors = childDSList.ToArray();
+        m_Doors = childDSList.ToArray ();
 
-        this.GenerateDoors();
+        this.GenerateDoors ();
 
         if (m_IsSeed) {
             FloorManager.instance.LoadSeed(this);
-
-            for (int i = 0; i < m_RoomCount; ++i) {
-                m_Rooms[i].GetComponent<RoomScript>().enabled = true;
-            }
         }
     }
 
-    void GenerateDoors() {
+    void GenerateDoors () {
         int doorsCount = m_Doors.Length;
         for (int i = 0; i < doorsCount; ++i) {
             Vector3 doorPosition = m_Doors[i].transform.position;
-            GameObject newDoorGO = this.BuildDoor(doorPosition, m_Doors[i].m_DoorPos);
+            GameObject newDoorGO = this.BuildDoor (doorPosition, m_Doors[i].m_DoorPos);
 
-            m_Doors[i].AttachContent(newDoorGO);
+            m_Doors[i].AttachContent (newDoorGO);
         }
     }
 
-    GameObject BuildDoor(Vector3 newDoorPos, DoorScript.DOOR_POSITION doorPos) {
+    GameObject BuildDoor (Vector3 newDoorPos, DoorScript.DOOR_POSITION doorPos) {
         GameObject prefab = null;
         switch (doorPos) {
             case DoorScript.DOOR_POSITION.LEFT:
@@ -95,11 +91,11 @@ public class FloorScript : MonoBehaviour {
                 break;
 
             default:
-                Debug.LogError("FloorScript::BuildDoor=> Wrong wall type!");
+                Debug.LogError ("FloorScript::BuildDoor=> Wrong wall type!");
                 break;
         }
 
-        GameObject newDoor = Object.Instantiate(prefab,
+        GameObject newDoor = Object.Instantiate (prefab,
                 newDoorPos, Quaternion.identity) as GameObject;
 
         return newDoor;

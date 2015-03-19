@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RemainingTime: 0
-  m_FloorTime: 180
+  m_FloorTime: 10
   m_TimeWhite: {fileID: 0}
   m_RendererUP: {fileID: 0}
   m_RendererDOWN: {fileID: 0}

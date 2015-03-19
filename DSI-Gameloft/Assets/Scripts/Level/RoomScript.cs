@@ -57,36 +57,34 @@ public class RoomScript : MonoBehaviour {
     }
 
     void Start() {
-        //List<GameObject> childGOList = new List<GameObject>();
+        List<GameObject> childGOList = new List<GameObject>();
 
-        //// Room parts
-        //m_RoomPartsContainer = this.transform.FindChild("RoomParts");
-        //int rpCount = m_RoomPartsContainer.childCount;
-        //for (int i = 0; i < rpCount; ++i) {
-        //    RoomPartScript childRPScript = m_RoomPartsContainer.GetChild(i).GetComponent<RoomPartScript>();
+        // Room parts
+        m_RoomPartsContainer = this.transform.FindChild("RoomParts");
+        int rpCount = m_RoomPartsContainer.childCount;
+        for (int i = 0; i < rpCount; ++i) {
+            RoomPartScript childRPScript = m_RoomPartsContainer.GetChild(i).GetComponent<RoomPartScript>();
 
-        //    childGOList.Add(childRPScript.gameObject);
-        //}
-        //m_RoomParts = childGOList
-        //    .Select(x => x.GetComponent<RoomPartScript>())
-        //    .Where(y => y.m_IsReachable)
-        //    .ToArray();
+            childGOList.Add(childRPScript.gameObject);
+        }
+        m_RoomParts = childGOList
+            .Select(x => x.GetComponent<RoomPartScript>())
+            .Where(y => y.m_IsReachable)
+            .ToArray();
 
-        //// Walls
-        //m_WallsContainer = this.transform.FindChild("Walls");
-        //childGOList = childGOList.Where(x => !x.GetComponent<RoomPartScript>().m_IsReachable).ToList();
-        //int wCount = m_WallsContainer.childCount;
-        //for (int i = 0; i < wCount; ++i) {
-        //    SceneryScript childSceneryScript = m_WallsContainer.GetChild(i).GetComponent<SceneryScript>();
+        // Walls
+        m_WallsContainer = this.transform.FindChild("Walls");
+        childGOList = childGOList.Where(x => !x.GetComponent<RoomPartScript>().m_IsReachable).ToList();
+        int wCount = m_WallsContainer.childCount;
+        for (int i = 0; i < wCount; ++i) {
+            SceneryScript childSceneryScript = m_WallsContainer.GetChild(i).GetComponent<SceneryScript>();
 
-        //    childGOList.Add(childSceneryScript.gameObject);
-        //}
-        //m_RoomWalls = childGOList.ToArray();
+            childGOList.Add(childSceneryScript.gameObject);
+        }
+        m_RoomWalls = childGOList.ToArray();
 
-        //if (FloorManager.instance.m_HasLoadedSeed) {
-        //    this.GenerateRoomParts();
-        //}
-        //this.GenerateWalls();
+        this.GenerateRoomParts();
+        this.GenerateWalls();
     }
 
     public void GenerateRoomParts() {

@@ -10,13 +10,7 @@ public class StartButton : MonoBehaviour {
     #endregion
 
     public void LaunchGame() {
-        int rngRoom = Random.Range(0, 1);
-        if (rngRoom % 2 == 1) {
-            Application.LoadLevel("PlayTestV3");
-        }
-        else {
-            Application.LoadLevel("PlayTestV2");
-        }
+        Application.LoadLevel("PlayTestV2");
     }
 
     public void Exit() {
