@@ -26,9 +26,9 @@ public class RoomScript : MonoBehaviour {
 
     // Walls
     GameObject[] m_RoomWalls;
-    GameObject[] m_WallHorPrefabs;
-    GameObject[] m_WallVerPrefabs;
-    GameObject[] m_WallCornerPrefabs;
+    GameObject m_WallHorPrefabs;
+    GameObject m_WallVerPrefabs;
+    GameObject m_WallCornerPrefabs;
     Transform m_WallsContainer;
 
     // Constants
@@ -51,22 +51,9 @@ public class RoomScript : MonoBehaviour {
             m_RoomPartPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/RoomParts/RoomPart{0}", i));
         }
 
-        m_WallHorPrefabs = new GameObject[c_WallHorPrefabCount];
-        m_WallVerPrefabs = new GameObject[c_WallVerPrefabCount];
-        m_WallCornerPrefabs = new GameObject[c_WallCornerPrefabCount];
-
-        int maxIterations = Mathf.Max(c_WallHorPrefabCount, c_WallVerPrefabCount, c_WallCornerPrefabCount);
-        for (int i = 0; i < maxIterations; ++i) {
-            if (i < c_WallHorPrefabCount) {
-                m_WallHorPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/Sceneries/SceneryH{0}", i));
-            }
-            if (i < c_WallVerPrefabCount) {
-                m_WallVerPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/Sceneries/SceneryV{0}", i));
-            }
-            if (i < c_WallCornerPrefabCount) {
-                m_WallCornerPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/Sceneries/SceneryC{0}", i));
-            }
-        }
+        m_WallHorPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallH");
+        m_WallVerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallH");
+        m_WallCornerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/Corner");
     }
 
     void Start() {
@@ -147,7 +134,7 @@ public class RoomScript : MonoBehaviour {
 
     GameObject BuildWall(Vector3 newWallPosition, SceneryScript.SCENERY_TYPE type) {
         int maxRNGRange = 0;
-        GameObject[] prefabs = null;
+        GameObject prefab = null;
         bool isDoor = false;
         switch (type) {
             case SceneryScript.SCENERY_TYPE.DOOR_HOR:
@@ -156,16 +143,13 @@ public class RoomScript : MonoBehaviour {
                 break;
 
             case SceneryScript.SCENERY_TYPE.CORNER:
-                maxRNGRange = m_WallCornerPrefabs.Length;
-                prefabs = m_WallCornerPrefabs;
+                prefab = m_WallCornerPrefabs;
                 break;
             case SceneryScript.SCENERY_TYPE.HORIZONTAL:
-                maxRNGRange = m_WallHorPrefabs.Length;
-                prefabs = m_WallHorPrefabs;
+                prefab = m_WallHorPrefabs;
                 break;
             case SceneryScript.SCENERY_TYPE.VERTICAL:
-                maxRNGRange = m_WallVerPrefabs.Length;
-                prefabs = m_WallVerPrefabs;
+                prefab = m_WallVerPrefabs;
                 break;
 
             case SceneryScript.SCENERY_TYPE.NONE:
@@ -181,7 +165,7 @@ public class RoomScript : MonoBehaviour {
             newWall = null;
         }
         else {
-            newWall = Object.Instantiate(prefabs[rngIndex],
+            newWall = Object.Instantiate(prefab,
                 newWallPosition, Quaternion.identity) as GameObject;
         }
 
