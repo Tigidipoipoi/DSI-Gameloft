@@ -1218,8 +1218,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195390}
-  m_LocalRotation: {x: .7628057, y: .463678956, z: -.27987662, w: .353268266}
-  m_LocalPosition: {x: .852835834, y: 4.68051052, z: 2.41186428}
+  m_LocalRotation: {x: -.588060081, y: .416662365, z: .621293783, w: .307525575}
+  m_LocalPosition: {x: -2.3001225, y: 4.32999086, z: 1.91023636}
   m_LocalScale: {x: 4.25499487, y: 4.25499392, z: 4.25499392}
   m_Children: []
   m_Father: {fileID: 418622}
@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_AudioGatline: {fileID: 8300000, guid: 85c9c23eda627b34aa8908c2ccf219b8, type: 3}
   m_AudioShotgun: {fileID: 8300000, guid: 575627785f036d6428eb109e748f292a, type: 3}
   m_AudioTurrel: {fileID: 0}
+  m_Epaule: {fileID: 469032}
 --- !u!136 &13691752
 CapsuleCollider:
   m_ObjectHideFlags: 1
