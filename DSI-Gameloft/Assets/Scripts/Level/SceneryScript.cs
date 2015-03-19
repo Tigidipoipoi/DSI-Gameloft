@@ -22,20 +22,16 @@ public class SceneryScript : MonoBehaviour {
 
     GameObject m_ChildContent;
 
-    GameObject m_WallCollider;
+    public GameObject m_WallCollider;
     #endregion
 
-    void Awake () {
-        m_WallCollider = Resources.Load<GameObject> ("Prefabs/Wall/WallCollider");
-    }
-
-    public void AttachContent (GameObject wall) {
+    public void AttachContent(GameObject wall) {
         int childCount = this.transform.childCount;
         for (int i = 0; i < childCount; ++i) {
-            Destroy (this.transform.GetChild (i).gameObject);
+            Destroy(this.transform.GetChild(i).gameObject);
         }
 
-        GameObject wallCollider = Object.Instantiate (m_WallCollider,
+        GameObject wallCollider = Object.Instantiate(m_WallCollider,
             this.transform.position, Quaternion.identity) as GameObject;
 
         wallCollider.name = "Collider";

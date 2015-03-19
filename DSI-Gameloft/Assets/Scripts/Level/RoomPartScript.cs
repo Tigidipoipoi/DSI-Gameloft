@@ -19,12 +19,8 @@ public class RoomPartScript : MonoBehaviour {
     public const float c_PartWidth = 80.0f;
     public const float c_PartHeight = 50.0f;
 
-    GameObject m_WallCollider;
+    public GameObject m_WallCollider;
     #endregion
-
-    void Awake() {
-        m_WallCollider = Resources.Load<GameObject>("Prefabs/Wall/WallCollider");
-    }
 
     public void AttachContent(GameObject prefab) {
         int childCount = this.transform.childCount;

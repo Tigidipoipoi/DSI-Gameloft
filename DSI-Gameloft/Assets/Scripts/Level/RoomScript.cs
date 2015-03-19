@@ -21,14 +21,14 @@ public class RoomScript : MonoBehaviour {
     #region Members
     // Room parts
     RoomPartScript[] m_RoomParts;
-    GameObject[] m_RoomPartPrefabs;
+    public GameObject[] m_RoomPartPrefabs;
     Transform m_RoomPartsContainer;
 
     // Walls
     GameObject[] m_RoomWalls;
-    GameObject m_WallHorPrefabs;
-    GameObject m_WallVerPrefabs;
-    GameObject m_WallCornerPrefabs;
+    public GameObject m_WallHorPrefabs;
+    public GameObject m_WallVerPrefabs;
+    public GameObject m_WallCornerPrefabs;
     Transform m_WallsContainer;
 
     // Constants
@@ -44,17 +44,6 @@ public class RoomScript : MonoBehaviour {
     public Vector2 m_FloorIndex;
     public bool m_IsStartRoom;
     #endregion
-
-    void Awake() {
-        m_RoomPartPrefabs = new GameObject[c_RoomPartPrefabCount];
-        for (int i = 0; i < c_RoomPartPrefabCount; ++i) {
-            m_RoomPartPrefabs[i] = Resources.Load<GameObject>(string.Format("Prefabs/RoomParts/RoomPart{0}", i));
-        }
-
-        m_WallHorPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallH");
-        m_WallVerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/WallV");
-        m_WallCornerPrefabs = Resources.Load<GameObject>("Prefabs/Wall/Corner");
-    }
 
     void Start() {
         List<GameObject> childGOList = new List<GameObject>();
