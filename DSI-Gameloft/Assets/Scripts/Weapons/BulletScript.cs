@@ -53,12 +53,14 @@ public class BulletScript : MonoBehaviour {
                 }
             }
 
-            if (isEnemyBullet) {
+            if (isEnemyBullet) 
+			{
                 if (otherGO.layer != m_EnemyLayer) {
                     PreDestroy();
                 }
             }
-            else {
+            else 
+			{
                 PreDestroy();
             }
         }
