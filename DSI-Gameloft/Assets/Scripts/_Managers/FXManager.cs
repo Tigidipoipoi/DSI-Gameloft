@@ -83,6 +83,7 @@ public class FXManager : MonoBehaviour {
 
 			case EventManagerType.EXPLOSION:
 				Instance = Instantiate(FXExplosion, go.transform.position, go.transform.rotation) as GameObject;
+				Destroy(Instance, 1.0f);
 				break;
 
 
